@@ -1,0 +1,18 @@
+# Déploiement Netlify — site statique Happy Décors (aucune compilation)
+[build]
+  publish = "."
+  command = ""
+
+# Sécurité / cache de base
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Les visuels des décors changent rarement : cache long
+[[headers]]
+  for = "/assets/decors/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
