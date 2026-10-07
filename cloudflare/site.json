@@ -1,0 +1,10 @@
+{
+  "name": "happydecors-site",
+  "vars": {
+    "URL": "https://happydecors.fr",
+    "FORMULAIRE_DESTINATAIRE": "contact@happydecors.fr"
+  },
+  "nePasPublier": [
+    "README.md"
+  ]
+}
