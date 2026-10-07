@@ -13,6 +13,31 @@ export { StockageBlobs } from "./stockage.js";
 
 const encodeur = new TextEncoder();
 
+/* ---------------- domaines ---------------- */
+
+// Netlify renvoie www.<domaine principal> vers le domaine principal (les autres alias, eux,
+// sont servis tels quels : www.chezmylene.fr répond 200 comme chezmylene.fr)
+function redirectionWww(req, env) {
+  const principal = env.DOMAINE_PRINCIPAL;
+  if (!principal) return null;
+  const url = new URL(req.url);
+  if (url.hostname !== "www." + principal) return null;
+  const cible = `https://${principal}${url.pathname}${url.search}`;
+  return new Response(`Redirecting to ${cible}`, {
+    status: ["GET", "HEAD"].includes(req.method) ? 301 : 308,
+    headers: { location: cible, "content-type": "text/plain; charset=utf-8", "strict-transport-security": "max-age=31536000" },
+  });
+}
+
+// Liaisons directes vers d'autres Workers : LIAISONS = {"doctorlove.fr": "LIAISON_DOCTORLOVE_FR"}
+let liaisonsLues;
+function liaisons(env) {
+  if (liaisonsLues === undefined) {
+    try { liaisonsLues = JSON.parse(env?.LIAISONS || "{}"); } catch { liaisonsLues = {}; }
+  }
+  return liaisonsLues;
+}
+
 /* ---------------- motifs Netlify ---------------- */
 
 const sansSlashFinal = (p) => (p.length > 1 && p.endsWith("/") ? p.slice(0, -1) : p);
@@ -419,6 +444,11 @@ export function creerWorker(site) {
         const f = fonctions.get(nom);
         if (f) return invoquer(f, req, envCourant, { waitUntil: () => {} }, {});
       }
+      // Autre site du même domaine servi par un Worker sur route (ex. le Dash qui lit
+      // doctorlove.fr/agenda.json) : Cloudflare enverrait l'appel à l'ancien hébergeur, pas au
+      // Worker. On passe donc par la liaison directe (service binding) déclarée dans site.json.
+      const liaison = liaisons(envCourant)[u.host];
+      if (liaison && envCourant[liaison]) return envCourant[liaison].fetch(req);
       return fetchOrigine(req);
     };
   }
@@ -432,6 +462,9 @@ export function creerWorker(site) {
 
   return {
     async fetch(req, env, ctx) {
+      // www.<domaine principal> → domaine principal, comme Netlify (301, ou 308 hors GET/HEAD)
+      const redirWww = redirectionWww(req, env);
+      if (redirWww) return redirWww;
       // Bascule : pendant la copie finale des données, les écritures attendent (2-3 min)
       if (env.MAINTENANCE === "1" && !["GET", "HEAD", "OPTIONS"].includes(req.method)
         && new URL(req.url).pathname !== "/__migration/blobs") {

@@ -232,6 +232,18 @@ if (config.placement) wrangler.placement = config.placement;
 // Formulaires : e-mail de notification par Cloudflare Email Service (domaine à activer d'abord)
 if (config.email) wrangler.send_email = [{ name: "EMAIL" }];
 if (config.hyperdrive) wrangler.hyperdrive = [{ binding: "HYPERDRIVE", id: config.hyperdrive }];
+// www.<domaine> → <domaine> (301), comme Netlify pour le domaine principal du site
+if (config.domainePrincipal) wrangler.vars = { ...wrangler.vars, DOMAINE_PRINCIPAL: config.domainePrincipal };
+// Appels vers un autre Worker du même domaine (sinon Cloudflare les enverrait à l'ancien hébergeur)
+if (config.liaisons) {
+  const table = {};
+  wrangler.services = Object.entries(config.liaisons).map(([hote, service]) => {
+    const binding = "LIAISON_" + hote.toUpperCase().replace(/[^A-Z0-9]/g, "_");
+    table[hote] = binding;
+    return { binding, service };
+  });
+  wrangler.vars = { ...wrangler.vars, LIAISONS: JSON.stringify(table) };
+}
 if (avecArrierePlan) {
   const file = config.file_arriere_plan || `${config.name}-arriere-plan`;
   wrangler.queues = {
