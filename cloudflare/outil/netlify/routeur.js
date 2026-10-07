@@ -467,6 +467,15 @@ export function creerWorker(site) {
       // www.<domaine principal> → domaine principal, comme Netlify (301, ou 308 hors GET/HEAD)
       const redirWww = redirectionWww(req, env);
       if (redirWww) return redirWww;
+      // Retour arrière : tout ce qui arrive encore ici (DNS en cache) est transmis à Netlify, tel quel,
+      // pour qu'une seule copie des données reçoive les écritures (secret RELAIS_NETLIFY = adresse *.netlify.app)
+      if (env.RELAIS_NETLIFY) {
+        const u = new URL(req.url);
+        return fetch(new Request(new URL(u.pathname + u.search, env.RELAIS_NETLIFY), {
+          method: req.method, headers: req.headers, redirect: "manual",
+          body: ["GET", "HEAD"].includes(req.method) ? undefined : req.body,
+        }));
+      }
       // Bascule : pendant la copie finale des données, les écritures attendent (2-3 min)
       if (env.MAINTENANCE === "1" && !["GET", "HEAD", "OPTIONS"].includes(req.method)
         && new URL(req.url).pathname !== "/__migration/blobs") {
@@ -487,6 +496,12 @@ export function creerWorker(site) {
     },
 
     async scheduled(evenement, env, ctx) {
+      // Interrupteur de la bascule : sans CRONS_ACTIFS=1 (copie d'essai, ou avant la bascule),
+      // aucune tâche planifiée ne tourne. Allumer : wrangler secret put ; éteindre : secret delete.
+      if (env.CRONS_ACTIFS !== "1") {
+        console.log(`cron ${evenement.cron} ignoré : CRONS_ACTIFS absent`);
+        return;
+      }
       preparer(env);
       installerFetchInterne(env, ctx);
       const noms = site.crons[evenement.cron] || [];

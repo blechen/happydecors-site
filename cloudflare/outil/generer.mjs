@@ -251,9 +251,9 @@ if (avecArrierePlan) {
     consumers: [{ queue: file, max_batch_size: 1, max_retries: 2, max_concurrency: 5 }],
   };
 }
-// Les crons ne sont branchés que sur décision explicite (cronsActifs) : jamais pendant les essais
-if (config.cronsActifs && Object.keys(crons).length) wrangler.triggers = { crons: Object.keys(crons) };
-else wrangler.triggers = { crons: [] };
+// Les crons sont déclarés, mais le routeur ne les exécute que si le secret CRONS_ACTIFS vaut « 1 »
+// (posé le jour J, en 2 secondes, sans reconstruire ; jamais sur une copie d'essai)
+wrangler.triggers = { crons: Object.keys(crons) };
 fs.writeFileSync(path.join(build, "wrangler.jsonc"),
   "// Généré par adaptateur/generer.mjs à partir de netlify.toml — ne pas modifier à la main\n" + JSON.stringify(wrangler, null, 2) + "\n");
 
@@ -264,4 +264,4 @@ for (const f of fonctions) {
 }
 for (const e of edges) console.log(`  edge     ${e.nom.padEnd(32)} ${e.chemins.join(", ")}`);
 for (const [n, f] of Object.entries(formulaires)) console.log(`  formulaire « ${n} » (pot de miel : ${f.pot || "aucun"})`);
-console.log(`  ${redirections.length} règle(s) de redirection, ${entetes.length} règle(s) d'en-têtes, ${Object.keys(crons).length} expression(s) cron ${config.cronsActifs ? "(ACTIVES)" : "(inactives)"}`);
+console.log(`  ${redirections.length} règle(s) de redirection, ${entetes.length} règle(s) d'en-têtes, ${Object.keys(crons).length} expression(s) cron (exécutées seulement avec le secret CRONS_ACTIFS=1)`);
