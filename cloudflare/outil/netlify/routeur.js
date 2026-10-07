@@ -264,7 +264,7 @@ async function formulaire(req, env, site, servirFichier) {
     const nomVisiteur = champs.nom || champs.name || champs.prenom || "";
     try {
       await env.EMAIL.send({
-        from: { email: `formulaire@${hote}`, name: `Site ${hote}` },
+        from: { email: env.FORMULAIRE_EXPEDITEUR || `formulaire@${hote}`, name: `Site ${hote}` },
         to: env.FORMULAIRE_DESTINATAIRE,
         replyTo: email || undefined,
         subject: `Nouveau message (${nom})${nomVisiteur ? " : " + nomVisiteur : ""}`,

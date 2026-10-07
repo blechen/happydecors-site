@@ -2,10 +2,12 @@
   "name": "happydecors-site",
   "vars": {
     "URL": "https://happydecors.fr",
-    "FORMULAIRE_DESTINATAIRE": "contact@happydecors.fr"
+    "FORMULAIRE_DESTINATAIRE": "contact@happydecors.fr",
+    "FORMULAIRE_EXPEDITEUR": "formulaire@envoi.happydecors.fr"
   },
   "nePasPublier": [
     "README.md"
   ],
-  "domainePrincipal": "happydecors.fr"
+  "domainePrincipal": "happydecors.fr",
+  "email": true
 }
