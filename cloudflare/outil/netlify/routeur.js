@@ -34,10 +34,17 @@ function compilerMotif(motif) {
   };
 }
 
+// Motifs d'en-têtes Netlify : « * » n'importe où (« /icon-*.png », « /fonts/* »), « :nom » = un segment
+const motifsCompiles = new Map();
 function correspondEntete(motif, chemin) {
-  if (motif === "/*") return true;
-  if (motif.endsWith("*")) return chemin.startsWith(motif.slice(0, -1));
-  return sansSlashFinal(chemin) === sansSlashFinal(motif);
+  let re = motifsCompiles.get(motif);
+  if (!re) {
+    const corps = sansSlashFinal(motif).split(/(\*|:[A-Za-z_]\w*)/).map((x) =>
+      x === "*" ? ".*" : x.startsWith(":") ? "[^/]+" : x.replace(/[.+?^${}()|[\]\\]/g, "\\$&")).join("");
+    re = new RegExp(`^${corps}/?$`);
+    motifsCompiles.set(motif, re);
+  }
+  return re.test(chemin);
 }
 
 /* ---------------- contexte Netlify des fonctions ---------------- */
@@ -131,6 +138,26 @@ async function migration(req, env) {
     const mesures = [];
     for (let i = 0; i < 5; i++) { const t = Date.now(); await stub.metadonnees("__diagnostic__"); mesures.push(Date.now() - t); }
     return Response.json({ workerColo: req.cf?.colo, objet: await stub.diagnostic(), allerRetourMs: mesures });
+  }
+  if (req.method === "GET" && url.searchParams.has("contenu")) {
+    // export complet (retour arrière vers Netlify) : valeurs en base64 + métadonnées
+    const tout = [];
+    let apres = "";
+    for (;;) {
+      const page = await stub.lister("", apres, 1000);
+      const valeurs = await stub.lirePlusieurs(page.map((l) => l.cle));
+      page.forEach((l, i) => {
+        const v = valeurs[i];
+        if (!v) return;
+        let bin = "";
+        const u8 = new Uint8Array(v.octets);
+        for (let j = 0; j < u8.length; j += 0x8000) bin += String.fromCharCode(...u8.subarray(j, j + 0x8000));
+        tout.push({ cle: l.cle, base64: btoa(bin), metadata: Object.keys(v.meta || {}).length ? v.meta : undefined });
+      });
+      if (page.length < 1000) break;
+      apres = page[page.length - 1].cle;
+    }
+    return Response.json({ store, blobs: tout });
   }
   if (req.method === "GET") {
     const tout = [];
@@ -405,6 +432,12 @@ export function creerWorker(site) {
 
   return {
     async fetch(req, env, ctx) {
+      // Bascule : pendant la copie finale des données, les écritures attendent (2-3 min)
+      if (env.MAINTENANCE === "1" && !["GET", "HEAD", "OPTIONS"].includes(req.method)
+        && new URL(req.url).pathname !== "/__migration/blobs") {
+        return Response.json({ error: "Maintenance en cours, réessayez dans 2 minutes." },
+          { status: 503, headers: { "retry-after": "120", "cache-control": "no-store" } });
+      }
       preparer(env);
       installerFetchInterne(env, ctx);
       const [rep, fermeture] = await avecBase(() => traiter(req, env, ctx));
