@@ -29,6 +29,21 @@ function redirectionWww(req, env) {
   });
 }
 
+// Tests locaux SEULEMENT (ENV_LOCAL=1, jamais en production) : avec Netlify en local, l'appli tourne
+// dans le processus des tests, qui modifient parfois process.env en cours de route. Le harnais de
+// test transmet ces réglages à chaque requête (en-tête x-harnais-env : {NOM: valeur | null}).
+function reglagesDuHarnais(req, env) {
+  if (env.ENV_LOCAL !== "1" || !req.headers.has("x-harnais-env")) return env;
+  const reglages = JSON.parse(req.headers.get("x-harnais-env"));
+  for (const [k, v] of Object.entries(reglages)) {
+    if (v === null) delete process.env[k]; else process.env[k] = v;
+  }
+  return new Proxy(env, {
+    get: (cible, k) => (Object.hasOwn(reglages, k) ? (reglages[k] ?? undefined) : cible[k]),
+    has: (cible, k) => (Object.hasOwn(reglages, k) ? reglages[k] !== null : k in cible),
+  });
+}
+
 // Liaisons directes vers d'autres Workers : LIAISONS = {"doctorlove.fr": "LIAISON_DOCTORLOVE_FR"}
 let liaisonsLues;
 function liaisons(env) {
@@ -482,6 +497,7 @@ export function creerWorker(site) {
         return Response.json({ error: "Maintenance en cours, réessayez dans 2 minutes." },
           { status: 503, headers: { "retry-after": "120", "cache-control": "no-store" } });
       }
+      env = reglagesDuHarnais(req, env);
       preparer(env);
       installerFetchInterne(env, ctx);
       const [rep, fermeture] = await avecBase(() => traiter(req, env, ctx));
