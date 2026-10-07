@@ -407,7 +407,9 @@ export function creerWorker(site) {
         return servirFichier(interne, env, decodeURIComponent(cibleUrl.pathname), statut === 404 ? 404 : undefined);
       }
       const dest = cible; // relative ou absolue, telle qu'écrite dans la règle (comme Netlify)
-      return new Response(null, { status: statut, headers: { location: dest, "cache-control": "public, max-age=0, must-revalidate" } });
+      // Netlify : petit texte « Redirecting to … » et en-têtes personnalisés du chemin, comme pour un fichier
+      return enTetesFichiers(new Response(req.method === "HEAD" ? null : `Redirecting to ${dest}`, { status: statut, headers: {
+        location: dest, "cache-control": "public, max-age=0, must-revalidate", "content-type": "text/plain; charset=utf-8" } }), chemin);
     }
 
     // 4. Fichiers (puis 404.html)
