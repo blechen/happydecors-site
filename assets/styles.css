@@ -546,3 +546,7 @@ html { scroll-padding-top: 90px; }
   .footer-nav, .footer-contact { gap: 0; }
   .footer-nav a, .footer-contact a { padding: 10px 0; }
 }
+
+/* Galerie : bouton « Voir plus de réalisations » */
+.gal-more { display: block; margin: 26px auto 0; }
+.gal-more[hidden] { display: none; }

@@ -197,14 +197,17 @@
     { src: "assets/gallery/gv1_mario.mp4",      poster: "assets/gallery/gv1_mario.jpg",      cap: "Mario, Spider-Man & nuages sous les lasers",                 video: true },
     { src: "assets/gallery/g29_balenblanc.jpg", cap: "Bal en Blanc : plafond de ballons géants" },
     { src: "assets/gallery/gv13_balenblanc.mp4", poster: "assets/gallery/gv13_balenblanc.jpg", cap: "Bal en Blanc : ballons géants au-dessus de la foule", video: true },
+    { src: "assets/gallery/gv27_etoiles_blanches.mp4", poster: "assets/gallery/gv27_etoiles_blanches.jpg", cap: "Bal en Blanc : ballons & étoiles blanches", video: true },
     { src: "assets/gallery/g01_tigre.jpg",      cap: "Arche Tigre face à la foule" },
     { src: "assets/gallery/gv14_ballonsblancs.mp4", poster: "assets/gallery/gv14_ballonsblancs.jpg", cap: "Bal en Blanc : ballons blancs au plafond", video: true },
     { src: "assets/gallery/gv19_piscine_ballons.mp4", poster: "assets/gallery/gv19_piscine_ballons.jpg", cap: "Piscine de ballons au T7, vue sur la Tour Eiffel", video: true },
+    { src: "assets/gallery/gv26_ballonsblancs.mp4", poster: "assets/gallery/gv26_ballonsblancs.jpg", cap: "Bal en Blanc : ballons sous les lasers", video: true },
     { src: "assets/gallery/g06_paris.jpg",      cap: "Paris — Moulin Rouge & Tour Eiffel" },
     { src: "assets/gallery/g03_araignee.jpg",   cap: "Araignée géante & sa toile" },
     { src: "assets/gallery/gv7_araignee.mp4",   poster: "assets/gallery/gv7_araignee.jpg",   cap: "Araignée géante devant la scène DJ",   video: true },
     { src: "assets/gallery/gv3_papillons.mp4",  poster: "assets/gallery/gv3_papillons.jpg",  cap: "Chat du Pays des Merveilles & papillons fluo",        video: true },
     { src: "assets/gallery/g02_coeurs.jpg",     cap: "Arche de cœurs roses" },
+    { src: "assets/gallery/gv29_valentin.mp4", poster: "assets/gallery/gv29_valentin.jpg", cap: "Saint-Valentin : étoile & cœur géants", video: true },
     { src: "assets/gallery/g32_pegase.jpg", cap: "Pégase en vol au T7" },
     { src: "assets/gallery/gv15_pegase.mp4", poster: "assets/gallery/gv15_pegase.jpg", cap: "Pégase en vol au-dessus de la piste", video: true },
     { src: "assets/gallery/g04_jurassic.jpg",   cap: "Univers Jurassic — T-Rex" },
@@ -215,6 +218,7 @@
     { src: "assets/gallery/g27_halloween.jpg",  cap: "Ambiance Halloween" },
     { src: "assets/gallery/g28_fantomes.jpg",   cap: "Fantômes au-dessus de la foule" },
     { src: "assets/gallery/gv23_horror.mp4", poster: "assets/gallery/gv23_horror.jpg", cap: "Night of Horror : sphères & fantôme géants", video: true },
+    { src: "assets/gallery/gv30_etoile_rouge.mp4", poster: "assets/gallery/gv30_etoile_rouge.jpg", cap: "Night of Horror : étoiles rouges & sphères", video: true },
     { src: "assets/gallery/g16_baleine.jpg",    cap: "Baleine suspendue au-dessus de la piste" },
     { src: "assets/gallery/gv10_baleine.mp4",   poster: "assets/gallery/gv10_baleine.jpg",   cap: "Baleine géante en vol",                video: true },
     { src: "assets/gallery/gv16_pieuvre.mp4", poster: "assets/gallery/gv16_pieuvre.jpg", cap: "Sous l'océan : pieuvre & poisson-clown géants", video: true },
@@ -233,9 +237,11 @@
     { src: "assets/gallery/g30_university.jpg", cap: "Colonne de ballons « University »" },
     { src: "assets/gallery/gv20_plafond_ballons.mp4", poster: "assets/gallery/gv20_plafond_ballons.jpg", cap: "Plafond de ballons au-dessus de la scène", video: true },
     { src: "assets/gallery/g23_spiderman.jpg",  cap: "Arche Spider-Man & toiles lumineuses" },
+    { src: "assets/gallery/gv24_superheros.mp4", poster: "assets/gallery/gv24_superheros.jpg", cap: "Super Héros : lasers & étoiles géantes", video: true },
     { src: "assets/gallery/g17_chats.jpg",      cap: "Chat du Cheshire & Aristochats" },
     { src: "assets/gallery/g21_chateau.jpg",    cap: "Arche château & boules miroir" },
     { src: "assets/gallery/gv6_noel.mp4",       poster: "assets/gallery/gv6_noel.jpg",       cap: "Cadeaux & étoiles de Noël",            video: true },
+    { src: "assets/gallery/gv28_noel.mp4", poster: "assets/gallery/gv28_noel.jpg", cap: "Noël : sucres d'orge, étoiles & boule à facettes", video: true },
     { src: "assets/gallery/g18_noel.jpg",       cap: "Cadeaux, étoiles & sapins (Noël)" },
     { src: "assets/gallery/g19_paques.jpg",     cap: "Lapin géant & œufs dorés (Pâques)" },
     { src: "assets/gallery/g12_papillons.jpg",  cap: "Papillons fluo & lanternes" },
@@ -243,6 +249,7 @@
     { src: "assets/gallery/gv11_neon.mp4",      poster: "assets/gallery/gv11_neon.jpg",      cap: "« Ici, je t'aime » — papillons & lanternes", video: true },
     { src: "assets/gallery/gv17_pride.mp4", poster: "assets/gallery/gv17_pride.jpg", cap: "Pride : planètes, cœurs & étoiles géants", video: true },
     { src: "assets/gallery/g15_fluo.jpg",       cap: "Étoiles violettes devant la scène DJ" },
+    { src: "assets/gallery/gv25_fluo.mp4", poster: "assets/gallery/gv25_fluo.jpg", cap: "Fluo : éclair géant, étoiles & confettis", video: true },
     { src: "assets/gallery/gv21_installation.mp4", poster: "assets/gallery/gv21_installation.jpg", cap: "Installation des ballons « University »", video: true },
     { src: "assets/gallery/gv12_nuages.mp4",    poster: "assets/gallery/gv12_nuages.jpg",    cap: "Nuages, étoiles & avion",             video: true },
     { src: "assets/gallery/g14_lanternes.jpg",  cap: "Lanternes ethniques & toiles fluo" },
@@ -318,12 +325,29 @@
   // Galerie « Nos réalisations »
   const galleryGrid = $("#galleryGrid");
   if (galleryGrid) {
-    galleryGrid.innerHTML = GALLERY.map((g, i) => `
+    // On affiche les 24 premières ; « Voir plus » dévoile la suite par paquets (page légère sur mobile)
+    const PAS = 24;
+    let montrees = 0;
+    const tuile = (g, i) => `
       <button class="gal-item${g.video ? " is-video" : ""}" data-i="${i}" aria-label="${g.video ? "Lire la vidéo" : "Agrandir"} : ${g.cap}">
         <img src="${g.video ? g.poster : g.src}" alt="${g.cap}" loading="lazy" />
         ${g.video ? '<span class="gal-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : ""}
         <span class="gal-cap">${g.cap}</span>
-      </button>`).join("");
+      </button>`;
+    const plus = document.createElement("button");
+    plus.type = "button";
+    plus.className = "btn btn-ghost gal-more";
+    galleryGrid.after(plus);
+    const montrer = () => {
+      const fin = Math.min(GALLERY.length, montrees + PAS);
+      galleryGrid.insertAdjacentHTML("beforeend", GALLERY.slice(montrees, fin).map((g, k) => tuile(g, montrees + k)).join(""));
+      montrees = fin;
+      const reste = GALLERY.length - montrees;
+      plus.hidden = reste <= 0;
+      plus.textContent = `Voir plus de réalisations (${reste})`;
+    };
+    montrer();
+    plus.addEventListener("click", montrer);
     galleryGrid.addEventListener("click", e => {
       const it = e.target.closest(".gal-item");
       if (it) { lbDecorId = null; openLBList(GALLERY, +it.dataset.i); }
