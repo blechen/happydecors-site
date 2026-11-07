@@ -2,3 +2,11 @@
 node_modules/
 .netlify/
 *.log
+/wrangler.jsonc
+/cloudflare/genere.mjs
+/cloudflare/worker.mjs
+/cloudflare/adaptateur/
+/cloudflare/*.netlify
+/cloudflare/opus-decoder.wasm
+/.wrangler/
+.assetsignore
