@@ -37,12 +37,41 @@ function correspond(motif, chemin) {
 // Netlify répond avec une adresse relative (« Location: /show/ ») pour ses redirections internes
 const redirectionRelative = (cible) => new Response(null, { status: 301, headers: { location: cible } });
 
+// Cloudflare ignore « Range » sur les fichiers statiques (200 avec le fichier entier) ; Safari
+// (iPhone) en a besoin pour lire une vidéo. On découpe nous-mêmes, pour la vidéo et l'audio seulement.
+async function plage(req, rep) {
+  const type = rep.headers.get("content-type") || "";
+  if (rep.status !== 200 || !/^(video|audio)\//.test(type)) return rep;
+  const r = req.method === "GET" ? (req.headers.get("range") || "").trim() : "";
+  const m = /^bytes=(\d*)-(\d*)$/.exec(r);
+  if (!m || (m[1] === "" && m[2] === "") || rep.headers.get("content-encoding")) {
+    const entier = new Response(rep.body, rep);
+    entier.headers.set("accept-ranges", "bytes");
+    return entier;
+  }
+  const corps = await rep.arrayBuffer();
+  const taille = corps.byteLength;
+  let debut, fin;
+  if (m[1] === "") { debut = Math.max(0, taille - Number(m[2])); fin = taille - 1; }
+  else { debut = Number(m[1]); fin = m[2] === "" ? taille - 1 : Math.min(Number(m[2]), taille - 1); }
+  const h = new Headers(rep.headers);
+  h.set("accept-ranges", "bytes");
+  if (debut >= taille || debut > fin) {
+    h.set("content-range", `bytes */${taille}`);
+    h.delete("content-length");
+    return new Response(null, { status: 416, headers: h });
+  }
+  h.set("content-range", `bytes ${debut}-${fin}/${taille}`);
+  h.set("content-length", String(fin - debut + 1));
+  return new Response(corps.slice(debut, fin + 1), { status: 206, headers: h });
+}
+
 async function fichier(env, url, chemin, req) {
   const cible = new URL(url);
   cible.pathname = chemin;
   // jamais le corps de la requête d'origine : il ne se lit qu'une fois (POST)
   const rep = await env.ASSETS.fetch(new Request(cible, { method: req.method === "HEAD" ? "HEAD" : "GET", headers: req.headers }));
-  return rep.status === 404 ? null : rep;
+  return rep.status === 404 ? null : plage(req, rep);
 }
 
 export async function resoudre(req, env, options = {}) {
