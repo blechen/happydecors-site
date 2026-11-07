@@ -454,3 +454,18 @@ textarea { resize: vertical; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .gal-cap { font-size: .74rem; padding: 20px 10px 9px; }
 }
+
+/* ============== Média par décor (pastille + vidéo lightbox) ============== */
+.card-img .card-media {
+  position: absolute; left: 8px; bottom: 8px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: var(--r-pill);
+  background: rgba(42,30,51,.72); color: #fff;
+  font: 700 .68rem/1 var(--font-body);
+}
+.card-media svg { width: 13px; height: 13px; fill: currentColor; display: block; }
+.card-media .mb-play { width: 10px; height: 10px; }
+.lb-figure video {
+  max-width: min(92vw, 900px); max-height: 82vh;
+  border-radius: 14px; background: #000; display: block;
+}

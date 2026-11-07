@@ -17,8 +17,8 @@
   // ---------- Échelle : hauteur approx. (m), relevée dans les devis/commandes ----------
   const HEIGHTS = {
     // Nouveaux décors (commandes 2023-2025)
-    DG_131: 2.2, DG_132: 2.1, DG_133: 2.2, DG_134: 3, DG_135: 2.2, DG_136: 1.2,
-    DG_137: 1.6, DG_138: 2, DG_139: 1.8, DG_140: 2.6, DG_141: 2.5, DG_142: 2.5,
+    DG_131: 2.2, DG_132: 2.1, DG_133: 2.2, DG_135: 2.2, DG_136: 1.2,
+    DG_137: 1.6, DG_138: 2, DG_140: 2.6, DG_142: 2.5,
     // Décors existants
     DG_130: 4.3, DG_032: 2.4, DG_015: 1.8, DG_091: 1.9, DG_069: 1.8, DG_006: 2.3,
     DG_049: 5.5, DG_017: 2.3, DG_018: 1.5, DG_019: 1.2, DG_078: 3.4, DG_058: 1.8,
@@ -26,6 +26,13 @@
     DG_051: 1.7, DG_100: 5.4, DG_102: 5.6, DG_098: 5.5, DG_095: 5.5,
   };
   const fmtH = m => (Number.isInteger(m) ? m + " m" : String(m).replace(".", ",") + " m");
+  const capOf = d => `${d.name} — ${d.price > 0 ? d.price + "€ / 48h" : "sur devis"}`;
+  function mediaBadge(d) {
+    const n = 1 + (d.media ? d.media.length : 0) + (d.video ? 1 : 0);
+    if (n <= 1) return "";
+    const play = d.video ? '<svg class="mb-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '';
+    return `<span class="card-media" aria-hidden="true">${play}<svg class="mb-ph" viewBox="0 0 24 24"><path d="M9 4 7.8 5.6H5A1.8 1.8 0 0 0 3.2 7.4v9.2A1.8 1.8 0 0 0 5 18.4h14a1.8 1.8 0 0 0 1.8-1.8V7.4A1.8 1.8 0 0 0 19 5.6h-2.8L15 4Zm3 3.9a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Z"/></svg>${n}</span>`;
+  }
 
   const $ = sel => document.querySelector(sel);
   const fmtPrice = p => p > 0
@@ -111,6 +118,7 @@
       <article class="card" style="--cc:${cc}">
         <div class="card-img" data-id="${d.id}" role="button" tabindex="0" aria-label="Agrandir ${d.name}">
           <span class="card-theme">${d.theme}</span>
+          ${mediaBadge(d)}
           <span class="card-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6h-2V6.4l-3.3 3.3-1.4-1.4L17.6 5H15V3ZM3 15h2v2.6l3.3-3.3 1.4 1.4L6.4 19H9v2H3v-6Z"/></svg></span>
           <img src="assets/decors/${d.id}.jpg" alt="${d.name} — décor gonflable (${d.theme})" loading="lazy" />
         </div>
@@ -198,7 +206,7 @@
     { src: "assets/gallery/g13_rooftop.jpg",    cap: "Rooftop — chat porte-bonheur & lanternes" },
   ];
 
-  const lb = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+  const lb = $("#lightbox"), lbImg = $("#lbImg"), lbVid = $("#lbVid"), lbCap = $("#lbCap");
   let lbItems = [];   // [{ src, cap }]
   let lbIndex = -1;
 
@@ -210,18 +218,29 @@
     document.body.style.overflow = "hidden";
   }
   function openLB(id) {
-    const items = current.map(d => ({
-      src: `assets/decors/${d.id}.jpg`,
-      cap: `${d.name} — ${d.price > 0 ? d.price + "€ / 48h" : "sur devis"}`,
-      h: HEIGHTS[d.id],
-    }));
-    openLBList(items, current.findIndex(d => d.id === id));
+    const d = DECORS.find(x => x.id === id);
+    if (!d) return;
+    const items = [{ src: `assets/decors/${d.id}.jpg`, cap: capOf(d), h: HEIGHTS[d.id] }];
+    (d.media || []).forEach(m => items.push({ src: `assets/decors/${m}`, cap: capOf(d) }));
+    if (d.video) items.push({ src: `assets/decors/${d.video}`, cap: capOf(d), video: true });
+    openLBList(items, 0);
   }
   function showLB() {
     const it = lbItems[lbIndex];
     if (!it) return;
-    lbImg.src = it.src;
-    lbImg.alt = it.cap;
+    if (it.video) {
+      lbImg.hidden = true;
+      lbVid.hidden = false;
+      lbVid.src = it.src;
+      lbVid.play().catch(() => {});
+    } else {
+      lbVid.pause();
+      lbVid.hidden = true;
+      lbVid.removeAttribute("src");
+      lbImg.hidden = false;
+      lbImg.src = it.src;
+      lbImg.alt = it.cap;
+    }
     lbCap.textContent = it.cap + (it.h ? ` · ≈ ${fmtH(it.h)}` : "");
   }
   function moveLB(step) {
@@ -229,7 +248,7 @@
     lbIndex = (lbIndex + step + lbItems.length) % lbItems.length;
     showLB();
   }
-  function closeLB() { lb.hidden = true; document.body.style.overflow = ""; }
+  function closeLB() { lbVid.pause(); lb.hidden = true; document.body.style.overflow = ""; }
 
   grid.addEventListener("click", e => {
     const img = e.target.closest(".card-img");
