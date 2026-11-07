@@ -28,7 +28,8 @@
   const fmtH = m => (Number.isInteger(m) ? m + " m" : String(m).replace(".", ",") + " m");
   const capOf = d => `${d.name} — ${d.price > 0 ? d.price + "€ / 48h" : "sur devis"}`;
   function mediaBadge(d) {
-    const n = 1 + (d.media ? d.media.length : 0) + (d.video ? 1 : 0);
+    const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
+    const n = 1 + (m.photos ? m.photos.length : 0) + (m.video ? 1 : 0);
     if (n <= 1) return "";
     const play = d.video ? '<svg class="mb-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '';
     return `<span class="card-media" aria-hidden="true">${play}<svg class="mb-ph" viewBox="0 0 24 24"><path d="M9 4 7.8 5.6H5A1.8 1.8 0 0 0 3.2 7.4v9.2A1.8 1.8 0 0 0 5 18.4h14a1.8 1.8 0 0 0 1.8-1.8V7.4A1.8 1.8 0 0 0 19 5.6h-2.8L15 4Zm3 3.9a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Z"/></svg>${n}</span>`;
@@ -222,9 +223,10 @@
   function openLB(id) {
     const d = DECORS.find(x => x.id === id);
     if (!d) return;
+    const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
     const items = [{ src: `assets/decors/${d.id}.jpg`, cap: capOf(d), h: HEIGHTS[d.id] }];
-    (d.media || []).forEach(m => items.push({ src: `assets/decors/${m}`, cap: capOf(d) }));
-    if (d.video) items.push({ src: `assets/decors/${d.video}`, cap: capOf(d), video: true });
+    (m.photos || []).forEach(p => items.push({ src: `assets/decors/${p}`, cap: capOf(d) }));
+    if (m.video) items.push({ src: `assets/decors/${m.video}`, cap: capOf(d), video: true });
     openLBList(items, 0);
   }
   function showLB() {
