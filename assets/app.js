@@ -23,7 +23,7 @@
     DG_051: 1.7, DG_100: 5.4, DG_102: 5.6, DG_098: 5.5, DG_095: 5.5,
   };
   const fmtH = m => (Number.isInteger(m) ? m + " m" : String(m).replace(".", ",") + " m");
-  const capOf = d => `${d.name} — ${d.price > 0 ? d.price + "€ / 48h" : "sur devis"}`;
+  const capOf = d => `${d.name}${d.qte ? " (" + d.qte + " disponibles)" : ""} — ${d.price > 0 ? d.price + "€" + (d.qte ? " l'unité" : "") + " / 48h" : "sur devis"}`;
   function mediaBadge(d) {
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
     const n = 1 + (m.photos ? m.photos.length : 0) + (m.video ? 1 : 0);
@@ -123,7 +123,8 @@
         </div>
         <div class="card-body">
           <span class="card-name">${d.name}</span>
-          <span class="card-price ${d.price > 0 ? "" : "devis"}">${fmtPrice(d.price)}</span>
+          ${d.qte ? `<span class="card-qte">${d.qte} disponibles</span>` : ""}
+          <span class="card-price ${d.price > 0 ? "" : "devis"}">${d.price > 0 && d.qte ? `${d.price}€ <small>l'unité · 48h</small>` : fmtPrice(d.price)}</span>
           <button class="card-add" data-add="${d.id}" data-added="${added}">
             ${added ? "✓ Ajouté à ma demande" : "+ Ajouter à ma demande"}
           </button>

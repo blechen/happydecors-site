@@ -21,7 +21,7 @@ const card = d => `
         </div>
         <div class="card-body">
           <h3 class="card-name">${esc(d.name)}</h3>
-          <span class="card-price ${d.price > 0 ? "" : "devis"}">${d.price > 0 ? d.price + "€ <small>/ 48h</small>" : "Sur devis"}</span>
+          ${d.qte ? `<span class="card-qte">${d.qte} disponibles</span>` : ""}<span class="card-price ${d.price > 0 ? "" : "devis"}">${d.price > 0 ? d.price + (d.qte ? "€ <small>l'unité · 48h</small>" : "€ <small>/ 48h</small>") : "Sur devis"}</span>
           <button class="card-add" data-add="${d.id}" data-added="false">+ Ajouter à ma demande</button>
         </div>
       </article>`;
