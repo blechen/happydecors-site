@@ -11,8 +11,13 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Les visuels des décors changent rarement : cache long
+# Visuels et vidéos : cache 30 jours (pas « immutable » : une photo remplacée doit pouvoir se mettre à jour)
 [[headers]]
   for = "/assets/decors/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/gallery/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

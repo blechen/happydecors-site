@@ -8,12 +8,15 @@ const UCOLOR = Object.fromEntries(UNIVERSES.map(u => [u.key, u.color]));
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const byId = id => DECORS.find(d => d.id === id);
 const byU = u => DECORS.filter(d => inUniverse(d, u));
+const prixMin = Math.min(...DECORS.filter(d => d.price > 0).map(d => d.price));
+const prixMax = Math.max(...DECORS.map(d => d.price));
 const pick = (...ids) => ids.map(byId).filter(Boolean);
 const uniq = arr => { const s = new Set(), o = []; for (const d of arr) if (d && !s.has(d.id)) { s.add(d.id); o.push(d); } return o; };
 
 const PAGES = [
   {
     slug: "location-decors-gonflables-mariage-paris",
+    cible: "votre mariage",
     title: "Décors gonflables pour mariage à Paris | Happy Décors",
     desc: "Arches, cœurs et décors gonflables géants à louer pour votre mariage à Paris. Effet waouh garanti, gonfleur fourni, retrait 75003. Demandez votre devis.",
     kicker: "Mariage",
@@ -21,13 +24,14 @@ const PAGES = [
     intro: "Une arche de cœurs à l'entrée, des sphères miroir au-dessus de la piste, un photocall qui fait le tour des stories… Nos décors gonflables transforment votre mariage et marquent vos invités dès l'arrivée. Vous récupérez tout plié à Paris, le gonfleur est fourni.",
     decors: uniq([...byU("amour"), ...pick("DG_010","DG_009","DG_092","DG_042","DG_043","DG_058","DG_057","DG_011","DG_090")]),
     faq: [
-      ["Combien coûte un décor gonflable pour un mariage ?", "Nos décors se louent à partir de 50 € les 48 h (petits décors) jusqu'à environ 300 € pour les grandes arches. On vous fait un devis précis selon votre sélection et votre lieu."],
+      ["Combien coûte un décor gonflable pour un mariage ?", `Nos décors se louent à partir de ${prixMin} € les 48 h (petits décors) jusqu'à ${prixMax} € pour les plus grandes arches. On vous fait un devis précis selon votre sélection et votre lieu.`],
       ["Quand faut-il réserver ?", "Idéalement 3 à 4 semaines à l'avance, surtout pour les week-ends de mai à septembre qui partent vite."],
       ["Peut-on les installer dans un jardin ou en extérieur ?", "Oui, par météo favorable (ni pluie, ni vent fort). On vous conseille le lestage et l'ancrage adaptés."],
     ],
   },
   {
     slug: "location-decors-gonflables-halloween-paris",
+    cible: "votre soirée Halloween",
     title: "Décors gonflables Halloween à louer à Paris | Happy Décors",
     desc: "Araignée géante, clown d'horreur, fantômes, maison hantée… Location de décors gonflables Halloween géants à Paris. Gonfleur fourni, devis en un message.",
     kicker: "Halloween",
@@ -42,6 +46,7 @@ const PAGES = [
   },
   {
     slug: "location-decors-gonflables-noel-paris",
+    cible: "votre soirée de Noël ou du Nouvel An",
     title: "Décors gonflables de Noël à louer à Paris | Happy Décors",
     desc: "Sapins géants, cadeaux, étoiles, sphères miroir : décors gonflables de Noël et du Nouvel An à louer à Paris. Gonfleur fourni, devis en un message.",
     kicker: "Noël & Nouvel An",
@@ -56,7 +61,8 @@ const PAGES = [
   },
   {
     slug: "location-decors-gonflables-evenement-entreprise-paris",
-    title: "Décors gonflables pour événement d'entreprise à Paris | Happy Décors",
+    cible: "votre événement",
+    title: "Décors gonflables événements d'entreprise Paris | Happy Décors",
     desc: "Décors gonflables géants à louer pour vos soirées d'entreprise, lancements et séminaires à Paris. Devis et facture, gonfleur fourni, installation possible.",
     kicker: "Entreprise",
     h1: "Des décors gonflables géants pour vos événements d'entreprise",
@@ -70,6 +76,7 @@ const PAGES = [
   },
   {
     slug: "location-decors-gonflables-anniversaire-paris",
+    cible: "votre anniversaire",
     title: "Décors gonflables pour anniversaire à Paris | Happy Décors",
     desc: "Décors gonflables géants à louer pour un anniversaire à Paris : 30, 40, 50 ans, soirées à thème. Effet waouh, gonfleur fourni, devis en un message.",
     kicker: "Anniversaire",
@@ -77,7 +84,7 @@ const PAGES = [
     intro: "30, 40, 50 ans ou soirée à thème : marquez le coup avec un décor géant. Candyland gourmand, héros pop, univers tropical ou rétro 90's… à vous de choisir l'ambiance.",
     decors: uniq([...byU("gourmandises").slice(0, 5), ...byU("heros").slice(0, 4), ...byU("contes").slice(0, 4), ...pick("DG_011","DG_069","DG_013","DG_046")]),
     faq: [
-      ["Quel budget pour décorer un anniversaire ?", "De 50 € à 300 € par décor selon la taille. Un bel ensemble pour une salle tourne souvent autour de 300 à 600 €."],
+      ["Quel budget pour décorer un anniversaire ?", `De ${prixMin} € à ${prixMax} € par décor selon la taille. Un bel ensemble pour une salle tourne souvent autour de 300 à 600 €.`],
       ["Livrez-vous ou faut-il venir chercher ?", "Retrait rue du Temple (Paris 3ᵉ). Un envoi par colis est possible à votre charge."],
       ["Les décors tiennent-ils toute la soirée ?", "Oui, le gonfleur tourne en continu sur une simple prise 220 V."],
     ],
@@ -113,6 +120,10 @@ const page = p => `<!DOCTYPE html>
   <meta property="og:description" content="${esc(p.desc)}" />
   <meta property="og:image" content="https://happydecors.fr/assets/og.jpg" />
   <meta property="og:url" content="https://happydecors.fr/${p.slug}/" />
+  <meta property="og:site_name" content="Happy Décors" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -157,7 +168,7 @@ const page = p => `<!DOCTYPE html>
   <section class="catalogue"><div class="wrap">
     <header class="section-head">
       <span class="kicker">Nos décors</span>
-      <h2>Idées de décors pour ${esc(p.kicker.toLowerCase())}</h2>
+      <h2>Idées de décors pour ${esc(p.cible)}</h2>
       <p class="section-lead">Une sélection parmi nos plus de 100 décors gonflables. <a href="/#catalogue">Voir tout le catalogue →</a></p>
     </header>
     <div class="grid">${p.decors.map(card).join("")}
@@ -179,7 +190,7 @@ const page = p => `<!DOCTYPE html>
     <div class="contact-copy">
       <span class="kicker">Parlons-en</span>
       <h2>Dites-nous votre projet.</h2>
-      <p class="contact-lead">Décrivez votre ${esc(p.kicker.toLowerCase())} et votre thème : on vous répond en un message avec les décors disponibles et un devis.</p>
+      <p class="contact-lead">Décrivez ${esc(p.cible)} et votre thème : on vous répond en un message avec les décors disponibles et un devis.</p>
       <a class="btn btn-whatsapp" href="${wa}" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> Écrire sur WhatsApp</a>
       <p style="margin-top:14px"><a href="/#contact" class="btn btn-primary btn-lg">Remplir le formulaire</a></p>
     </div>

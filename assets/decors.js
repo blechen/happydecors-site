@@ -10,23 +10,23 @@
 
 const UNIVERSES = [
   // Occasions : triées automatiquement selon la prochaine date (la plus proche en premier)
-  { key: "halloween",    label: "Halloween", short: "Halloween",                emoji: "🎃", color: "#FF7A1A", date: "10-31", bg: "assets/gallery/g03_araignee.jpg" },
-  { key: "noel",         label: "Noël & Nouvel An", short: "Noël",         emoji: "🎄", color: "#2BB673", date: "12-25", bg: "assets/gallery/g18_noel.jpg" },
-  { key: "asie",         label: "Nouvel An chinois", short: "Nouvel An chinois",        emoji: "🏮", color: "#DC2626", date: "02-01", bg: "assets/gallery/g05_dragon.jpg" },
-  { key: "amour",        label: "Mariage & Saint-Valentin", short: "Mariage", emoji: "💗", color: "#FF4D6D", date: "02-14", bg: "assets/gallery/g02_coeurs.jpg" },
-  { key: "paques",       label: "Pâques & Printemps", short: "Pâques",       emoji: "🐣", color: "#8DBF2E", date: "04-05", bg: "assets/gallery/g19_paques.jpg" },
-  { key: "ete",          label: "Été & Tropical", short: "Été",           emoji: "🌴", color: "#F2A900", date: "06-21", bg: "assets/gallery/g10_tropical.jpg" },
+  { key: "halloween",    label: "Halloween", short: "Halloween",                emoji: "🎃", color: "#FF7A1A", date: "10-31", bg: "assets/gallery/uni/g03_araignee.jpg" },
+  { key: "noel",         label: "Noël & Nouvel An", short: "Noël",         emoji: "🎄", color: "#2BB673", date: "12-25", bg: "assets/gallery/uni/g18_noel.jpg" },
+  { key: "asie",         label: "Nouvel An chinois", short: "Nouvel An chinois",        emoji: "🏮", color: "#DC2626", date: "02-01", bg: "assets/gallery/uni/g05_dragon.jpg" },
+  { key: "amour",        label: "Mariage & Saint-Valentin", short: "Mariage", emoji: "💗", color: "#FF4D6D", date: "02-14", bg: "assets/gallery/uni/g02_coeurs.jpg" },
+  { key: "paques",       label: "Pâques & Printemps", short: "Pâques",       emoji: "🐣", color: "#8DBF2E", date: "04-05", bg: "assets/gallery/uni/g19_paques.jpg" },
+  { key: "ete",          label: "Été & Tropical", short: "Été",           emoji: "🌴", color: "#F2A900", date: "06-21", bg: "assets/gallery/uni/g10_tropical.jpg" },
   // Thèmes
-  { key: "mer",          label: "Sous la mer", short: "Sous la mer",              emoji: "🐙", color: "#0EA5E9", bg: "assets/gallery/g16_baleine.jpg" },
-  { key: "animaux",      label: "Jungle & Animaux", short: "Animaux",         emoji: "🐯", color: "#14A38B", bg: "assets/gallery/g01_tigre.jpg" },
-  { key: "contes",       label: "Contes & Disney", short: "Contes & Disney",          emoji: "🏰", color: "#A855F7", bg: "assets/gallery/g21_chateau.jpg" },
-  { key: "heros",        label: "Super-héros & Jeux vidéo", short: "Super-héros", emoji: "⚡️", color: "#4F46E5", bg: "assets/gallery/g23_spiderman.jpg" },
-  { key: "espace",       label: "Espace", short: "Espace",                   emoji: "🚀", color: "#7B61FF", bg: "assets/gallery/g07_espace.jpg" },
-  { key: "gourmandises", label: "Gourmandises", short: "Gourmandises",             emoji: "🍭", color: "#FF6FB5", bg: "assets/gallery/g08_candyland.jpg" },
-  { key: "pop",          label: "Pop, Rétro & Disco", short: "Pop & Disco",       emoji: "🪩", color: "#E11D74", bg: "assets/gallery/g22_emojis.jpg" },
-  { key: "chic",         label: "Bal masqué & Glamour", short: "Glamour",     emoji: "🎭", color: "#334155", bg: "assets/gallery/g11_noirblanc.jpg" },
-  { key: "villes",       label: "Paris & Voyage", short: "Voyage",           emoji: "🗼", color: "#3B82F6", bg: "assets/gallery/g06_paris.jpg" },
-  { key: "ambiance",     label: "Ambiance & Déco", short: "Ambiance",          emoji: "✨", color: "#D946EF", bg: "assets/gallery/g14_lanternes.jpg" },
+  { key: "mer",          label: "Sous la mer", short: "Sous la mer",              emoji: "🐙", color: "#0EA5E9", bg: "assets/gallery/uni/g16_baleine.jpg" },
+  { key: "animaux",      label: "Jungle & Animaux", short: "Animaux",         emoji: "🐯", color: "#14A38B", bg: "assets/gallery/uni/g01_tigre.jpg" },
+  { key: "contes",       label: "Contes & Disney", short: "Contes & Disney",          emoji: "🏰", color: "#A855F7", bg: "assets/gallery/uni/g21_chateau.jpg" },
+  { key: "heros",        label: "Super-héros & Jeux vidéo", short: "Super-héros", emoji: "⚡️", color: "#4F46E5", bg: "assets/gallery/uni/g23_spiderman.jpg" },
+  { key: "espace",       label: "Espace", short: "Espace",                   emoji: "🚀", color: "#7B61FF", bg: "assets/gallery/uni/g07_espace.jpg" },
+  { key: "gourmandises", label: "Gourmandises", short: "Gourmandises",             emoji: "🍭", color: "#FF6FB5", bg: "assets/gallery/uni/g08_candyland.jpg" },
+  { key: "pop",          label: "Pop, Rétro & Disco", short: "Pop & Disco",       emoji: "🪩", color: "#E11D74", bg: "assets/gallery/uni/g22_emojis.jpg" },
+  { key: "chic",         label: "Bal masqué & Glamour", short: "Glamour",     emoji: "🎭", color: "#334155", bg: "assets/gallery/uni/g11_noirblanc.jpg" },
+  { key: "villes",       label: "Paris & Voyage", short: "Voyage",           emoji: "🗼", color: "#3B82F6", bg: "assets/gallery/uni/g06_paris.jpg" },
+  { key: "ambiance",     label: "Ambiance & Déco", short: "Ambiance",          emoji: "✨", color: "#D946EF", bg: "assets/gallery/uni/g14_lanternes.jpg" },
 ];
 
 // Un décor appartient à son univers principal (u) + éventuellement à d'autres (also)

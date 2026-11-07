@@ -139,7 +139,7 @@
     grid.innerHTML = current.map(cardHTML).join("");
     const n = current.length;
     resultCount.textContent = n === DECORS.length
-      ? `${n} décors disponibles`
+      ? `Plus de 100 décors disponibles`
       : `${n} décor${n > 1 ? "s" : ""} ${activeU !== "all" ? "· " + uLabel[activeU] : ""}`;
     emptyMsg.hidden = n > 0;
   }

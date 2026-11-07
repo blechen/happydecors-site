@@ -539,3 +539,9 @@ html { scroll-padding-top: 90px; }
   .uni-emoji { width: 42px; height: 42px; font-size: 1.45rem; }
   .uni-name { font-size: .95rem; }
 }
+
+/* Pied de page : liens assez hauts pour le doigt */
+@media (max-width: 820px) {
+  .footer-nav, .footer-contact { gap: 0; }
+  .footer-nav a, .footer-contact a { padding: 10px 0; }
+}
