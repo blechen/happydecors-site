@@ -14,6 +14,19 @@
   const uLabel = {}, uEmoji = {};
   UNIVERSES.forEach(u => { uLabel[u.key] = u.label; uEmoji[u.key] = u.emoji; });
 
+  // ---------- Échelle : hauteur approx. (m), relevée dans les devis/commandes ----------
+  const HEIGHTS = {
+    // Nouveaux décors (commandes 2023-2025)
+    DG_131: 2.2, DG_132: 2.1, DG_133: 2.2, DG_134: 3, DG_135: 2.2, DG_136: 1.2,
+    DG_137: 1.6, DG_138: 2, DG_139: 1.8, DG_140: 2.6, DG_141: 2.5, DG_142: 2.5,
+    // Décors existants
+    DG_130: 4.3, DG_032: 2.4, DG_015: 1.8, DG_091: 1.9, DG_069: 1.8, DG_006: 2.3,
+    DG_049: 5.5, DG_017: 2.3, DG_018: 1.5, DG_019: 1.2, DG_078: 3.4, DG_058: 1.8,
+    DG_088: 2.5, DG_083: 1.6, DG_052: 3.9, DG_007: 1.5, DG_080: 1.7, DG_081: 1.7,
+    DG_051: 1.7, DG_100: 5.4, DG_102: 5.6, DG_098: 5.5, DG_095: 5.5,
+  };
+  const fmtH = m => (Number.isInteger(m) ? m + " m" : String(m).replace(".", ",") + " m");
+
   const $ = sel => document.querySelector(sel);
   const fmtPrice = p => p > 0
     ? `${p}€ <small>/ 48h</small>`
@@ -168,26 +181,52 @@
   // ======================================================
   //  LIGHTBOX
   // ======================================================
+  // Photos « Nos réalisations » (décors installés en vrai)
+  const GALLERY = [
+    { src: "assets/gallery/g01_tigre.jpg",      cap: "Arche Tigre face à la foule" },
+    { src: "assets/gallery/g02_coeurs.jpg",     cap: "Arche de cœurs roses" },
+    { src: "assets/gallery/g03_araignee.jpg",   cap: "Araignée géante & sa toile" },
+    { src: "assets/gallery/g04_jurassic.jpg",   cap: "Univers Jurassic — T-Rex" },
+    { src: "assets/gallery/g05_dragon.jpg",     cap: "Dragon chinois & lanternes" },
+    { src: "assets/gallery/g06_paris.jpg",      cap: "Paris — Moulin Rouge & Tour Eiffel" },
+    { src: "assets/gallery/g07_espace.jpg",     cap: "Décor suspendu — ambiance espace" },
+    { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
+    { src: "assets/gallery/g09_californie.jpg", cap: "Combi VW — ambiance Flower Power" },
+    { src: "assets/gallery/g10_tropical.jpg",   cap: "Arche perroquet & palmiers" },
+    { src: "assets/gallery/g11_noirblanc.jpg",  cap: "Bal noir & blanc" },
+    { src: "assets/gallery/g12_papillons.jpg",  cap: "Papillons fluo & lanternes" },
+    { src: "assets/gallery/g13_rooftop.jpg",    cap: "Rooftop — chat porte-bonheur & lanternes" },
+  ];
+
   const lb = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+  let lbItems = [];   // [{ src, cap }]
   let lbIndex = -1;
 
-  function openLB(id) {
-    lbIndex = current.findIndex(d => d.id === id);
-    if (lbIndex < 0) return;
+  function openLBList(items, i) {
+    if (!items.length || i < 0) return;
+    lbItems = items; lbIndex = i;
     showLB();
     lb.hidden = false;
     document.body.style.overflow = "hidden";
   }
+  function openLB(id) {
+    const items = current.map(d => ({
+      src: `assets/decors/${d.id}.jpg`,
+      cap: `${d.name} — ${d.price > 0 ? d.price + "€ / 48h" : "sur devis"}`,
+      h: HEIGHTS[d.id],
+    }));
+    openLBList(items, current.findIndex(d => d.id === id));
+  }
   function showLB() {
-    const d = current[lbIndex];
-    if (!d) return;
-    lbImg.src = `assets/decors/${d.id}.jpg`;
-    lbImg.alt = d.name;
-    lbCap.textContent = `${d.name} — ${d.price > 0 ? d.price + "€ / 48h" : "sur devis"}`;
+    const it = lbItems[lbIndex];
+    if (!it) return;
+    lbImg.src = it.src;
+    lbImg.alt = it.cap;
+    lbCap.textContent = it.cap + (it.h ? ` · ≈ ${fmtH(it.h)}` : "");
   }
   function moveLB(step) {
-    if (!current.length) return;
-    lbIndex = (lbIndex + step + current.length) % current.length;
+    if (!lbItems.length) return;
+    lbIndex = (lbIndex + step + lbItems.length) % lbItems.length;
     showLB();
   }
   function closeLB() { lb.hidden = true; document.body.style.overflow = ""; }
@@ -200,6 +239,21 @@
     const img = e.target.closest(".card-img");
     if (img && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openLB(img.dataset.id); }
   });
+
+  // Galerie « Nos réalisations »
+  const galleryGrid = $("#galleryGrid");
+  if (galleryGrid) {
+    galleryGrid.innerHTML = GALLERY.map((g, i) => `
+      <button class="gal-item" data-i="${i}" aria-label="Agrandir : ${g.cap}">
+        <img src="${g.src}" alt="${g.cap}" loading="lazy" />
+        <span class="gal-cap">${g.cap}</span>
+      </button>`).join("");
+    galleryGrid.addEventListener("click", e => {
+      const it = e.target.closest(".gal-item");
+      if (it) openLBList(GALLERY, +it.dataset.i);
+    });
+  }
+
   $("#lbClose").addEventListener("click", closeLB);
   $("#lbPrev").addEventListener("click", () => moveLB(-1));
   $("#lbNext").addEventListener("click", () => moveLB(1));

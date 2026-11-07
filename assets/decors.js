@@ -128,4 +128,18 @@ const DECORS = [
   { id: "DG_002", name: "Vespa",                 theme: "Italie",       u: "villes",       price: 150 },
   { id: "DG_094", name: "Voiture Austin Mini",   theme: "Londres",      u: "villes",       price: 250 },
   { id: "DG_000", name: "Wonder Woman",          theme: "Super-Héros",  u: "pop",          price: 60 },
+
+  /* --- Nouveaux décors (commandes 2023-2025) --- */
+  { id: "DG_131", name: "Pieuvre géante",        theme: "Animaux",      u: "animaux",      price: 250, featured: true },
+  { id: "DG_132", name: "Spider-Man en vol",     theme: "Super-Héros",  u: "pop",          price: 180 },
+  { id: "DG_133", name: "Mario volant",          theme: "Pop",          u: "pop",          price: 150 },
+  { id: "DG_134", name: "Plante Piranha",        theme: "Pop",          u: "pop",          price: 150 },
+  { id: "DG_135", name: "Astronaute",            theme: "Espace",       u: "espace",       price: 250, featured: true },
+  { id: "DG_136", name: "Boules arc-en-ciel (×4)", theme: "Ambiance",   u: "ambiance",     price: 70 },
+  { id: "DG_137", name: "Nuages (×4)",           theme: "Ambiance",     u: "ambiance",     price: 150 },
+  { id: "DG_138", name: "Maneki-neko",           theme: "Asie",         u: "villes",       price: 150 },
+  { id: "DG_139", name: "Ananas géant",          theme: "Tropical",     u: "ete",          price: 150 },
+  { id: "DG_140", name: "Tête de clown géante",  theme: "Halloween",    u: "halloween",    price: 180, featured: true },
+  { id: "DG_141", name: "Masque tête de mort",   theme: "Halloween",    u: "halloween",    price: 150 },
+  { id: "DG_142", name: "Cœur ailé",             theme: "Amour",        u: "amour",        price: 150 },
 ];
