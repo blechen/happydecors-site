@@ -465,9 +465,10 @@ textarea { resize: vertical; }
 }
 .card-media svg { width: 13px; height: 13px; fill: currentColor; display: block; }
 .card-media .mb-play { width: 10px; height: 10px; }
+.lb-figure:has(video:not([hidden])) { max-width: min(92vw, 900px); }
 .lb-figure video {
-  max-width: min(92vw, 900px); max-height: 82vh;
-  border-radius: 14px; background: #000; display: block;
+  width: 100%; max-height: 78vh; object-fit: contain;
+  background: #000; display: block;
 }
 .lb-add { margin-top: 14px; }
 

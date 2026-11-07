@@ -93,12 +93,12 @@ const page = p => `<!DOCTYPE html>
   <meta name="description" content="${esc(p.desc)}" />
   <meta name="theme-color" content="#FF4D6D" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="canonical" href="https://www.happydecors.fr/${p.slug}/" />
+  <link rel="canonical" href="https://happydecors.fr/${p.slug}/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${esc(p.title)}" />
   <meta property="og:description" content="${esc(p.desc)}" />
-  <meta property="og:image" content="https://www.happydecors.fr/assets/og.jpg" />
-  <meta property="og:url" content="https://www.happydecors.fr/${p.slug}/" />
+  <meta property="og:image" content="https://happydecors.fr/assets/og.jpg" />
+  <meta property="og:url" content="https://happydecors.fr/${p.slug}/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -183,6 +183,10 @@ const page = p => `<!DOCTYPE html>
     <a href="/mentions-legales.html">Mentions légales</a>
   </nav>
 </div></footer>
+<div class="mobile-cta">
+  <a class="btn btn-primary" href="/#contact">Demander un devis</a>
+  <a class="mcta-wa" href="${wa}" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><span aria-hidden="true">💬</span></a>
+</div>
 </body>
 </html>`;
 
@@ -193,7 +197,7 @@ for (const p of PAGES) {
 }
 
 // sitemap complet
-const urls = ["https://www.happydecors.fr/", ...PAGES.map(p => `https://www.happydecors.fr/${p.slug}/`)];
+const urls = ["https://happydecors.fr/", ...PAGES.map(p => `https://happydecors.fr/${p.slug}/`)];
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 console.log("sitemap.xml mis à jour (", urls.length, "URL )");

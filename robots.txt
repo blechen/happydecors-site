@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.happydecors.fr/sitemap.xml
+Sitemap: https://happydecors.fr/sitemap.xml

@@ -45,7 +45,7 @@
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
     const n = 1 + (m.photos ? m.photos.length : 0) + (m.video ? 1 : 0);
     if (n <= 1) return "";
-    const play = d.video ? '<svg class="mb-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '';
+    const play = m.video ? '<svg class="mb-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '';
     return `<span class="card-media" aria-hidden="true">${play}<svg class="mb-ph" viewBox="0 0 24 24"><path d="M9 4 7.8 5.6H5A1.8 1.8 0 0 0 3.2 7.4v9.2A1.8 1.8 0 0 0 5 18.4h14a1.8 1.8 0 0 0 1.8-1.8V7.4A1.8 1.8 0 0 0 19 5.6h-2.8L15 4Zm3 3.9a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Z"/></svg>${n}</span>`;
   }
 
@@ -178,7 +178,6 @@
     const id = btn.dataset.add;
     if (selected.has(id)) selected.delete(id); else selected.add(id);
     syncSelection();
-    const d = DECORS.find(x => x.id === id);
     const on = selected.has(id);
     btn.dataset.added = String(on);
     btn.textContent = on ? "✓ Ajouté à ma demande" : "+ Ajouter à ma demande";
@@ -209,24 +208,28 @@
   // ======================================================
   // « Nos réalisations » — photos + vidéos d'événements
   const GALLERY = [
-    { src: "assets/gallery/gv1_mario.mp4",      poster: "assets/gallery/gv1_mario.jpg",      cap: "Mario géant & lasers",                 video: true },
+    { src: "assets/gallery/gv1_mario.mp4",      poster: "assets/gallery/gv1_mario.jpg",      cap: "Mario, Spider-Man & nuages sous les lasers",                 video: true },
     { src: "assets/gallery/g01_tigre.jpg",      cap: "Arche Tigre face à la foule" },
     { src: "assets/gallery/g06_paris.jpg",      cap: "Paris — Moulin Rouge & Tour Eiffel" },
     { src: "assets/gallery/g03_araignee.jpg",   cap: "Araignée géante & sa toile" },
-    { src: "assets/gallery/gv3_papillons.mp4",  poster: "assets/gallery/gv3_papillons.jpg",  cap: "Papillons fluo & boules disco",        video: true },
+    { src: "assets/gallery/gv7_araignee.mp4",   poster: "assets/gallery/gv7_araignee.jpg",   cap: "Araignée géante devant la scène DJ",   video: true },
+    { src: "assets/gallery/gv3_papillons.mp4",  poster: "assets/gallery/gv3_papillons.jpg",  cap: "Chat du Pays des Merveilles & papillons fluo",        video: true },
     { src: "assets/gallery/g02_coeurs.jpg",     cap: "Arche de cœurs roses" },
     { src: "assets/gallery/g04_jurassic.jpg",   cap: "Univers Jurassic — T-Rex" },
     { src: "assets/gallery/g05_dragon.jpg",     cap: "Dragon chinois & lanternes" },
-    { src: "assets/gallery/gv2_clown.mp4",      poster: "assets/gallery/gv2_clown.jpg",      cap: "Clown d'Halloween & lasers",           video: true },
+    { src: "assets/gallery/gv8_dragon.mp4",     poster: "assets/gallery/gv8_dragon.jpg",     cap: "Dragon & lanternes rouges",            video: true },
+    { src: "assets/gallery/gv2_clown.mp4",      poster: "assets/gallery/gv2_clown.jpg",      cap: "Clown géant & lasers",           video: true },
     { src: "assets/gallery/g27_halloween.jpg",  cap: "Ambiance Halloween" },
     { src: "assets/gallery/g28_fantomes.jpg",   cap: "Fantômes au-dessus de la foule" },
     { src: "assets/gallery/g16_baleine.jpg",    cap: "Baleine suspendue au-dessus de la piste" },
-    { src: "assets/gallery/gv5_espace.mp4",     poster: "assets/gallery/gv5_espace.jpg",     cap: "Cerises, planètes & lasers",           video: true },
+    { src: "assets/gallery/gv10_baleine.mp4",   poster: "assets/gallery/gv10_baleine.jpg",   cap: "Baleine géante en vol",                video: true },
+    { src: "assets/gallery/gv5_espace.mp4",     poster: "assets/gallery/gv5_espace.jpg",     cap: "Planètes, étoiles & pastèque",           video: true },
     { src: "assets/gallery/g07_espace.jpg",     cap: "Navette & planètes — Espace" },
     { src: "assets/gallery/g26_ovni.jpg",       cap: "OVNI & planète" },
+    { src: "assets/gallery/gv9_ovni.mp4",       poster: "assets/gallery/gv9_ovni.jpg",       cap: "OVNI & planètes sous le néon",         video: true },
     { src: "assets/gallery/g24_fusee.jpg",      cap: "Fusée orange" },
     { src: "assets/gallery/g25_avion.jpg",      cap: "Avion suspendu" },
-    { src: "assets/gallery/gv4_arcenciel.mp4",  poster: "assets/gallery/gv4_arcenciel.jpg",  cap: "Arc-en-ciel & papillons",              video: true },
+    { src: "assets/gallery/gv4_arcenciel.mp4",  poster: "assets/gallery/gv4_arcenciel.jpg",  cap: "Arc-en-ciel, Pégase & papillons",              video: true },
     { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
     { src: "assets/gallery/g20_banane.jpg",     cap: "Bananes & sphères miroir" },
     { src: "assets/gallery/g09_californie.jpg", cap: "Combi VW — ambiance Flower Power" },
@@ -239,7 +242,9 @@
     { src: "assets/gallery/g18_noel.jpg",       cap: "Cadeaux, étoiles & sapins (Noël)" },
     { src: "assets/gallery/g19_paques.jpg",     cap: "Lapin géant & œufs dorés (Pâques)" },
     { src: "assets/gallery/g12_papillons.jpg",  cap: "Papillons fluo & lanternes" },
+    { src: "assets/gallery/gv11_neon.mp4",      poster: "assets/gallery/gv11_neon.jpg",      cap: "« Ici, je t'aime » — papillons & lanternes", video: true },
     { src: "assets/gallery/g15_fluo.jpg",       cap: "Étoiles violettes devant la scène DJ" },
+    { src: "assets/gallery/gv12_nuages.mp4",    poster: "assets/gallery/gv12_nuages.jpg",    cap: "Nuages, étoiles & avion",             video: true },
     { src: "assets/gallery/g14_lanternes.jpg",  cap: "Lanternes ethniques & toiles fluo" },
     { src: "assets/gallery/g11_noirblanc.jpg",  cap: "Bal noir & blanc" },
     { src: "assets/gallery/g13_rooftop.jpg",    cap: "Rooftop — chat porte-bonheur & lanternes" },
