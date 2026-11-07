@@ -11,5 +11,6 @@
     ".claude"
   ],
   "domainePrincipal": "happydecors.fr",
-  "email": true
+  "email": true,
+  "workers_dev": false
 }
