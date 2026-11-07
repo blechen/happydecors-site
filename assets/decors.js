@@ -139,4 +139,5 @@ const DECORS = [
   { id: "DG_138", name: "Maneki-neko",           theme: "Asie",         u: "villes",       price: 150, media: ["DG_138_2.jpg", "DG_138_3.jpg"] },
   { id: "DG_140", name: "Tête de clown géante",  theme: "Halloween",    u: "halloween",    price: 180, featured: true, media: ["DG_140_2.jpg"], video: "DG_140.mp4" },
   { id: "DG_142", name: "Cœur ailé",             theme: "Amour",        u: "amour",        price: 150, media: ["DG_142_2.jpg"] },
+  { id: "DG_143", name: "Couronne royale",       theme: "Royauté",      u: "ambiance",     price: 150 },
 ];

@@ -18,7 +18,7 @@
   const HEIGHTS = {
     // Nouveaux décors (commandes 2023-2025)
     DG_131: 2.2, DG_132: 2.1, DG_133: 2.2, DG_135: 2.2, DG_136: 1.2,
-    DG_137: 1.6, DG_138: 2, DG_140: 2.6, DG_142: 2.5,
+    DG_137: 1.6, DG_138: 2, DG_140: 2.6, DG_142: 2.5, DG_143: 2.2,
     // Décors existants
     DG_130: 4.3, DG_032: 2.4, DG_015: 1.8, DG_091: 1.9, DG_069: 1.8, DG_006: 2.3,
     DG_049: 5.5, DG_017: 2.3, DG_018: 1.5, DG_019: 1.2, DG_078: 3.4, DG_058: 1.8,
@@ -99,12 +99,13 @@
   // ======================================================
   let current = []; // liste filtrée courante (pour la lightbox)
 
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/œ/g, "oe").replace(/æ/g, "ae");
   function getFiltered() {
-    const q = query.trim().toLowerCase();
+    const q = norm(query.trim());
     return DECORS.filter(d => {
       if (activeU !== "all" && d.u !== activeU) return false;
       if (q) {
-        const hay = (d.name + " " + d.theme + " " + uLabel[d.u]).toLowerCase();
+        const hay = norm(d.name + " " + d.theme + " " + uLabel[d.u]);
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -170,6 +171,7 @@
   function syncSelection() {
     selN.textContent = String(selected.size);
     selBar.hidden = selected.size === 0;
+    document.body.classList.toggle("has-sel", selected.size > 0);
     const names = [...selected].map(id => (DECORS.find(d => d.id === id) || {}).name).filter(Boolean);
     if (names.length) decorsField.value = names.join(", ");
     else if (decorsField.dataset.auto !== "0") decorsField.value = "";
@@ -231,6 +233,7 @@
     if (it.video) {
       lbImg.hidden = true;
       lbVid.hidden = false;
+      lbVid.muted = true;
       lbVid.src = it.src;
       lbVid.play().catch(() => {});
     } else {
@@ -325,5 +328,6 @@
   //  DIVERS
   // ======================================================
   $("#year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".js-count").forEach(e => { e.textContent = DECORS.length; });
   render();
 })();
