@@ -5,28 +5,11 @@
 (function () {
   "use strict";
 
-  // Couleur par univers
-  const UCOLOR = {
-    amour: "#FF4D6D", animaux: "#1FBFA8", gourmandises: "#FF6FB5",
-    villes: "#3BA7FF", espace: "#7B61FF", halloween: "#FF7A1A",
-    fetes: "#2BB673", pop: "#F2A900", ete: "#14B8C4", ambiance: "#B968FF",
-  };
-  const uLabel = {}, uEmoji = {};
-  UNIVERSES.forEach(u => { uLabel[u.key] = u.label; uEmoji[u.key] = u.emoji; });
-
-  // Image de fond par univers (photos de soirée)
-  const UNI_BG = {
-    amour: "assets/gallery/g02_coeurs.jpg",
-    animaux: "assets/gallery/g01_tigre.jpg",
-    gourmandises: "assets/gallery/g08_candyland.jpg",
-    villes: "assets/gallery/g06_paris.jpg",
-    espace: "assets/gallery/g07_espace.jpg",
-    halloween: "assets/gallery/g27_halloween.jpg",
-    fetes: "assets/gallery/g18_noel.jpg",
-    pop: "assets/gallery/g23_spiderman.jpg",
-    ete: "assets/gallery/g10_tropical.jpg",
-    ambiance: "assets/gallery/g11_noirblanc.jpg",
-  };
+  // Couleur, libellé et photo de fond par univers (définis dans decors.js)
+  const UNIS = universesInOrder();
+  const UCOLOR = {}, uLabel = {}, UNI_BG = {};
+  UNIVERSES.forEach(u => { UCOLOR[u.key] = u.color; uLabel[u.key] = u.label; if (u.bg) UNI_BG[u.key] = u.bg; });
+  const uLabels = d => [d.u].concat(d.also || []).map(k => uLabel[k]).join(" ");
 
   // ---------- Échelle : hauteur approx. (m), relevée dans les devis/commandes ----------
   const HEIGHTS = {
@@ -71,12 +54,12 @@
   //  UNIVERS : cartes + puces de filtre
   // ======================================================
   const counts = {};
-  DECORS.forEach(d => { counts[d.u] = (counts[d.u] || 0) + 1; });
+  UNIVERSES.forEach(u => { counts[u.key] = DECORS.filter(d => inUniverse(d, u.key)).length; });
 
   // Cartes d'univers (section Univers)
-  universGrid.innerHTML = UNIVERSES.map(u => `
+  universGrid.innerHTML = UNIS.map(u => `
     <button class="uni-card${UNI_BG[u.key] ? " has-bg" : ""}" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}${UNI_BG[u.key] ? `; background-image:url('${UNI_BG[u.key]}')` : ""}">
-      <span class="uni-emoji">${u.emoji}</span>
+      ${u.soon ? '<span class="uni-soon">Bientôt</span>' : ""}<span class="uni-emoji">${u.emoji}</span>
       <span class="uni-name">${u.label}</span>
       <span class="uni-count">${counts[u.key] || 0} décors</span>
     </button>`).join("");
@@ -90,9 +73,9 @@
 
   // Puces de filtre (toolbar du catalogue)
   const chipsHTML = [`<button class="chip" data-u="all" aria-pressed="true">Tout voir</button>`]
-    .concat(UNIVERSES.map(u => `
+    .concat(UNIS.map(u => `
       <button class="chip" data-u="${u.key}" aria-pressed="false" style="--cc:${UCOLOR[u.key]}">
-        <span class="c-emoji">${u.emoji}</span>${u.label}
+        <span class="c-emoji">${u.emoji}</span>${u.short || u.label}
       </button>`)).join("");
   filters.innerHTML = chipsHTML;
 
@@ -118,9 +101,9 @@
   function getFiltered() {
     const q = norm(query.trim());
     return DECORS.filter(d => {
-      if (activeU !== "all" && d.u !== activeU) return false;
+      if (activeU !== "all" && !inUniverse(d, activeU)) return false;
       if (q) {
-        const hay = norm(d.name + " " + d.theme + " " + uLabel[d.u]);
+        const hay = norm(d.name + " " + d.theme + " " + uLabels(d));
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -150,7 +133,9 @@
 
   function render() {
     current = getFiltered();
-    current.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    // Dans un univers : ses décors propres d'abord, puis ceux qui s'y associent ; vedettes en tête
+    const rank = d => (activeU !== "all" && d.u !== activeU ? 2 : 0) + (d.featured ? 0 : 1);
+    current.sort((a, b) => rank(a) - rank(b));
     grid.innerHTML = current.map(cardHTML).join("");
     const n = current.length;
     resultCount.textContent = n === DECORS.length

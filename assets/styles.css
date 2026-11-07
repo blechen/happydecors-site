@@ -215,7 +215,7 @@ section { padding: clamp(46px, 7vw, 88px) 0; }
 .pillar p { color: var(--ink-soft); font-size: .98rem; margin: 0; }
 
 /* ---------- univers ---------- */
-.univers-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.univers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .uni-card {
   display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
   padding: 20px 18px; border-radius: var(--r-md); cursor: pointer; text-align: left;
@@ -386,7 +386,6 @@ textarea { resize: vertical; }
 @media (max-width: 980px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
-  .univers-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 820px) {
   .nav, .header-cta { display: none; }
@@ -401,7 +400,6 @@ textarea { resize: vertical; }
 @media (max-width: 620px) {
   body { font-size: 16px; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .univers-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; }
   .toolbar { top: 64px; }
@@ -521,3 +519,23 @@ html { scroll-padding-top: 90px; }
 .uni-card.has-bg > * { position: relative; z-index: 1; color: #fff; }
 .uni-card.has-bg .uni-count { color: rgba(255,255,255,.88); }
 .uni-card.has-bg .uni-emoji { filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
+
+/* Univers : 16 catégories — badge « Bientôt » + défilement horizontal sur mobile */
+.uni-card { position: relative; }
+.uni-soon { position: absolute; top: 12px; right: 12px; background: #fff; color: var(--uc); font-size: .72rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.uni-card > .uni-soon, .uni-card.has-bg > .uni-soon { position: absolute; z-index: 2; color: var(--uc); }
+@media (max-width: 980px) { .univers-grid { gap: 10px; } .uni-card { padding: 16px 14px; } }
+@media (max-width: 620px) {
+  .univers-grid {
+    grid-template-columns: none; grid-auto-flow: column; grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 43%; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity; scroll-padding-left: 24px;
+    margin: 0 -24px; padding: 4px 24px 10px; scrollbar-width: none;
+  }
+  .univers-grid::-webkit-scrollbar { display: none; }
+  .uni-card { scroll-snap-align: start; }
+  .uni-card.has-bg { min-height: 116px; }
+  .uni-card:hover { transform: none; }
+  .uni-emoji { width: 42px; height: 42px; font-size: 1.45rem; }
+  .uni-name { font-size: .95rem; }
+}

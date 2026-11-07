@@ -3,24 +3,14 @@
 import fs from "fs";
 
 const g = {};
-new Function("g", fs.readFileSync("assets/decors.js", "utf8") + ";g.DECORS=DECORS;g.UNIVERSES=UNIVERSES;")(g);
-const { DECORS, UNIVERSES } = g;
+new Function("g", fs.readFileSync("assets/decors.js", "utf8") + ";g.DECORS=DECORS;g.UNIVERSES=UNIVERSES;g.universesInOrder=universesInOrder;g.inUniverse=inUniverse;")(g);
+const { DECORS, UNIVERSES, universesInOrder, inUniverse } = g;
 
-const UCOLOR = {
-  amour: "#FF4D6D", animaux: "#1FBFA8", gourmandises: "#FF6FB5",
-  villes: "#3BA7FF", espace: "#7B61FF", halloween: "#FF7A1A",
-  fetes: "#2BB673", pop: "#F2A900", ete: "#14B8C4", ambiance: "#B968FF",
-};
-const UNI_BG = {
-  amour: "assets/gallery/g02_coeurs.jpg", animaux: "assets/gallery/g01_tigre.jpg",
-  gourmandises: "assets/gallery/g08_candyland.jpg", villes: "assets/gallery/g06_paris.jpg",
-  espace: "assets/gallery/g07_espace.jpg", halloween: "assets/gallery/g27_halloween.jpg",
-  fetes: "assets/gallery/g18_noel.jpg", pop: "assets/gallery/g23_spiderman.jpg",
-  ete: "assets/gallery/g10_tropical.jpg", ambiance: "assets/gallery/g11_noirblanc.jpg",
-};
+const UCOLOR = {}, UNI_BG = {};
+UNIVERSES.forEach(u => { UCOLOR[u.key] = u.color; if (u.bg) UNI_BG[u.key] = u.bg; });
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const counts = {};
-DECORS.forEach(d => { counts[d.u] = (counts[d.u] || 0) + 1; });
+UNIVERSES.forEach(u => { counts[u.key] = DECORS.filter(d => inUniverse(d, u.key)).length; });
 const uLabel = {}; UNIVERSES.forEach(u => uLabel[u.key] = u.label);
 
 const card = d => `
@@ -38,13 +28,13 @@ const card = d => `
 
 const uni = u => `
     <button class="uni-card${UNI_BG[u.key] ? " has-bg" : ""}" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}${UNI_BG[u.key] ? `; background-image:url('${UNI_BG[u.key]}')` : ""}">
-      <span class="uni-emoji">${u.emoji}</span>
+      ${u.soon ? '<span class="uni-soon">Bientôt</span>' : ""}<span class="uni-emoji">${u.emoji}</span>
       <span class="uni-name">${esc(u.label)}</span>
       <span class="uni-count">${counts[u.key] || 0} décors</span>
     </button>`;
 
 const grid = DECORS.map(card).join("");
-const unis = UNIVERSES.map(uni).join("");
+const unis = universesInOrder().map(uni).join("");
 
 let html = fs.readFileSync("index.html", "utf8");
 html = html.replace(/(<!--GRID_START-->)[\s\S]*?(<!--GRID_END-->)/, `$1${grid}\n      $2`);

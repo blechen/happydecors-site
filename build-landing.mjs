@@ -2,12 +2,12 @@
 // Pages statiques réutilisant styles.css. À lancer avant déploiement.
 import fs from "fs";
 const g = {};
-new Function("g", fs.readFileSync("assets/decors.js", "utf8") + ";g.DECORS=DECORS;")(g);
-const { DECORS } = g;
-const UCOLOR = { amour:"#FF4D6D", animaux:"#1FBFA8", gourmandises:"#FF6FB5", villes:"#3BA7FF", espace:"#7B61FF", halloween:"#FF7A1A", fetes:"#2BB673", pop:"#F2A900", ete:"#14B8C4", ambiance:"#B968FF" };
+new Function("g", fs.readFileSync("assets/decors.js", "utf8") + ";g.DECORS=DECORS;g.UNIVERSES=UNIVERSES;g.inUniverse=inUniverse;")(g);
+const { DECORS, UNIVERSES, inUniverse } = g;
+const UCOLOR = Object.fromEntries(UNIVERSES.map(u => [u.key, u.color]));
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const byId = id => DECORS.find(d => d.id === id);
-const byU = u => DECORS.filter(d => d.u === u);
+const byU = u => DECORS.filter(d => inUniverse(d, u));
 const pick = (...ids) => ids.map(byId).filter(Boolean);
 const uniq = arr => { const s = new Set(), o = []; for (const d of arr) if (d && !s.has(d.id)) { s.add(d.id); o.push(d); } return o; };
 
@@ -41,6 +41,20 @@ const PAGES = [
     ],
   },
   {
+    slug: "location-decors-gonflables-noel-paris",
+    title: "Décors gonflables de Noël à louer à Paris | Happy Décors",
+    desc: "Sapins géants, cadeaux, étoiles, sphères miroir : décors gonflables de Noël et du Nouvel An à louer à Paris. Gonfleur fourni, devis en un message.",
+    kicker: "Noël & Nouvel An",
+    h1: "Décors gonflables géants pour Noël et le Nouvel An",
+    intro: "Des sapins géants, des cadeaux surdimensionnés, des étoiles et des sphères miroir au plafond… Nos décors gonflables mettent tout de suite l'ambiance des fêtes dans votre soirée de Noël, d'entreprise ou entre amis, comme dans votre réveillon du Nouvel An. Vous récupérez tout plié à Paris, le gonfleur est fourni.",
+    decors: uniq([...byU("noel"), ...pick("DG_057","DG_137","DG_042","DG_035","DG_036")]),
+    faq: [
+      ["Quels décors pour une soirée de Noël d'entreprise ?", "Les sapins géants et les cadeaux posent le décor dès l'entrée ; les étoiles, les lanternes et les sphères miroir habillent le plafond et la piste. On vous aide à composer selon la taille de votre salle."],
+      ["Quand réserver pour Noël et le Nouvel An ?", "Dès novembre : les soirées de fin d'année se concentrent sur les trois premières semaines de décembre et le 31."],
+      ["Fournissez-vous un devis et une facture ?", "Oui, devis puis facture au nom de votre société ; l'installation sur place est possible sur devis."],
+    ],
+  },
+  {
     slug: "location-decors-gonflables-evenement-entreprise-paris",
     title: "Décors gonflables pour événement d'entreprise à Paris | Happy Décors",
     desc: "Décors gonflables géants à louer pour vos soirées d'entreprise, lancements et séminaires à Paris. Devis et facture, gonfleur fourni, installation possible.",
@@ -61,7 +75,7 @@ const PAGES = [
     kicker: "Anniversaire",
     h1: "Des décors gonflables géants pour un anniversaire inoubliable",
     intro: "30, 40, 50 ans ou soirée à thème : marquez le coup avec un décor géant. Candyland gourmand, héros pop, univers tropical ou rétro 90's… à vous de choisir l'ambiance.",
-    decors: uniq([...byU("gourmandises").slice(0, 6), ...byU("pop").slice(0, 6), ...pick("DG_011","DG_069","DG_013","DG_046")]),
+    decors: uniq([...byU("gourmandises").slice(0, 5), ...byU("heros").slice(0, 4), ...byU("contes").slice(0, 4), ...pick("DG_011","DG_069","DG_013","DG_046")]),
     faq: [
       ["Quel budget pour décorer un anniversaire ?", "De 50 € à 300 € par décor selon la taille. Un bel ensemble pour une salle tourne souvent autour de 300 à 600 €."],
       ["Livrez-vous ou faut-il venir chercher ?", "Retrait rue du Temple (Paris 3ᵉ). Un envoi par colis est possible à votre charge."],
@@ -177,6 +191,7 @@ const page = p => `<!DOCTYPE html>
   <nav class="footer-nav" aria-label="Pied de page">
     <a href="/location-decors-gonflables-mariage-paris/">Mariage</a>
     <a href="/location-decors-gonflables-halloween-paris/">Halloween</a>
+    <a href="/location-decors-gonflables-noel-paris/">Noël</a>
     <a href="/location-decors-gonflables-evenement-entreprise-paris/">Entreprise</a>
     <a href="/location-decors-gonflables-anniversaire-paris/">Anniversaire</a>
     <a href="/#catalogue">Tous les décors</a>
