@@ -6,7 +6,9 @@
     "FORMULAIRE_EXPEDITEUR": "formulaire@envoi.happydecors.fr"
   },
   "nePasPublier": [
-    "README.md"
+    "README.md",
+    "build-*.mjs",
+    ".claude"
   ],
   "domainePrincipal": "happydecors.fr",
   "email": true
