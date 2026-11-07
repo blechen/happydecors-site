@@ -65,7 +65,7 @@ const PAGES = [
     faq: [
       ["Fournissez-vous une facture et un devis ?", "Oui, devis puis facture au nom de votre société. Paiement à la remise du décor, ou 50 %/50 % avec installation."],
       ["Pouvez-vous installer sur place ?", "Oui, l'installation et le démontage sont possibles sur devis, avec sécurisation adaptée au public."],
-      ["Peut-on personnaliser un décor à nos couleurs ou logo ?", "On conçoit aussi des décors sur mesure. Contactez-nous avec votre brief."],
+      ["Peut-on associer plusieurs décors ?", "Oui : une arche à l'entrée et des décors suspendus au-dessus de la piste font un ensemble très efficace. Ajoutez-les à votre demande, on vous fait un devis global."],
     ],
   },
   {
