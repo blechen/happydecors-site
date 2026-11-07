@@ -14,6 +14,20 @@
   const uLabel = {}, uEmoji = {};
   UNIVERSES.forEach(u => { uLabel[u.key] = u.label; uEmoji[u.key] = u.emoji; });
 
+  // Image de fond par univers (photos de soirée)
+  const UNI_BG = {
+    amour: "assets/gallery/g02_coeurs.jpg",
+    animaux: "assets/gallery/g01_tigre.jpg",
+    gourmandises: "assets/gallery/g08_candyland.jpg",
+    villes: "assets/gallery/g06_paris.jpg",
+    espace: "assets/gallery/g07_espace.jpg",
+    halloween: "assets/gallery/g27_halloween.jpg",
+    fetes: "assets/gallery/g18_noel.jpg",
+    pop: "assets/gallery/g23_spiderman.jpg",
+    ete: "assets/gallery/g10_tropical.jpg",
+    ambiance: "assets/gallery/g11_noirblanc.jpg",
+  };
+
   // ---------- Échelle : hauteur approx. (m), relevée dans les devis/commandes ----------
   const HEIGHTS = {
     // Nouveaux décors (commandes 2023-2025)
@@ -61,7 +75,7 @@
 
   // Cartes d'univers (section Univers)
   universGrid.innerHTML = UNIVERSES.map(u => `
-    <button class="uni-card" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}">
+    <button class="uni-card${UNI_BG[u.key] ? " has-bg" : ""}" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}${UNI_BG[u.key] ? `; background-image:url('${UNI_BG[u.key]}')` : ""}">
       <span class="uni-emoji">${u.emoji}</span>
       <span class="uni-name">${u.label}</span>
       <span class="uni-count">${counts[u.key] || 0} décors</span>
@@ -136,6 +150,7 @@
 
   function render() {
     current = getFiltered();
+    current.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
     grid.innerHTML = current.map(cardHTML).join("");
     const n = current.length;
     resultCount.textContent = n === DECORS.length
@@ -192,37 +207,67 @@
   // ======================================================
   //  LIGHTBOX
   // ======================================================
-  // Photos « Nos réalisations » (décors installés en vrai)
+  // « Nos réalisations » — photos + vidéos d'événements
   const GALLERY = [
+    { src: "assets/gallery/gv1_mario.mp4",      poster: "assets/gallery/gv1_mario.jpg",      cap: "Mario géant & lasers",                 video: true },
     { src: "assets/gallery/g01_tigre.jpg",      cap: "Arche Tigre face à la foule" },
-    { src: "assets/gallery/g02_coeurs.jpg",     cap: "Arche de cœurs roses" },
+    { src: "assets/gallery/g06_paris.jpg",      cap: "Paris — Moulin Rouge & Tour Eiffel" },
     { src: "assets/gallery/g03_araignee.jpg",   cap: "Araignée géante & sa toile" },
+    { src: "assets/gallery/gv3_papillons.mp4",  poster: "assets/gallery/gv3_papillons.jpg",  cap: "Papillons fluo & boules disco",        video: true },
+    { src: "assets/gallery/g02_coeurs.jpg",     cap: "Arche de cœurs roses" },
     { src: "assets/gallery/g04_jurassic.jpg",   cap: "Univers Jurassic — T-Rex" },
     { src: "assets/gallery/g05_dragon.jpg",     cap: "Dragon chinois & lanternes" },
-    { src: "assets/gallery/g06_paris.jpg",      cap: "Paris — Moulin Rouge & Tour Eiffel" },
-    { src: "assets/gallery/g07_espace.jpg",     cap: "Décor suspendu — ambiance espace" },
+    { src: "assets/gallery/gv2_clown.mp4",      poster: "assets/gallery/gv2_clown.jpg",      cap: "Clown d'Halloween & lasers",           video: true },
+    { src: "assets/gallery/g27_halloween.jpg",  cap: "Ambiance Halloween" },
+    { src: "assets/gallery/g28_fantomes.jpg",   cap: "Fantômes au-dessus de la foule" },
+    { src: "assets/gallery/g16_baleine.jpg",    cap: "Baleine suspendue au-dessus de la piste" },
+    { src: "assets/gallery/gv5_espace.mp4",     poster: "assets/gallery/gv5_espace.jpg",     cap: "Cerises, planètes & lasers",           video: true },
+    { src: "assets/gallery/g07_espace.jpg",     cap: "Navette & planètes — Espace" },
+    { src: "assets/gallery/g26_ovni.jpg",       cap: "OVNI & planète" },
+    { src: "assets/gallery/g24_fusee.jpg",      cap: "Fusée orange" },
+    { src: "assets/gallery/g25_avion.jpg",      cap: "Avion suspendu" },
+    { src: "assets/gallery/gv4_arcenciel.mp4",  poster: "assets/gallery/gv4_arcenciel.jpg",  cap: "Arc-en-ciel & papillons",              video: true },
     { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
+    { src: "assets/gallery/g20_banane.jpg",     cap: "Bananes & sphères miroir" },
     { src: "assets/gallery/g09_californie.jpg", cap: "Combi VW — ambiance Flower Power" },
     { src: "assets/gallery/g10_tropical.jpg",   cap: "Arche perroquet & palmiers" },
-    { src: "assets/gallery/g11_noirblanc.jpg",  cap: "Bal noir & blanc" },
+    { src: "assets/gallery/g22_emojis.jpg",     cap: "Emojis géants en arc" },
+    { src: "assets/gallery/g23_spiderman.jpg",  cap: "Arche Spider-Man & toiles lumineuses" },
+    { src: "assets/gallery/g17_chats.jpg",      cap: "Chat du Cheshire & Aristochats" },
+    { src: "assets/gallery/g21_chateau.jpg",    cap: "Arche château & boules miroir" },
+    { src: "assets/gallery/gv6_noel.mp4",       poster: "assets/gallery/gv6_noel.jpg",       cap: "Cadeaux & étoiles de Noël",            video: true },
+    { src: "assets/gallery/g18_noel.jpg",       cap: "Cadeaux, étoiles & sapins (Noël)" },
+    { src: "assets/gallery/g19_paques.jpg",     cap: "Lapin géant & œufs dorés (Pâques)" },
     { src: "assets/gallery/g12_papillons.jpg",  cap: "Papillons fluo & lanternes" },
+    { src: "assets/gallery/g15_fluo.jpg",       cap: "Étoiles violettes devant la scène DJ" },
+    { src: "assets/gallery/g14_lanternes.jpg",  cap: "Lanternes ethniques & toiles fluo" },
+    { src: "assets/gallery/g11_noirblanc.jpg",  cap: "Bal noir & blanc" },
     { src: "assets/gallery/g13_rooftop.jpg",    cap: "Rooftop — chat porte-bonheur & lanternes" },
   ];
 
-  const lb = $("#lightbox"), lbImg = $("#lbImg"), lbVid = $("#lbVid"), lbCap = $("#lbCap");
+  const lb = $("#lightbox"), lbImg = $("#lbImg"), lbVid = $("#lbVid"), lbCap = $("#lbCap"), lbAdd = $("#lbAdd");
   let lbItems = [];   // [{ src, cap }]
   let lbIndex = -1;
+  let lbDecorId = null;
+  function syncLbAdd() {
+    if (!lbDecorId) return;
+    const on = selected.has(lbDecorId);
+    lbAdd.textContent = on ? "✓ Ajouté à ma demande" : "+ Ajouter à ma demande";
+  }
 
   function openLBList(items, i) {
     if (!items.length || i < 0) return;
     lbItems = items; lbIndex = i;
     showLB();
+    lbAdd.hidden = !lbDecorId;
+    syncLbAdd();
     lb.hidden = false;
     document.body.style.overflow = "hidden";
   }
   function openLB(id) {
     const d = DECORS.find(x => x.id === id);
     if (!d) return;
+    lbDecorId = id;
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
     const items = [{ src: `assets/decors/${d.id}.jpg`, cap: capOf(d), h: HEIGHTS[d.id] }];
     (m.photos || []).forEach(p => items.push({ src: `assets/decors/${p}`, cap: capOf(d) }));
@@ -268,16 +313,25 @@
   const galleryGrid = $("#galleryGrid");
   if (galleryGrid) {
     galleryGrid.innerHTML = GALLERY.map((g, i) => `
-      <button class="gal-item" data-i="${i}" aria-label="Agrandir : ${g.cap}">
-        <img src="${g.src}" alt="${g.cap}" loading="lazy" />
+      <button class="gal-item${g.video ? " is-video" : ""}" data-i="${i}" aria-label="${g.video ? "Lire la vidéo" : "Agrandir"} : ${g.cap}">
+        <img src="${g.video ? g.poster : g.src}" alt="${g.cap}" loading="lazy" />
+        ${g.video ? '<span class="gal-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : ""}
         <span class="gal-cap">${g.cap}</span>
       </button>`).join("");
     galleryGrid.addEventListener("click", e => {
       const it = e.target.closest(".gal-item");
-      if (it) openLBList(GALLERY, +it.dataset.i);
+      if (it) { lbDecorId = null; openLBList(GALLERY, +it.dataset.i); }
     });
   }
 
+  lbAdd.addEventListener("click", () => {
+    if (!lbDecorId) return;
+    if (selected.has(lbDecorId)) selected.delete(lbDecorId); else selected.add(lbDecorId);
+    syncSelection();
+    syncLbAdd();
+    const b = grid.querySelector(`.card-add[data-add="${lbDecorId}"]`);
+    if (b) { const on = selected.has(lbDecorId); b.dataset.added = String(on); b.textContent = on ? "✓ Ajouté à ma demande" : "+ Ajouter à ma demande"; }
+  });
   $("#lbClose").addEventListener("click", closeLB);
   $("#lbPrev").addEventListener("click", () => moveLB(-1));
   $("#lbNext").addEventListener("click", () => moveLB(1));

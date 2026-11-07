@@ -469,6 +469,7 @@ textarea { resize: vertical; }
   max-width: min(92vw, 900px); max-height: 82vh;
   border-radius: 14px; background: #000; display: block;
 }
+.lb-add { margin-top: 14px; }
 
 /* ============== Quick-wins UX + accessibilité + mobile ============== */
 html { scroll-padding-top: 90px; }
@@ -506,3 +507,16 @@ html { scroll-padding-top: 90px; }
   .hero-art { order: 2; }
   .card-add { min-height: 44px; }
 }
+.gal-item.is-video .gal-play {
+  position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none;
+}
+.gal-play svg { width: 54px; height: 54px; fill: #fff; opacity: .95; filter: drop-shadow(0 2px 10px rgba(0,0,0,.55)); transition: transform .3s ease; }
+.gal-item.is-video:hover .gal-play svg { transform: scale(1.12); }
+
+/* Univers en fond photo */
+.uni-card.has-bg { position: relative; overflow: hidden; background-size: cover; background-position: center; border: 0; min-height: 132px; }
+.uni-card.has-bg::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(22,14,28,.86), rgba(22,14,28,.32)); z-index: 0; transition: background .3s ease; }
+.uni-card.has-bg:hover::before { background: linear-gradient(to top, rgba(22,14,28,.76), rgba(22,14,28,.18)); }
+.uni-card.has-bg > * { position: relative; z-index: 1; color: #fff; }
+.uni-card.has-bg .uni-count { color: rgba(255,255,255,.88); }
+.uni-card.has-bg .uni-emoji { filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }

@@ -207,10 +207,61 @@
     <div class="wrap">
       <header class="section-head">
         <span class="kicker">Les univers</span>
-        <h2>Trouvez le vôtre.</h2>
-        <p class="section-lead">Un thème en tête ? Cliquez, le catalogue se filtre tout seul.</p>
+        <h2>Quel est votre thème ?</h2>
+        <p class="section-lead">Un thème en tête ? Cliquez sur un univers, le catalogue se filtre tout seul.</p>
       </header>
-      <div class="univers-grid" id="universGrid"><!-- rempli par app.js --></div>
+      <div class="univers-grid" id="universGrid"><!--UNI_START-->
+    <button class="uni-card has-bg" data-u="amour" style="--uc:#FF4D6D; background-image:url('assets/gallery/g02_coeurs.jpg')">
+      <span class="uni-emoji">💗</span>
+      <span class="uni-name">Amour &amp; Mariage</span>
+      <span class="uni-count">7 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="animaux" style="--uc:#1FBFA8; background-image:url('assets/gallery/g01_tigre.jpg')">
+      <span class="uni-emoji">🐾</span>
+      <span class="uni-name">Animaux &amp; Mer</span>
+      <span class="uni-count">17 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="gourmandises" style="--uc:#FF6FB5; background-image:url('assets/gallery/g08_candyland.jpg')">
+      <span class="uni-emoji">🍭</span>
+      <span class="uni-name">Gourmandises</span>
+      <span class="uni-count">12 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="villes" style="--uc:#3BA7FF; background-image:url('assets/gallery/g06_paris.jpg')">
+      <span class="uni-emoji">🗼</span>
+      <span class="uni-name">Villes &amp; Voyage</span>
+      <span class="uni-count">13 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="espace" style="--uc:#7B61FF; background-image:url('assets/gallery/g07_espace.jpg')">
+      <span class="uni-emoji">🚀</span>
+      <span class="uni-name">Espace</span>
+      <span class="uni-count">7 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="halloween" style="--uc:#FF7A1A; background-image:url('assets/gallery/g27_halloween.jpg')">
+      <span class="uni-emoji">🎃</span>
+      <span class="uni-name">Halloween</span>
+      <span class="uni-count">9 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="fetes" style="--uc:#2BB673; background-image:url('assets/gallery/g18_noel.jpg')">
+      <span class="uni-emoji">🎄</span>
+      <span class="uni-name">Fêtes de l'année</span>
+      <span class="uni-count">5 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="pop" style="--uc:#F2A900; background-image:url('assets/gallery/g23_spiderman.jpg')">
+      <span class="uni-emoji">⚡️</span>
+      <span class="uni-name">Pop &amp; Héros</span>
+      <span class="uni-count">18 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="ete" style="--uc:#14B8C4; background-image:url('assets/gallery/g10_tropical.jpg')">
+      <span class="uni-emoji">🌴</span>
+      <span class="uni-name">Été &amp; Tropical</span>
+      <span class="uni-count">10 décors</span>
+    </button>
+    <button class="uni-card has-bg" data-u="ambiance" style="--uc:#B968FF; background-image:url('assets/gallery/g11_noirblanc.jpg')">
+      <span class="uni-emoji">✨</span>
+      <span class="uni-name">Ambiance &amp; Déco</span>
+      <span class="uni-count">18 décors</span>
+    </button>
+    <!--UNI_END--></div>
     </div>
   </section>
 
@@ -232,7 +283,1284 @@
       </div>
 
       <p class="result-count" id="resultCount" aria-live="polite"></p>
-      <div class="grid" id="grid"><!-- rempli par app.js --></div>
+      <div class="grid" id="grid"><!--GRID_START-->
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_110" role="button" tabindex="0" aria-label="Agrandir American Horror Story">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_110.jpg" alt="American Horror Story — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">American Horror Story</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_110" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_108" role="button" tabindex="0" aria-label="Agrandir Araignée géante">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_108.jpg" alt="Araignée géante — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Araignée géante</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_108" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_107" role="button" tabindex="0" aria-label="Agrandir Arc-en-ciel">
+          <span class="card-theme">Ambiance</span>
+          <img src="assets/decors/DG_107.jpg" alt="Arc-en-ciel — décor gonflable géant à louer à Paris (Ambiance)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arc-en-ciel</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_107" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_106" role="button" tabindex="0" aria-label="Agrandir Arche Candyland">
+          <span class="card-theme">Candyland</span>
+          <img src="assets/decors/DG_106.jpg" alt="Arche Candyland — décor gonflable géant à louer à Paris (Candyland)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Candyland</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_106" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_105" role="button" tabindex="0" aria-label="Agrandir Arche Château">
+          <span class="card-theme">Disney</span>
+          <img src="assets/decors/DG_105.jpg" alt="Arche Château — décor gonflable géant à louer à Paris (Disney)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Château</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_105" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_104" role="button" tabindex="0" aria-label="Agrandir Arche Cœur">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_104.jpg" alt="Arche Cœur — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Cœur</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_104" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_103" role="button" tabindex="0" aria-label="Agrandir Arche Dinosaure">
+          <span class="card-theme">Jurassic</span>
+          <img src="assets/decors/DG_103.jpg" alt="Arche Dinosaure — décor gonflable géant à louer à Paris (Jurassic)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Dinosaure</h3>
+          <span class="card-price ">350€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_103" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_100" role="button" tabindex="0" aria-label="Agrandir Arche Disney">
+          <span class="card-theme">Disney</span>
+          <img src="assets/decors/DG_100.jpg" alt="Arche Disney — décor gonflable géant à louer à Paris (Disney)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Disney</h3>
+          <span class="card-price ">350€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_100" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_102" role="button" tabindex="0" aria-label="Agrandir Arche Fantômes">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_102.jpg" alt="Arche Fantômes — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Fantômes</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_102" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_101" role="button" tabindex="0" aria-label="Agrandir Arche Grèce">
+          <span class="card-theme">Grèce</span>
+          <img src="assets/decors/DG_101.jpg" alt="Arche Grèce — décor gonflable géant à louer à Paris (Grèce)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Grèce</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_101" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_099" role="button" tabindex="0" aria-label="Agrandir Arche Scream">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_099.jpg" alt="Arche Scream — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Scream</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_099" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_098" role="button" tabindex="0" aria-label="Agrandir Arche Spiderman">
+          <span class="card-theme">Super-Héros</span>
+          <img src="assets/decors/DG_098.jpg" alt="Arche Spiderman — décor gonflable géant à louer à Paris (Super-Héros)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Spiderman</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_098" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_097" role="button" tabindex="0" aria-label="Agrandir Arche Tigre">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_097.jpg" alt="Arche Tigre — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Tigre</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_097" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_096" role="button" tabindex="0" aria-label="Agrandir Arche Tropicale">
+          <span class="card-theme">Tropical</span>
+          <img src="assets/decors/DG_096.jpg" alt="Arche Tropicale — décor gonflable géant à louer à Paris (Tropical)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Tropicale</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_096" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_095" role="button" tabindex="0" aria-label="Agrandir Arche Western">
+          <span class="card-theme">Western</span>
+          <img src="assets/decors/DG_095.jpg" alt="Arche Western — décor gonflable géant à louer à Paris (Western)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Arche Western</h3>
+          <span class="card-price ">300€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_095" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_093" role="button" tabindex="0" aria-label="Agrandir Avion">
+          <span class="card-theme">Voyage</span>
+          <img src="assets/decors/DG_093.jpg" alt="Avion — décor gonflable géant à louer à Paris (Voyage)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Avion</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_093" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_091" role="button" tabindex="0" aria-label="Agrandir Baleine">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_091.jpg" alt="Baleine — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Baleine</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_091" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_089" role="button" tabindex="0" aria-label="Agrandir Banana Split">
+          <span class="card-theme">Candyland</span>
+          <img src="assets/decors/DG_089.jpg" alt="Banana Split — décor gonflable géant à louer à Paris (Candyland)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Banana Split</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_089" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_088" role="button" tabindex="0" aria-label="Agrandir Banane géante">
+          <span class="card-theme">Fruits</span>
+          <img src="assets/decors/DG_088.jpg" alt="Banane géante — décor gonflable géant à louer à Paris (Fruits)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Banane géante</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_088" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_033" role="button" tabindex="0" aria-label="Agrandir Bonbons M&amp;M's">
+          <span class="card-theme">Candyland</span>
+          <img src="assets/decors/DG_033.jpg" alt="Bonbons M&amp;M's — décor gonflable géant à louer à Paris (Candyland)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Bonbons M&amp;M's</h3>
+          <span class="card-price ">130€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_033" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_087" role="button" tabindex="0" aria-label="Agrandir Bouche Kiss">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_087.jpg" alt="Bouche Kiss — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Bouche Kiss</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_087" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_074" role="button" tabindex="0" aria-label="Agrandir Bouteille Coca">
+          <span class="card-theme">Plage &amp; Été</span>
+          <img src="assets/decors/DG_074.jpg" alt="Bouteille Coca — décor gonflable géant à louer à Paris (Plage &amp; Été)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Bouteille Coca</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_074" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_056" role="button" tabindex="0" aria-label="Agrandir Bouteille Mr. Propre">
+          <span class="card-theme">Pop</span>
+          <img src="assets/decors/DG_056.jpg" alt="Bouteille Mr. Propre — décor gonflable géant à louer à Paris (Pop)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Bouteille Mr. Propre</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_056" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_086" role="button" tabindex="0" aria-label="Agrandir Burger">
+          <span class="card-theme">Fast Food</span>
+          <img src="assets/decors/DG_086.jpg" alt="Burger — décor gonflable géant à louer à Paris (Fast Food)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Burger</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_086" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_084" role="button" tabindex="0" aria-label="Agrandir Cabine de plage">
+          <span class="card-theme">Plage &amp; Été</span>
+          <img src="assets/decors/DG_084.jpg" alt="Cabine de plage — décor gonflable géant à louer à Paris (Plage &amp; Été)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cabine de plage</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_084" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_085" role="button" tabindex="0" aria-label="Agrandir Cabine téléphonique">
+          <span class="card-theme">Londres</span>
+          <img src="assets/decors/DG_085.jpg" alt="Cabine téléphonique — décor gonflable géant à louer à Paris (Londres)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cabine téléphonique</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_085" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#2BB673">
+        <div class="card-img" data-id="DG_083" role="button" tabindex="0" aria-label="Agrandir Cadeaux de Noël">
+          <span class="card-theme">Noël</span>
+          <img src="assets/decors/DG_083.jpg" alt="Cadeaux de Noël — décor gonflable géant à louer à Paris (Noël)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cadeaux de Noël</h3>
+          <span class="card-price ">100€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_083" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_081" role="button" tabindex="0" aria-label="Agrandir Cerises 2D">
+          <span class="card-theme">Fruits</span>
+          <img src="assets/decors/DG_081.jpg" alt="Cerises 2D — décor gonflable géant à louer à Paris (Fruits)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cerises 2D</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_081" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_080" role="button" tabindex="0" aria-label="Agrandir Cerises 3D">
+          <span class="card-theme">Fruits</span>
+          <img src="assets/decors/DG_080.jpg" alt="Cerises 3D — décor gonflable géant à louer à Paris (Fruits)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cerises 3D</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_080" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_079" role="button" tabindex="0" aria-label="Agrandir Chat Aristochats">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_079.jpg" alt="Chat Aristochats — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chat Aristochats</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_079" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_078" role="button" tabindex="0" aria-label="Agrandir Chat du Pays des Merveilles">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_078.jpg" alt="Chat du Pays des Merveilles — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chat du Pays des Merveilles</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_078" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_077" role="button" tabindex="0" aria-label="Agrandir Chats photo">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_077.jpg" alt="Chats photo — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chats photo</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_077" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_076" role="button" tabindex="0" aria-label="Agrandir Chauves-souris">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_076.jpg" alt="Chauves-souris — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chauves-souris</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_076" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_075" role="button" tabindex="0" aria-label="Agrandir Chien">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_075.jpg" alt="Chien — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chien</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_075" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_012" role="button" tabindex="0" aria-label="Agrandir Chien Snoopy">
+          <span class="card-theme">Pop</span>
+          <img src="assets/decors/DG_012.jpg" alt="Chien Snoopy — décor gonflable géant à louer à Paris (Pop)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Chien Snoopy</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_012" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_072" role="button" tabindex="0" aria-label="Agrandir Cœur 2D">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_072.jpg" alt="Cœur 2D — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cœur 2D</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_072" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_070" role="button" tabindex="0" aria-label="Agrandir Cœur 3D">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_070.jpg" alt="Cœur 3D — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cœur 3D</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_070" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_073" role="button" tabindex="0" aria-label="Agrandir Cœur Diamant">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_073.jpg" alt="Cœur Diamant — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cœur Diamant</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_073" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_071" role="button" tabindex="0" aria-label="Agrandir Cœur étoiles">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_071.jpg" alt="Cœur étoiles — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cœur étoiles</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_071" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_069" role="button" tabindex="0" aria-label="Agrandir Combi Van VW">
+          <span class="card-theme">Plage &amp; Été</span>
+          <img src="assets/decors/DG_069.jpg" alt="Combi Van VW — décor gonflable géant à louer à Paris (Plage &amp; Été)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Combi Van VW</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_069" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_067" role="button" tabindex="0" aria-label="Agrandir Couteau Halloween">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_067.jpg" alt="Couteau Halloween — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Couteau Halloween</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_067" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_031" role="button" tabindex="0" aria-label="Agrandir Décor New-York">
+          <span class="card-theme">New-York</span>
+          <img src="assets/decors/DG_031.jpg" alt="Décor New-York — décor gonflable géant à louer à Paris (New-York)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Décor New-York</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_031" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_066" role="button" tabindex="0" aria-label="Agrandir Décor Paris">
+          <span class="card-theme">Paris</span>
+          <img src="assets/decors/DG_066.jpg" alt="Décor Paris — décor gonflable géant à louer à Paris (Paris)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Décor Paris</h3>
+          <span class="card-price ">160€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_066" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_065" role="button" tabindex="0" aria-label="Agrandir Diamants">
+          <span class="card-theme">Glitter</span>
+          <img src="assets/decors/DG_065.jpg" alt="Diamants — décor gonflable géant à louer à Paris (Glitter)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Diamants</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_065" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_064" role="button" tabindex="0" aria-label="Agrandir Dracula">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_064.jpg" alt="Dracula — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Dracula</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_064" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_063" role="button" tabindex="0" aria-label="Agrandir Dragon chinois">
+          <span class="card-theme">Asie</span>
+          <img src="assets/decors/DG_063.jpg" alt="Dragon chinois — décor gonflable géant à louer à Paris (Asie)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Dragon chinois</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_063" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_062" role="button" tabindex="0" aria-label="Agrandir Dragon fantastique">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_062.jpg" alt="Dragon fantastique — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Dragon fantastique</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_062" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#2BB673">
+        <div class="card-img" data-id="DG_061" role="button" tabindex="0" aria-label="Agrandir Drapeaux olympiques">
+          <span class="card-theme">Olympiques</span>
+          <img src="assets/decors/DG_061.jpg" alt="Drapeaux olympiques — décor gonflable géant à louer à Paris (Olympiques)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Drapeaux olympiques</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_061" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_090" role="button" tabindex="0" aria-label="Agrandir Drapés pour bal">
+          <span class="card-theme">Bal</span>
+          <img src="assets/decors/DG_090.jpg" alt="Drapés pour bal — décor gonflable géant à louer à Paris (Bal)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Drapés pour bal</h3>
+          <span class="card-price devis">Sur devis</span>
+          <button class="card-add" data-add="DG_090" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_060" role="button" tabindex="0" aria-label="Agrandir Emojis (×5)">
+          <span class="card-theme">Emojis</span>
+          <img src="assets/decors/DG_060.jpg" alt="Emojis (×5) — décor gonflable géant à louer à Paris (Emojis)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Emojis (×5)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_060" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_058" role="button" tabindex="0" aria-label="Agrandir Étoiles blanches (×4)">
+          <span class="card-theme">Plafond</span>
+          <img src="assets/decors/DG_058.jpg" alt="Étoiles blanches (×4) — décor gonflable géant à louer à Paris (Plafond)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Étoiles blanches (×4)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_058" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_059" role="button" tabindex="0" aria-label="Agrandir Étoiles filantes">
+          <span class="card-theme">Ambiance</span>
+          <img src="assets/decors/DG_059.jpg" alt="Étoiles filantes — décor gonflable géant à louer à Paris (Ambiance)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Étoiles filantes</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_059" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_057" role="button" tabindex="0" aria-label="Agrandir Étoiles violettes (×4)">
+          <span class="card-theme">Plafond</span>
+          <img src="assets/decors/DG_057.jpg" alt="Étoiles violettes (×4) — décor gonflable géant à louer à Paris (Plafond)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Étoiles violettes (×4)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_057" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_047" role="button" tabindex="0" aria-label="Agrandir Flacon de pilules">
+          <span class="card-theme">Pop</span>
+          <img src="assets/decors/DG_047.jpg" alt="Flacon de pilules — décor gonflable géant à louer à Paris (Pop)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Flacon de pilules</h3>
+          <span class="card-price ">100€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_047" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_055" role="button" tabindex="0" aria-label="Agrandir Flamants roses">
+          <span class="card-theme">Tropical</span>
+          <img src="assets/decors/DG_055.jpg" alt="Flamants roses — décor gonflable géant à louer à Paris (Tropical)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Flamants roses</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_055" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_054" role="button" tabindex="0" aria-label="Agrandir Flash">
+          <span class="card-theme">Super-Héros</span>
+          <img src="assets/decors/DG_054.jpg" alt="Flash — décor gonflable géant à louer à Paris (Super-Héros)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Flash</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_054" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_053" role="button" tabindex="0" aria-label="Agrandir Fleurs rampantes (×4)">
+          <span class="card-theme">Tropical</span>
+          <img src="assets/decors/DG_053.jpg" alt="Fleurs rampantes (×4) — décor gonflable géant à louer à Paris (Tropical)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Fleurs rampantes (×4)</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_053" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_052" role="button" tabindex="0" aria-label="Agrandir Fleurs sur tiges">
+          <span class="card-theme">Tropical</span>
+          <img src="assets/decors/DG_052.jpg" alt="Fleurs sur tiges — décor gonflable géant à louer à Paris (Tropical)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Fleurs sur tiges</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_052" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_051" role="button" tabindex="0" aria-label="Agrandir Fraises 2D">
+          <span class="card-theme">Fruits</span>
+          <img src="assets/decors/DG_051.jpg" alt="Fraises 2D — décor gonflable géant à louer à Paris (Fruits)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Fraises 2D</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_051" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_049" role="button" tabindex="0" aria-label="Agrandir Fusée Tintin">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_049.jpg" alt="Fusée Tintin — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Fusée Tintin</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_049" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_048" role="button" tabindex="0" aria-label="Agrandir Glace géante">
+          <span class="card-theme">Candyland</span>
+          <img src="assets/decors/DG_048.jpg" alt="Glace géante — décor gonflable géant à louer à Paris (Candyland)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Glace géante</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_048" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_045" role="button" tabindex="0" aria-label="Agrandir Kangourou">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_045.jpg" alt="Kangourou — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Kangourou</h3>
+          <span class="card-price ">80€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_045" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_042" role="button" tabindex="0" aria-label="Agrandir Lanternes baroques (×4)">
+          <span class="card-theme">Lanternes</span>
+          <img src="assets/decors/DG_042.jpg" alt="Lanternes baroques (×4) — décor gonflable géant à louer à Paris (Lanternes)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lanternes baroques (×4)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_042" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_041" role="button" tabindex="0" aria-label="Agrandir Lanternes chinoises (×40)">
+          <span class="card-theme">Lanternes</span>
+          <img src="assets/decors/DG_041.jpg" alt="Lanternes chinoises (×40) — décor gonflable géant à louer à Paris (Lanternes)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lanternes chinoises (×40)</h3>
+          <span class="card-price ">20€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_041" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_043" role="button" tabindex="0" aria-label="Agrandir Lanternes ethniques (×9)">
+          <span class="card-theme">Lanternes</span>
+          <img src="assets/decors/DG_043.jpg" alt="Lanternes ethniques (×9) — décor gonflable géant à louer à Paris (Lanternes)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lanternes ethniques (×9)</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_043" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_040" role="button" tabindex="0" aria-label="Agrandir Lanternes à motifs (×12)">
+          <span class="card-theme">Lanternes</span>
+          <img src="assets/decors/DG_040.jpg" alt="Lanternes à motifs (×12) — décor gonflable géant à louer à Paris (Lanternes)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lanternes à motifs (×12)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_040" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#2BB673">
+        <div class="card-img" data-id="DG_039" role="button" tabindex="0" aria-label="Agrandir Lanternes de Noël (×4)">
+          <span class="card-theme">Noël</span>
+          <img src="assets/decors/DG_039.jpg" alt="Lanternes de Noël (×4) — décor gonflable géant à louer à Paris (Noël)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lanternes de Noël (×4)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_039" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_038" role="button" tabindex="0" aria-label="Agrandir Lapin">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_038.jpg" alt="Lapin — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lapin</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_038" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_046" role="button" tabindex="0" aria-label="Agrandir Logo I Love 90's">
+          <span class="card-theme">Rétro 90's</span>
+          <img src="assets/decors/DG_046.jpg" alt="Logo I Love 90's — décor gonflable géant à louer à Paris (Rétro 90's)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Logo I Love 90's</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_046" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_016" role="button" tabindex="0" aria-label="Agrandir Maison Psychose">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_016.jpg" alt="Maison Psychose — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Maison Psychose</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_016" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_036" role="button" tabindex="0" aria-label="Agrandir Masque doré de carnaval">
+          <span class="card-theme">Bal masqué</span>
+          <img src="assets/decors/DG_036.jpg" alt="Masque doré de carnaval — décor gonflable géant à louer à Paris (Bal masqué)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Masque doré de carnaval</h3>
+          <span class="card-price ">130€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_036" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_035" role="button" tabindex="0" aria-label="Agrandir Masque vénitien">
+          <span class="card-theme">Bal masqué</span>
+          <img src="assets/decors/DG_035.jpg" alt="Masque vénitien — décor gonflable géant à louer à Paris (Bal masqué)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Masque vénitien</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_035" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_032" role="button" tabindex="0" aria-label="Agrandir Navette spatiale NASA">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_032.jpg" alt="Navette spatiale NASA — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Navette spatiale NASA</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_032" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_092" role="button" tabindex="0" aria-label="Agrandir Lanternes noir &amp; blanc (×8)">
+          <span class="card-theme">Ambiance</span>
+          <img src="assets/decors/DG_092.jpg" alt="Lanternes noir &amp; blanc (×8) — décor gonflable géant à louer à Paris (Ambiance)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Lanternes noir &amp; blanc (×8)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_092" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#2BB673">
+        <div class="card-img" data-id="DG_029" role="button" tabindex="0" aria-label="Agrandir Œufs de Pâques dorés (×4)">
+          <span class="card-theme">Pâques</span>
+          <img src="assets/decors/DG_029.jpg" alt="Œufs de Pâques dorés (×4) — décor gonflable géant à louer à Paris (Pâques)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Œufs de Pâques dorés (×4)</h3>
+          <span class="card-price ">80€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_029" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_027" role="button" tabindex="0" aria-label="Agrandir Palmiers">
+          <span class="card-theme">Plage &amp; Été</span>
+          <img src="assets/decors/DG_027.jpg" alt="Palmiers — décor gonflable géant à louer à Paris (Plage &amp; Été)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Palmiers</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_027" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_026" role="button" tabindex="0" aria-label="Agrandir Palmiers Surf">
+          <span class="card-theme">Plage &amp; Été</span>
+          <img src="assets/decors/DG_026.jpg" alt="Palmiers Surf — décor gonflable géant à louer à Paris (Plage &amp; Été)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Palmiers Surf</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_026" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_025" role="button" tabindex="0" aria-label="Agrandir Panda">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_025.jpg" alt="Panda — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Panda</h3>
+          <span class="card-price ">80€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_025" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_024" role="button" tabindex="0" aria-label="Agrandir Papillons fluo UV">
+          <span class="card-theme">Fluo</span>
+          <img src="assets/decors/DG_024.jpg" alt="Papillons fluo UV — décor gonflable géant à louer à Paris (Fluo)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Papillons fluo UV</h3>
+          <span class="card-price ">20€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_024" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_001" role="button" tabindex="0" aria-label="Agrandir Pastèque">
+          <span class="card-theme">Fruits</span>
+          <img src="assets/decors/DG_001.jpg" alt="Pastèque — décor gonflable géant à louer à Paris (Fruits)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pastèque</h3>
+          <span class="card-price ">100€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_001" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_023" role="button" tabindex="0" aria-label="Agrandir Pégase / Licorne ailée">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_023.jpg" alt="Pégase / Licorne ailée — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pégase / Licorne ailée</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_023" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_021" role="button" tabindex="0" aria-label="Agrandir Phare marin">
+          <span class="card-theme">Mer</span>
+          <img src="assets/decors/DG_021.jpg" alt="Phare marin — décor gonflable géant à louer à Paris (Mer)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Phare marin</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_021" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_034" role="button" tabindex="0" aria-label="Agrandir Pharmacie">
+          <span class="card-theme">Pop</span>
+          <img src="assets/decors/DG_034.jpg" alt="Pharmacie — décor gonflable géant à louer à Paris (Pop)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pharmacie</h3>
+          <span class="card-price ">130€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_034" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_020" role="button" tabindex="0" aria-label="Agrandir Pikachu">
+          <span class="card-theme">Pop</span>
+          <img src="assets/decors/DG_020.jpg" alt="Pikachu — décor gonflable géant à louer à Paris (Pop)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pikachu</h3>
+          <span class="card-price ">80€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_020" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_017" role="button" tabindex="0" aria-label="Agrandir Grande Lune">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_017.jpg" alt="Grande Lune — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Grande Lune</h3>
+          <span class="card-price ">130€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_017" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_019" role="button" tabindex="0" aria-label="Agrandir Planètes (120 cm, ×2)">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_019.jpg" alt="Planètes (120 cm, ×2) — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Planètes (120 cm, ×2)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_019" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_018" role="button" tabindex="0" aria-label="Agrandir Planètes (150 cm, ×4)">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_018.jpg" alt="Planètes (150 cm, ×4) — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Planètes (150 cm, ×4)</h3>
+          <span class="card-price ">70€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_018" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_030" role="button" tabindex="0" aria-label="Agrandir Pot Nutella">
+          <span class="card-theme">Candyland</span>
+          <img src="assets/decors/DG_030.jpg" alt="Pot Nutella — décor gonflable géant à louer à Paris (Candyland)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pot Nutella</h3>
+          <span class="card-price ">130€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_030" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_015" role="button" tabindex="0" aria-label="Agrandir Requin">
+          <span class="card-theme">Mer</span>
+          <img src="assets/decors/DG_015.jpg" alt="Requin — décor gonflable géant à louer à Paris (Mer)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Requin</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_015" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#2BB673">
+        <div class="card-img" data-id="DG_014" role="button" tabindex="0" aria-label="Agrandir Sapins de Noël (×2)">
+          <span class="card-theme">Noël</span>
+          <img src="assets/decors/DG_014.jpg" alt="Sapins de Noël (×2) — décor gonflable géant à louer à Paris (Noël)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Sapins de Noël (×2)</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_014" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_022" role="button" tabindex="0" aria-label="Agrandir Sirène">
+          <span class="card-theme">Mer</span>
+          <img src="assets/decors/DG_022.jpg" alt="Sirène — décor gonflable géant à louer à Paris (Mer)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Sirène</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_022" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_013" role="button" tabindex="0" aria-label="Agrandir Smiley 90's">
+          <span class="card-theme">Rétro 90's</span>
+          <img src="assets/decors/DG_013.jpg" alt="Smiley 90's — décor gonflable géant à louer à Paris (Rétro 90's)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Smiley 90's</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_013" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#14B8C4">
+        <div class="card-img" data-id="DG_011" role="button" tabindex="0" aria-label="Agrandir Soleil">
+          <span class="card-theme">Plage &amp; Été</span>
+          <img src="assets/decors/DG_011.jpg" alt="Soleil — décor gonflable géant à louer à Paris (Plage &amp; Été)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Soleil</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_011" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_028" role="button" tabindex="0" aria-label="Agrandir Soucoupe volante OVNI">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_028.jpg" alt="Soucoupe volante OVNI — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Soucoupe volante OVNI</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_028" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_009" role="button" tabindex="0" aria-label="Agrandir Sphères avec drapé (×4)">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_009.jpg" alt="Sphères avec drapé (×4) — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Sphères avec drapé (×4)</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_009" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_010" role="button" tabindex="0" aria-label="Agrandir Sphères miroir (×10)">
+          <span class="card-theme">Bal masqué</span>
+          <img src="assets/decors/DG_010.jpg" alt="Sphères miroir (×10) — décor gonflable géant à louer à Paris (Bal masqué)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Sphères miroir (×10)</h3>
+          <span class="card-price ">40€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_010" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_008" role="button" tabindex="0" aria-label="Agrandir Statue de la Liberté">
+          <span class="card-theme">New-York</span>
+          <img src="assets/decors/DG_008.jpg" alt="Statue de la Liberté — décor gonflable géant à louer à Paris (New-York)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Statue de la Liberté</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_008" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF6FB5">
+        <div class="card-img" data-id="DG_007" role="button" tabindex="0" aria-label="Agrandir Sucettes Lollipop">
+          <span class="card-theme">Candyland</span>
+          <img src="assets/decors/DG_007.jpg" alt="Sucettes Lollipop — décor gonflable géant à louer à Paris (Candyland)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Sucettes Lollipop</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_007" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_006" role="button" tabindex="0" aria-label="Agrandir Télécabine">
+          <span class="card-theme">Montagne</span>
+          <img src="assets/decors/DG_006.jpg" alt="Télécabine — décor gonflable géant à louer à Paris (Montagne)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Télécabine</h3>
+          <span class="card-price ">100€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_006" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_005" role="button" tabindex="0" aria-label="Agrandir Tortues">
+          <span class="card-theme">Mer</span>
+          <img src="assets/decors/DG_005.jpg" alt="Tortues — décor gonflable géant à louer à Paris (Mer)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Tortues</h3>
+          <span class="card-price ">80€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_005" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_130" role="button" tabindex="0" aria-label="Agrandir Tour Eiffel">
+          <span class="card-theme">Paris</span>
+          <img src="assets/decors/DG_130.jpg" alt="Tour Eiffel — décor gonflable géant à louer à Paris (Paris)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Tour Eiffel</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_130" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_004" role="button" tabindex="0" aria-label="Agrandir Tour médiévale">
+          <span class="card-theme">Fantastique</span>
+          <img src="assets/decors/DG_004.jpg" alt="Tour médiévale — décor gonflable géant à louer à Paris (Fantastique)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Tour médiévale</h3>
+          <span class="card-price ">120€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_004" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_003" role="button" tabindex="0" aria-label="Agrandir Triangles 90's">
+          <span class="card-theme">Rétro 90's</span>
+          <img src="assets/decors/DG_003.jpg" alt="Triangles 90's — décor gonflable géant à louer à Paris (Rétro 90's)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Triangles 90's</h3>
+          <span class="card-price ">50€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_003" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_002" role="button" tabindex="0" aria-label="Agrandir Vespa">
+          <span class="card-theme">Italie</span>
+          <img src="assets/decors/DG_002.jpg" alt="Vespa — décor gonflable géant à louer à Paris (Italie)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Vespa</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_002" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_094" role="button" tabindex="0" aria-label="Agrandir Voiture Austin Mini">
+          <span class="card-theme">Londres</span>
+          <img src="assets/decors/DG_094.jpg" alt="Voiture Austin Mini — décor gonflable géant à louer à Paris (Londres)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Voiture Austin Mini</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_094" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_000" role="button" tabindex="0" aria-label="Agrandir Wonder Woman">
+          <span class="card-theme">Super-Héros</span>
+          <img src="assets/decors/DG_000.jpg" alt="Wonder Woman — décor gonflable géant à louer à Paris (Super-Héros)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Wonder Woman</h3>
+          <span class="card-price ">60€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_000" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#1FBFA8">
+        <div class="card-img" data-id="DG_131" role="button" tabindex="0" aria-label="Agrandir Pieuvre géante">
+          <span class="card-theme">Animaux</span>
+          <img src="assets/decors/DG_131.jpg" alt="Pieuvre géante — décor gonflable géant à louer à Paris (Animaux)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Pieuvre géante</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_131" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_132" role="button" tabindex="0" aria-label="Agrandir Spider-Man en vol">
+          <span class="card-theme">Super-Héros</span>
+          <img src="assets/decors/DG_132.jpg" alt="Spider-Man en vol — décor gonflable géant à louer à Paris (Super-Héros)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Spider-Man en vol</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_132" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#F2A900">
+        <div class="card-img" data-id="DG_133" role="button" tabindex="0" aria-label="Agrandir Mario volant">
+          <span class="card-theme">Pop</span>
+          <img src="assets/decors/DG_133.jpg" alt="Mario volant — décor gonflable géant à louer à Paris (Pop)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Mario volant</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_133" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#7B61FF">
+        <div class="card-img" data-id="DG_135" role="button" tabindex="0" aria-label="Agrandir Astronaute">
+          <span class="card-theme">Espace</span>
+          <img src="assets/decors/DG_135.jpg" alt="Astronaute — décor gonflable géant à louer à Paris (Espace)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Astronaute</h3>
+          <span class="card-price ">250€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_135" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_136" role="button" tabindex="0" aria-label="Agrandir Boules arc-en-ciel (×4)">
+          <span class="card-theme">Ambiance</span>
+          <img src="assets/decors/DG_136.jpg" alt="Boules arc-en-ciel (×4) — décor gonflable géant à louer à Paris (Ambiance)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Boules arc-en-ciel (×4)</h3>
+          <span class="card-price ">70€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_136" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_137" role="button" tabindex="0" aria-label="Agrandir Nuages (×2)">
+          <span class="card-theme">Ambiance</span>
+          <img src="assets/decors/DG_137.jpg" alt="Nuages (×2) — décor gonflable géant à louer à Paris (Ambiance)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Nuages (×2)</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_137" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#3BA7FF">
+        <div class="card-img" data-id="DG_138" role="button" tabindex="0" aria-label="Agrandir Maneki-neko">
+          <span class="card-theme">Asie</span>
+          <img src="assets/decors/DG_138.jpg" alt="Maneki-neko — décor gonflable géant à louer à Paris (Asie)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Maneki-neko</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_138" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF7A1A">
+        <div class="card-img" data-id="DG_140" role="button" tabindex="0" aria-label="Agrandir Tête de clown géante">
+          <span class="card-theme">Halloween</span>
+          <img src="assets/decors/DG_140.jpg" alt="Tête de clown géante — décor gonflable géant à louer à Paris (Halloween)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Tête de clown géante</h3>
+          <span class="card-price ">180€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_140" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#FF4D6D">
+        <div class="card-img" data-id="DG_142" role="button" tabindex="0" aria-label="Agrandir Cœur ailé">
+          <span class="card-theme">Amour</span>
+          <img src="assets/decors/DG_142.jpg" alt="Cœur ailé — décor gonflable géant à louer à Paris (Amour)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Cœur ailé</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_142" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <article class="card" style="--cc:#B968FF">
+        <div class="card-img" data-id="DG_143" role="button" tabindex="0" aria-label="Agrandir Couronne royale">
+          <span class="card-theme">Royauté</span>
+          <img src="assets/decors/DG_143.jpg" alt="Couronne royale — décor gonflable géant à louer à Paris (Royauté)" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-name">Couronne royale</h3>
+          <span class="card-price ">150€ <small>/ 48h</small></span>
+          <button class="card-add" data-add="DG_143" data-added="false">+ Ajouter à ma demande</button>
+        </div>
+      </article>
+      <!--GRID_END--></div>
       <p class="empty" id="empty" hidden>Aucun décor ne correspond. <button class="linklike" id="resetSearch">Tout afficher</button></p>
 
       <!-- panier de demande -->
@@ -250,7 +1578,7 @@
       <header class="section-head">
         <span class="kicker">Nos réalisations</span>
         <h2>Nos décors en vrai, en soirée.</h2>
-        <p class="section-lead">Un aperçu de nos gonflables installés lors de vraies soirées et événements. Cliquez pour agrandir.</p>
+        <p class="section-lead">Photos et vidéos de nos décors installés lors de vraies soirées — mariages, anniversaires, soirées clubs. Cliquez pour agrandir ou lancer la vidéo.</p>
       </header>
       <div class="gallery-grid" id="galleryGrid"><!-- rempli par app.js --></div>
     </div>
@@ -446,6 +1774,7 @@
     <img id="lbImg" src="" alt="" />
     <video id="lbVid" hidden controls playsinline preload="metadata"></video>
     <figcaption id="lbCap"></figcaption>
+    <button class="btn btn-primary lb-add" id="lbAdd" hidden>+ Ajouter à ma demande</button>
   </figure>
   <button class="lb-nav lb-next" id="lbNext" aria-label="Suivant">›</button>
 </div>
