@@ -29,7 +29,8 @@ const MEDIA = {
   "DG_136": {
     "photos": [
       "DG_136_2.jpg"
-    ]
+    ],
+    "video": "DG_136.mp4"
   },
   "DG_137": {
     "photos": [
@@ -50,7 +51,8 @@ const MEDIA = {
   },
   "DG_142": {
     "photos": [
-      "DG_142_2.jpg"
+      "DG_142_2.jpg",
+      "DG_142_3.jpg"
     ]
   },
   "DG_110": {
@@ -94,7 +96,8 @@ const MEDIA = {
   "DG_035": {
     "photos": [
       "DG_035_2.jpg"
-    ]
+    ],
+    "video": "DG_035.mp4"
   },
   "DG_029": {
     "photos": [
@@ -294,7 +297,8 @@ const MEDIA = {
   },
   "DG_070": {
     "photos": [
-      "DG_070_2.jpg"
+      "DG_070_2.jpg",
+      "DG_070_3.jpg"
     ]
   },
   "DG_073": {
@@ -466,7 +470,8 @@ const MEDIA = {
       "DG_038_2.jpg",
       "DG_038_3.jpg",
       "DG_038_4.jpg"
-    ]
+    ],
+    "video": "DG_038.mp4"
   },
   "DG_034": {
     "photos": [
@@ -582,6 +587,11 @@ const MEDIA = {
   "DG_018": {
     "photos": [
       "DG_018_2.jpg"
+    ]
+  },
+  "DG_036": {
+    "photos": [
+      "DG_036_2.jpg"
     ]
   }
 };
