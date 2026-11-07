@@ -236,6 +236,7 @@
     { src: "assets/gallery/g10_tropical.jpg",   cap: "Arche perroquet & palmiers" },
     { src: "assets/gallery/g22_emojis.jpg",     cap: "Emojis géants en arc" },
     { src: "assets/gallery/g30_university.jpg", cap: "Colonne de ballons « University »" },
+    { src: "assets/gallery/g37_mur_arcenciel.jpg", cap: "Pride : murs de ballons arc-en-ciel" },
     { src: "assets/gallery/gv20_plafond_ballons.mp4", poster: "assets/gallery/gv20_plafond_ballons.jpg", cap: "Plafond de ballons au-dessus de la scène", video: true },
     { src: "assets/gallery/g21_chateau.jpg",    cap: "Arche château & boules miroir" },
     { src: "assets/gallery/g18_noel.jpg",       cap: "Cadeaux, étoiles & sapins (Noël)" },

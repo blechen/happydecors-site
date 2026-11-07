@@ -91,7 +91,8 @@ const MEDIA = {
   "DG_060": {
     "photos": [
       "DG_060_2.jpg"
-    ]
+    ],
+    "video": "DG_060.mp4"
   },
   "DG_035": {
     "photos": [
