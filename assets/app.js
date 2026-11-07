@@ -195,7 +195,7 @@
   // « Nos réalisations » — photos + vidéos d'événements
   const GALLERY = [
     { src: "assets/gallery/gv19_piscine_ballons.mp4", poster: "assets/gallery/gv19_piscine_ballons.jpg", cap: "Piscine de ballons au T7, vue sur la Tour Eiffel", video: true },
-    { src: "assets/gallery/g29_balenblanc.jpg", cap: "Bal en Blanc : plafond de ballons géants" },
+    { src: "assets/gallery/g33_canopee_blanche.jpg", cap: "Bal en Blanc : canopée de ballons blancs" },
     { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
     { src: "assets/gallery/gv15_pegase.mp4", poster: "assets/gallery/gv15_pegase.jpg", cap: "Pégase en vol au-dessus de la piste", video: true },
     { src: "assets/gallery/g17_chats.jpg",      cap: "Chat du Cheshire & Aristochats" },
