@@ -21,3 +21,165 @@
   for = "/assets/gallery/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
+# Anciennes adresses du site WordPress (avant juin 2026) → sections du nouveau site
+[[redirects]]
+  from = "/contactez-nous"
+  to = "/#contact"
+  status = 301
+
+[[redirects]]
+  from = "/contactez-nous/*"
+  to = "/#contact"
+  status = 301
+
+[[redirects]]
+  from = "/exemples"
+  to = "/#realisations"
+  status = 301
+
+[[redirects]]
+  from = "/exemples/*"
+  to = "/#realisations"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/#faq"
+  status = 301
+
+[[redirects]]
+  from = "/faq/*"
+  to = "/#faq"
+  status = 301
+
+[[redirects]]
+  from = "/instagram"
+  to = "/#realisations"
+  status = 301
+
+[[redirects]]
+  from = "/instagram/*"
+  to = "/#realisations"
+  status = 301
+
+[[redirects]]
+  from = "/product-category"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/product-category/*"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/product"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/product/*"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/produit"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/produit/*"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/boutique"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/boutique/*"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/shop"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/shop/*"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/categorie-produit"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/categorie-produit/*"
+  to = "/#catalogue"
+  status = 301
+
+[[redirects]]
+  from = "/panier"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/panier/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cart"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/cart/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/commande"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/commande/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/checkout"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/checkout/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mon-compte"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mon-compte/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/my-account"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/my-account/*"
+  to = "/"
+  status = 301
+

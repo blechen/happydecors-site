@@ -60,6 +60,21 @@ const PAGES = [
     ],
   },
   {
+    slug: "location-arches-gonflables-paris",
+    cible: "votre événement",
+    title: "Location d'arches gonflables géantes à Paris | Happy Décors",
+    desc: "Arche cœur, Candyland, château, dinosaure, Spider-Man… Location d'arches gonflables géantes à Paris pour l'entrée de vos événements. Gonfleur fourni.",
+    kicker: "Arches gonflables",
+    h1: "Des arches gonflables géantes pour l'entrée de votre événement",
+    intro: "Une arche géante à l'entrée, et vos invités savent tout de suite dans quel univers ils entrent : cœur pour un mariage, château, Candyland, dinosaure, fantômes pour Halloween… Les plus grandes dépassent 5 mètres de haut et deviennent le photocall préféré de la soirée. Vous les récupérez pliées à Paris, le gonfleur est fourni.",
+    decors: DECORS.filter(d => d.name.startsWith("Arche")),
+    faq: [
+      ["Combien coûte la location d'une arche gonflable ?", `De ${Math.min(...DECORS.filter(d => d.name.startsWith("Arche")).map(d => d.price))} € à ${Math.max(...DECORS.filter(d => d.name.startsWith("Arche")).map(d => d.price))} € les 48 h selon le modèle. On vous fait un devis précis selon votre sélection.`],
+      ["Quelle hauteur font les arches ?", "Les plus grandes dépassent 5 mètres de haut. On vous donne les dimensions exactes de chaque arche avec le devis, pour vérifier qu'elle passe dans votre lieu."],
+      ["Comment l'arche reste-t-elle gonflée ?", "Grâce au gonfleur électrique fourni, qui tourne pendant tout l'événement : une simple prise 220 V suffit."],
+    ],
+  },
+  {
     slug: "location-decors-gonflables-evenement-entreprise-paris",
     cible: "votre événement",
     title: "Décors gonflables événements d'entreprise Paris | Happy Décors",
@@ -128,6 +143,9 @@ const page = p => `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles.css" />
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Happy Décors","item":"https://happydecors.fr/"},{"@type":"ListItem","position":2,"name":"${esc(p.kicker)}","item":"https://happydecors.fr/${p.slug}/"}] }
+  </script>
   <script type="application/ld+json">
   { "@context":"https://schema.org","@type":"FAQPage","mainEntity":[${p.faq.map(([q, a]) => `{"@type":"Question","name":"${esc(q)}","acceptedAnswer":{"@type":"Answer","text":"${esc(a)}"}}`).join(",")}] }
   </script>
@@ -203,6 +221,7 @@ const page = p => `<!DOCTYPE html>
     <a href="/location-decors-gonflables-mariage-paris/">Mariage</a>
     <a href="/location-decors-gonflables-halloween-paris/">Halloween</a>
     <a href="/location-decors-gonflables-noel-paris/">Noël</a>
+    <a href="/location-arches-gonflables-paris/">Arches</a>
     <a href="/location-decors-gonflables-evenement-entreprise-paris/">Entreprise</a>
     <a href="/location-decors-gonflables-anniversaire-paris/">Anniversaire</a>
     <a href="/#catalogue">Tous les décors</a>
@@ -222,8 +241,14 @@ for (const p of PAGES) {
   console.log("écrit:", p.slug, "(", p.decors.length, "décors )");
 }
 
-// sitemap complet
-const urls = ["https://happydecors.fr/", ...PAGES.map(p => `https://happydecors.fr/${p.slug}/`)];
+// sitemap complet, avec les images (Google Images)
+const appJs = fs.readFileSync("assets/app.js", "utf8");
+const galerie = [...appJs.matchAll(/src: "(assets\/gallery\/g\d+[^"]*\.jpg)"/g)].map(m => m[1]);
+const imgDecor = d => `https://happydecors.fr/assets/decors/${d.id}.jpg`;
+const entrees = [
+  { loc: "https://happydecors.fr/", images: [...DECORS.map(imgDecor), ...galerie.map(g => "https://happydecors.fr/" + g)] },
+  ...PAGES.map(p => ({ loc: `https://happydecors.fr/${p.slug}/`, images: p.decors.map(imgDecor) })),
+];
 const today = new Date().toISOString().slice(0, 10);
-fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join("\n")}\n</urlset>\n`);
-console.log("sitemap.xml mis à jour (", urls.length, "URL )");
+fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${entrees.map(e => `  <url><loc>${e.loc}</loc><lastmod>${today}</lastmod>${e.images.map(i => `<image:image><image:loc>${i}</image:loc></image:image>`).join("")}</url>`).join("\n")}\n</urlset>\n`);
+console.log("sitemap.xml mis à jour (", entrees.length, "URL,", entrees.reduce((n, e) => n + e.images.length, 0), "images )");
