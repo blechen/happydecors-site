@@ -144,7 +144,7 @@ const DECORS = [
   { id: "DG_011", name: "Soleil",                theme: "Plage & Été",  u: "ete",          price: 180, featured: true },
   { id: "DG_028", name: "Soucoupe volante OVNI", theme: "Espace",       u: "espace",       price: 250, featured: true },
   { id: "DG_009", name: "Sphères avec drapé (×4)", theme: "Halloween",  u: "halloween",    price: 50 },
-  { id: "DG_010", name: "Sphères miroir (×10)",  theme: "Disco",   u: "pop",     price: 40, also: ["noel", "chic", "ambiance"] },
+  { id: "DG_010", name: "Sphères miroir (×10)",  theme: "Disco",   u: "pop",     price: 40, also: ["noel", "chic", "ambiance"], horsLoc: true },
   { id: "DG_008", name: "Statue de la Liberté",  theme: "New-York",     u: "villes",       price: 180, featured: true },
   { id: "DG_007", name: "Sucettes Lollipop",     theme: "Candyland",    u: "gourmandises", price: 60 },
   { id: "DG_006", name: "Télécabine",            theme: "Montagne",     u: "villes",       price: 100, also: ["noel"] },
@@ -167,4 +167,4 @@ const DECORS = [
   { id: "DG_140", name: "Tête de clown géante",  theme: "Halloween",    u: "halloween",    price: 180, featured: true },
   { id: "DG_142", name: "Cœur ailé",             theme: "Amour",        u: "amour",        price: 150 },
   { id: "DG_143", name: "Couronne royale",       theme: "Royauté",      u: "chic",     price: 150, also: ["contes"] },
-];
+].filter(d => !d.horsLoc); // horsLoc: true = momentanément plus en location (masqué partout, retirer la marque pour le remettre)
