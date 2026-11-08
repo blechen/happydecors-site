@@ -149,7 +149,7 @@ const DECORS = [
   { id: "DG_008", name: "Statue de la Liberté",  theme: "New-York",     u: "villes",       price: 180, featured: true },
   { id: "DG_007", name: "Sucettes Lollipop",     theme: "Candyland",    u: "gourmandises", price: 60 },
   { id: "DG_006", name: "Télécabine",            theme: "Montagne",     u: "villes",       price: 100, also: ["noel"] },
-  { id: "DG_005", name: "Tortues",               theme: "Mer",          u: "mer",      price: 80, also: ["ete"] },
+  { id: "DG_005", name: "Tortues",               theme: "Mer",          u: "mer",      price: 80, qte: 2, also: ["ete"] },
   { id: "DG_130", name: "Tour Eiffel",           theme: "Paris",        u: "villes",       price: 150, also: ["amour"], featured: true },
   { id: "DG_004", name: "Tour médiévale",        theme: "Fantastique",  u: "contes",          price: 120 },
   { id: "DG_003", name: "Triangles 90's",        theme: "Rétro 90's",   u: "pop",          price: 50 },
@@ -168,4 +168,8 @@ const DECORS = [
   { id: "DG_140", name: "Tête de clown géante",  theme: "Halloween",    u: "halloween",    price: 220, featured: true },
   { id: "DG_142", name: "Cœur ailé",             theme: "Amour",        u: "amour",        price: 150 },
   { id: "DG_143", name: "Couronne royale",       theme: "Royauté",      u: "chic",     price: 150, also: ["contes"] },
+  { id: "DG_144", name: "Poisson-clown géant",   theme: "Mer",          u: "mer",          price: 120, qte: 2, also: ["ete"] },
+  { id: "DG_145", name: "Dauphins",              theme: "Mer",          u: "mer",          price: 100, qte: 2, also: ["ete"] },
+  { id: "DG_146", name: "Marguerites géantes",   theme: "Printemps",    u: "paques",       price: 90, qte: 4, also: ["ete", "amour"] },
+  { id: "DG_147", name: "Boules sucre d'orge",   theme: "Noël",         u: "noel",         price: 50, qte: 4, also: ["gourmandises"] },
 ].filter(d => !d.horsLoc); // horsLoc: true = momentanément plus en location (masqué partout, retirer la marque pour le remettre)

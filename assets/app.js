@@ -16,6 +16,7 @@
     // Nouveaux décors (commandes 2023-2025)
     DG_131: 2.2, DG_132: 2.1, DG_133: 2.2, DG_135: 2.2, DG_136: 1.2,
     DG_137: 1.6, DG_138: 2, DG_140: 2.6, DG_142: 2.5, DG_143: 2.2,
+    DG_144: 1.4, DG_145: 1.6, DG_146: 1.4, DG_147: 1.2,
     // Décors existants
     DG_130: 4.3, DG_032: 2.4, DG_015: 1.8, DG_091: 1.9, DG_069: 1.8, DG_006: 2.3,
     DG_049: 5.5, DG_017: 2.3, DG_018: 1.5, DG_019: 1.2, DG_078: 3.4, DG_058: 1.8,
@@ -197,7 +198,7 @@
     { src: "assets/gallery/gv19_piscine_ballons.mp4", poster: "assets/gallery/gv19_piscine_ballons.jpg", cap: "Piscine de ballons au T7, vue sur la Tour Eiffel", video: true },
     { src: "assets/gallery/gv31_canopee_blanche.mp4", poster: "assets/gallery/gv31_canopee_blanche.jpg", cap: "Bal en Blanc : canopée de ballons blancs", video: true },
     { src: "assets/gallery/gv37_lune.mp4", poster: "assets/gallery/gv37_lune.jpg", cap: "Halloween : la Grande Lune face à la Tour Eiffel", video: true },
-    { src: "assets/gallery/gv41_montgolfiere.mp4", poster: "assets/gallery/gv41_montgolfiere.jpg", cap: "Montgolfière au coucher du soleil", video: true },
+    { src: "assets/gallery/gv41_montgolfiere.mp4", poster: "assets/gallery/gv41_montgolfiere.jpg", cap: "Glace géante au coucher du soleil", video: true },
     { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
     { src: "assets/gallery/gv32_ariel.mp4", poster: "assets/gallery/gv32_ariel.jpg", cap: "La Petite Sirène au T7", video: true },
     { src: "assets/gallery/gv15_pegase.mp4", poster: "assets/gallery/gv15_pegase.jpg", cap: "Pégase en vol au-dessus de la piste", video: true },
