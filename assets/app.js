@@ -303,8 +303,19 @@
       lbImg.src = it.src;
       lbImg.alt = it.cap;
     }
-    lbCap.textContent = it.cap + (it.h ? ` · ≈ ${fmtH(it.h)}` : "");
+    lbCap.textContent = it.cap + (it.h ? ` · ≈ ${fmtH(it.h)}` : "") + (lbItems.length > 1 ? `  (${lbIndex + 1}/${lbItems.length})` : "");
   }
+  // Balayage au doigt (mobile) : gauche = suivant, droite = précédent
+  (function () {
+    let x0 = null, y0 = 0;
+    const fig = document.querySelector(".lightbox");
+    fig.addEventListener("touchstart", e => { if (e.touches.length === 1) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; } }, { passive: true });
+    fig.addEventListener("touchend", e => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5 && e.target.tagName !== "VIDEO") moveLB(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  })();
   function moveLB(step) {
     if (!lbItems.length) return;
     lbIndex = (lbIndex + step + lbItems.length) % lbItems.length;
