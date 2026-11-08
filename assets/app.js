@@ -195,8 +195,7 @@
   // ======================================================
   // « Nos réalisations » — photos + vidéos d'événements
   const GALLERY = [
-    { src: "assets/gallery/gv19_piscine_ballons.mp4", poster: "assets/gallery/gv19_piscine_ballons.jpg", cap: "Piscine de ballons au T7, vue sur la Tour Eiffel", video: true },
-    { src: "assets/gallery/gv31_canopee_blanche.mp4", poster: "assets/gallery/gv31_canopee_blanche.jpg", cap: "Bal en Blanc : canopée de ballons blancs", video: true },
+    { src: "assets/gallery/gv46_ocean_t7.mp4", poster: "assets/gallery/gv46_ocean_t7.jpg", cap: "Sous l'océan au T7 : dauphin, pieuvre & poissons-clowns", video: true },
     { src: "assets/gallery/gv37_lune.mp4", poster: "assets/gallery/gv37_lune.jpg", cap: "Halloween : la Grande Lune face à la Tour Eiffel", video: true },
     { src: "assets/gallery/gv41_montgolfiere.mp4", poster: "assets/gallery/gv41_montgolfiere.jpg", cap: "Glace géante au coucher du soleil", video: true },
     { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
@@ -205,6 +204,7 @@
     { src: "assets/gallery/g17_chats.jpg",      cap: "Chat du Cheshire & Aristochats" },
     { src: "assets/gallery/gv38_marguerites.mp4", poster: "assets/gallery/gv38_marguerites.jpg", cap: "Marguerites géantes au coucher du soleil", video: true },
     { src: "assets/gallery/gv44_boules_arcenciel.mp4", poster: "assets/gallery/gv44_boules_arcenciel.jpg", cap: "Boules arc-en-ciel au crépuscule", video: true },
+    { src: "assets/gallery/gv19_piscine_ballons.mp4", poster: "assets/gallery/gv19_piscine_ballons.jpg", cap: "Piscine de ballons au T7, vue sur la Tour Eiffel", video: true },
     { src: "assets/gallery/g06_paris.jpg",      cap: "Paris — Moulin Rouge & Tour Eiffel" },
     { src: "assets/gallery/gv10_baleine.mp4",   poster: "assets/gallery/gv10_baleine.jpg",   cap: "Baleine géante en vol",                video: true },
     { src: "assets/gallery/gv33_pieuvre.mp4", poster: "assets/gallery/gv33_pieuvre.jpg", cap: "Pieuvre rose géante", video: true },
@@ -212,6 +212,7 @@
     { src: "assets/gallery/g35_requin.jpg", cap: "Requin géant" },
     { src: "assets/gallery/g31_clown.jpg", cap: "Tête de clown géante (Halloween)" },
     { src: "assets/gallery/g23_spiderman.jpg",  cap: "Arche Spider-Man & toiles lumineuses" },
+    { src: "assets/gallery/gv31_canopee_blanche.mp4", poster: "assets/gallery/gv31_canopee_blanche.jpg", cap: "Bal en Blanc : canopée de ballons blancs", video: true },
     { src: "assets/gallery/gv36_eclair.mp4", poster: "assets/gallery/gv36_eclair.jpg", cap: "Éclair géant", video: true },
     { src: "assets/gallery/g19_paques.jpg",     cap: "Lapin géant & œufs dorés (Pâques)" },
     { src: "assets/gallery/g13_rooftop.jpg",    cap: "Rooftop — chat porte-bonheur & lanternes" },
