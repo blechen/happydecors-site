@@ -4,10 +4,16 @@ const MEDIA = {
     "photos": [
       "DG_131_2.jpg"
     ],
-    "video": "DG_131.mp4"
+    "video": "DG_131.mp4",
+    "videos": [
+      "DG_131_v2.mp4"
+    ]
   },
   "DG_132": {
-    "video": "DG_132.mp4"
+    "video": "DG_132.mp4",
+    "videos": [
+      "DG_132_v2.mp4"
+    ]
   },
   "DG_133": {
     "photos": [
@@ -901,7 +907,10 @@ const MEDIA = {
     "photos": [
       "DG_150_3.jpg"
     ],
-    "video": "DG_150.mp4"
+    "video": "DG_150.mp4",
+    "videos": [
+      "DG_150_v2.mp4"
+    ]
   },
   "DG_152": {
     "photos": [
