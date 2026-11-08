@@ -40,13 +40,14 @@
     : `Sur devis`;
 
   // ---------- État ----------
+  const PAGE = 24;
+  let shown = PAGE;
   let activeU = "all";
   let query = "";
   const selected = new Set();
 
   // ---------- Éléments ----------
   const grid = $("#grid");
-  const filters = $("#filters");
   const universGrid = $("#universGrid");
   const searchInput = $("#searchInput");
   const resultCount = $("#resultCount");
@@ -58,39 +59,46 @@
   const counts = {};
   UNIVERSES.forEach(u => { counts[u.key] = DECORS.filter(d => inUniverse(d, u.key)).length; });
 
-  // Cartes d'univers (section Univers)
-  universGrid.innerHTML = UNIS.map(u => `
+  // Tuiles (thèmes phares) + liste compacte de tous les thèmes, groupés
+  const tileHTML = u => `
     <button class="uni-card${UNI_BG[u.key] ? " has-bg" : ""}" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}${UNI_BG[u.key] ? `; background-image:url('${UNI_BG[u.key]}')` : ""}">
       ${u.soon ? '<span class="uni-soon">Bientôt</span>' : ""}<span class="uni-emoji">${u.emoji}</span>
       <span class="uni-name">${u.label}</span>
       <span class="uni-count">${counts[u.key] || 0} décors</span>
-    </button>`).join("");
-
-  universGrid.addEventListener("click", e => {
-    const btn = e.target.closest(".uni-card");
+    </button>`;
+  const GRP = { occasion: "Occasions", couleur: "Couleurs & ambiances", univers: "Univers" };
+  const pillHTML = u => `<button class="uni-pill" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}"><span class="up-e">${u.emoji}</span>${u.short || u.label}<small>${counts[u.key] || 0}</small></button>`;
+  universGrid.innerHTML = UNIS.filter(u => u.tile).map(tileHTML).join("");
+  const uniAll = $("#uniAll"), uniMore = $("#uniMore");
+  uniAll.innerHTML = Object.keys(GRP).map(g => {
+    const list = UNIS.filter(u => u.grp === g && !u.tile);
+    return list.length ? `<h3 class="uni-grp">${GRP[g]}</h3><div class="uni-pills">${list.map(pillHTML).join("")}</div>` : "";
+  }).join("");
+  uniMore.textContent = `Voir les ${UNIS.length} thèmes ▾`;
+  uniMore.addEventListener("click", () => {
+    const open = uniAll.hidden; uniAll.hidden = !open;
+    uniMore.setAttribute("aria-expanded", String(open));
+    uniMore.textContent = open ? "Masquer les thèmes ▴" : `Voir les ${UNIS.length} thèmes ▾`;
+  });
+  const goUniverse = e => {
+    const btn = e.target.closest("[data-u]");
     if (!btn) return;
     setUniverse(btn.dataset.u);
     document.getElementById("catalogue").scrollIntoView({ behavior: "smooth" });
-  });
+  };
+  universGrid.addEventListener("click", goUniverse);
+  uniAll.addEventListener("click", goUniverse);
 
-  // Puces de filtre (toolbar du catalogue)
-  const chipsHTML = [`<button class="chip" data-u="all" aria-pressed="true">Tout voir</button>`]
-    .concat(UNIS.map(u => `
-      <button class="chip" data-u="${u.key}" aria-pressed="false" style="--cc:${UCOLOR[u.key]}">
-        <span class="c-emoji">${u.emoji}</span>${u.short || u.label}
-      </button>`)).join("");
-  filters.innerHTML = chipsHTML;
-
-  filters.addEventListener("click", e => {
-    const chip = e.target.closest(".chip");
-    if (!chip) return;
-    setUniverse(chip.dataset.u);
-  });
+  // Sélecteur de thème (natif : confortable au pouce sur mobile)
+  const uniSelect = $("#uniSelect");
+  uniSelect.innerHTML = `<option value="all">Tous les thèmes</option>` + Object.keys(GRP).map(g =>
+    `<optgroup label="${GRP[g]}">${UNIS.filter(u => u.grp === g).map(u => `<option value="${u.key}">${u.emoji} ${u.short || u.label}</option>`).join("")}</optgroup>`).join("");
+  uniSelect.addEventListener("change", () => setUniverse(uniSelect.value));
 
   function setUniverse(u) {
     activeU = u;
-    filters.querySelectorAll(".chip").forEach(c =>
-      c.setAttribute("aria-pressed", String(c.dataset.u === u)));
+    uniSelect.value = u;
+    shown = PAGE;
     render();
   }
 
@@ -139,7 +147,10 @@
     // Dans un univers : ses décors propres d'abord, puis ceux qui s'y associent ; vedettes en tête
     const rank = d => (activeU !== "all" && d.u !== activeU ? 2 : 0) + (d.featured ? 0 : 1);
     current.sort((a, b) => rank(a) - rank(b));
-    grid.innerHTML = current.map(cardHTML).join("");
+    grid.innerHTML = current.slice(0, shown).map(cardHTML).join("");
+    const moreBtn = $("#moreBtn"), reste = current.length - shown;
+    moreBtn.hidden = reste <= 0;
+    moreBtn.textContent = `Voir plus de décors (${reste})`;
     const n = current.length;
     resultCount.textContent = n === DECORS.length
       ? `Plus de 100 décors disponibles`
@@ -148,7 +159,8 @@
   }
 
   // Recherche
-  searchInput.addEventListener("input", () => { query = searchInput.value; render(); });
+  searchInput.addEventListener("input", () => { query = searchInput.value; shown = PAGE; render(); });
+  $("#moreBtn").addEventListener("click", () => { shown += PAGE; render(); });
   $("#resetSearch").addEventListener("click", () => {
     query = ""; searchInput.value = ""; setUniverse("all");
   });
