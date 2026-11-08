@@ -91,8 +91,7 @@ const MEDIA = {
   "DG_060": {
     "photos": [
       "DG_060_2.jpg"
-    ],
-    "video": "DG_060.mp4"
+    ]
   },
   "DG_035": {
     "photos": [
@@ -599,5 +598,8 @@ const MEDIA = {
   "DG_144": { "photos": ["DG_144_2.jpg"], "video": "DG_144.mp4" },
   "DG_145": { "photos": ["DG_145_2.jpg"], "video": "DG_145.mp4" },
   "DG_146": { "photos": ["DG_146_2.jpg", "DG_146_3.jpg"], "video": "DG_146.mp4" },
-  "DG_147": { "photos": ["DG_147_2.jpg"], "video": "DG_147.mp4" }
+  "DG_147": { "photos": ["DG_147_2.jpg"], "video": "DG_147.mp4" },
+  "DG_148": { "photos": ["DG_148_2.jpg"] },
+  "DG_149": { "photos": ["DG_149_2.jpg"] },
+  "DG_150": { "photos": ["DG_150_2.jpg"], "video": "DG_150.mp4" }
 };
