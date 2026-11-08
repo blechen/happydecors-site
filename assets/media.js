@@ -34,6 +34,7 @@ const MEDIA = {
   },
   "DG_137": {
     "photos": [
+      "DG_137_9.jpg",
       "DG_137_2.jpg"
     ],
     "video": "DG_137.mp4"
@@ -1050,6 +1051,7 @@ const MEDIA = {
   },
   "DG_152": {
     "photos": [
+      "DG_152_9.jpg",
       "DG_152_2.jpg",
       "DG_152_3.jpg",
       "DG_152_4.jpg",
