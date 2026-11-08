@@ -2,8 +2,7 @@
 const MEDIA = {
   "DG_131": {
     "photos": [
-      "DG_131_2.jpg",
-      "DG_131_3.jpg"
+      "DG_131_2.jpg"
     ],
     "video": "DG_131.mp4"
   },
