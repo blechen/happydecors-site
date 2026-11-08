@@ -192,4 +192,11 @@ const DECORS = [
   { id: "DG_145", name: "Dauphins",              theme: "Mer",          u: "mer",          price: 100, qte: 2, also: ["ete", "animaux", "enfants", "bebe", "emojis"] },
   { id: "DG_146", name: "Marguerites géantes",   theme: "Printemps",    u: "paques",       price: 90, qte: 4, also: ["ete", "amour", "bebe", "fluo", "blanc", "rose"] },
   { id: "DG_147", name: "Boules sucre d'orge",   theme: "Noël",         u: "noel",         price: 50, qte: 4, also: ["gourmandises", "hiver"] },
+  { id: "DG_153", name: "Toiles fluo UV « Space Dots »", theme: "Fluo UV", u: "fluo", price: 30, qte: 12, also: ["pop", "promo", "enfants"] },
+  { id: "DG_154", name: "Toiles fluo UV « Neon Forest »", theme: "Fluo UV", u: "fluo", price: 25, qte: 8, also: ["animaux", "ete", "ambiance"] },
+  { id: "DG_155", name: "Toiles fluo UV toile d'araignée", theme: "Fluo UV", u: "halloween", price: 20, qte: 10, also: ["fluo", "ambiance"] },
+  { id: "DG_156", name: "Panneaux fluo UV Mickey", theme: "Fluo UV", u: "fluo", price: 25, qte: 6, also: ["contes", "enfants", "ambiance"] },
+  { id: "DG_157", name: "Carottes géantes", theme: "Fruits & Légumes", u: "gourmandises", price: 50, qte: 4, also: ["paques", "enfants", "ete"] },
+  { id: "DG_158", name: "Tête de licorne 2D", theme: "Contes", u: "contes", price: 70, also: ["enfants", "bebe", "pop", "pride"] },
+  { id: "DG_159", name: "Enseigne MONSTERS", theme: "Halloween", u: "halloween", price: 100, also: ["fluo", "pop"] },
 ].filter(d => !d.horsLoc); // horsLoc: true = momentanément plus en location (masqué partout, retirer la marque pour le remettre)

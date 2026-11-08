@@ -1160,5 +1160,12 @@ const MEDIA = {
       "DG_025_2.jpg"
     ]
   },
-  "DG_041": {}
+  "DG_041": {},
+  "DG_153": {"photos": ["DG_153_2.jpg", "DG_153_3.jpg", "DG_153_4.jpg"], "video": "DG_153.mp4"},
+  "DG_154": {"photos": ["DG_154_2.jpg", "DG_154_3.jpg", "DG_154_4.jpg"]},
+  "DG_155": {"photos": ["DG_155_2.jpg", "DG_155_3.jpg", "DG_155_4.jpg"], "video": "DG_155.mp4"},
+  "DG_156": {"photos": ["DG_156_2.jpg", "DG_156_3.jpg"]},
+  "DG_157": {},
+  "DG_158": {},
+  "DG_159": {"photos": ["DG_159_2.jpg"]}
 };
