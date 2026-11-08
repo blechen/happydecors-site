@@ -514,6 +514,19 @@ html { scroll-padding-top: 90px; }
 .gal-item.is-video:hover .gal-play svg { transform: scale(1.12); }
 
 /* Univers en fond photo */
+.uni-card.has-bg { position: relative; overflow: hidden; background-size: cover; background-position: center; border: 0; min-height: 132px; }
+.uni-card.has-bg::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(22,14,28,.86), rgba(22,14,28,.32)); z-index: 0; transition: background .3s ease; }
+.uni-card.has-bg:hover::before { background: linear-gradient(to top, rgba(22,14,28,.76), rgba(22,14,28,.18)); }
+.uni-card.has-bg > * { position: relative; z-index: 1; color: #fff; }
+.uni-card.has-bg .uni-count { color: rgba(255,255,255,.88); }
+.uni-card.has-bg .uni-emoji { filter: drop-shadow(0 2px 6px rgba(0,0,0,.55)); }
+
+/* Univers : 16 catégories — badge « Bientôt » + défilement horizontal sur mobile */
+.uni-card { position: relative; }
+.uni-soon { position: absolute; top: 12px; right: 12px; background: #fff; color: var(--uc); font-size: .72rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.uni-card > .uni-soon, .uni-card.has-bg > .uni-soon { position: absolute; z-index: 2; color: var(--uc); }
+@media (max-width: 980px) { .univers-grid { gap: 10px; } .uni-card { padding: 16px 14px; } }
+/* Univers en fond photo */
 @media (max-width: 620px) {
   .univers-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .uni-card { padding: 12px 12px; }
