@@ -27,9 +27,10 @@
   const capOf = d => `${d.name}${d.qte ? " (" + d.qte + " disponibles)" : ""} — ${d.price > 0 ? d.price + "€" + (d.qte ? " l'unité" : "") + " / 48h" : "sur devis"}`;
   function mediaBadge(d) {
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
-    const n = 1 + (m.photos ? m.photos.length : 0) + (m.video ? 1 : 0);
+    const vids = (m.videos || []).concat(m.video ? [m.video] : []);
+    const n = 1 + (m.photos ? m.photos.length : 0) + vids.length;
     if (n <= 1) return "";
-    const play = m.video ? '<svg class="mb-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '';
+    const play = vids.length ? '<svg class="mb-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '';
     return `<span class="card-media" aria-hidden="true">${play}<svg class="mb-ph" viewBox="0 0 24 24"><path d="M9 4 7.8 5.6H5A1.8 1.8 0 0 0 3.2 7.4v9.2A1.8 1.8 0 0 0 5 18.4h14a1.8 1.8 0 0 0 1.8-1.8V7.4A1.8 1.8 0 0 0 19 5.6h-2.8L15 4Zm3 3.9a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Z"/></svg>${n}</span>`;
   }
 
@@ -280,7 +281,7 @@
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
     const items = [{ src: `assets/decors/${d.id}.jpg`, cap: capOf(d), h: HEIGHTS[d.id] }];
     (m.photos || []).forEach(p => items.push({ src: `assets/decors/${p}`, cap: capOf(d) }));
-    if (m.video) items.push({ src: `assets/decors/${m.video}`, cap: capOf(d), video: true });
+    (m.video ? [m.video] : []).concat(m.videos || []).forEach(v => items.push({ src: `assets/decors/${v}`, cap: capOf(d), video: true }));
     openLBList(items, 0);
   }
   function showLB() {
