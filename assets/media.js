@@ -3,7 +3,10 @@ const MEDIA = {
   "DG_131": {
     "photos": [
       "DG_131_2.jpg",
-      "DG_131_4.jpg"
+      "DG_131_4.jpg",
+      "DG_131_5.jpg",
+      "DG_131_6.jpg",
+      "DG_131_7.jpg"
     ],
     "video": "DG_131.mp4",
     "videos": [
@@ -14,32 +17,47 @@ const MEDIA = {
     "video": "DG_132.mp4",
     "videos": [
       "DG_132_v2.mp4"
+    ],
+    "photos": [
+      "DG_132_2.jpg",
+      "DG_132_3.jpg",
+      "DG_132_4.jpg"
     ]
   },
   "DG_133": {
     "photos": [
       "DG_133_2.jpg",
-      "DG_133_3.jpg"
+      "DG_133_3.jpg",
+      "DG_133_4.jpg",
+      "DG_133_5.jpg"
     ],
     "video": "DG_133.mp4"
   },
   "DG_135": {
     "photos": [
       "DG_135_2.jpg",
-      "DG_135_3.jpg"
+      "DG_135_3.jpg",
+      "DG_135_4.jpg",
+      "DG_135_5.jpg"
     ],
     "video": "DG_135.mp4"
   },
   "DG_136": {
     "video": "DG_136.mp4",
     "photos": [
-      "DG_136_2.jpg"
+      "DG_136_2.jpg",
+      "DG_136_3.jpg",
+      "DG_136_4.jpg"
     ]
   },
   "DG_137": {
     "photos": [
       "DG_137_2.jpg",
-      "DG_137_3.jpg"
+      "DG_137_3.jpg",
+      "DG_137_4.jpg",
+      "DG_137_5.jpg",
+      "DG_137_6.jpg",
+      "DG_137_7.jpg"
     ],
     "video": "DG_137.mp4"
   },
@@ -50,7 +68,10 @@ const MEDIA = {
   },
   "DG_140": {
     "photos": [
-      "DG_140_2.jpg"
+      "DG_140_2.jpg",
+      "DG_140_3.jpg",
+      "DG_140_4.jpg",
+      "DG_140_5.jpg"
     ]
   },
   "DG_142": {
@@ -228,7 +249,8 @@ const MEDIA = {
       "DG_108_7.jpg",
       "DG_108_2.jpg",
       "DG_108_4.jpg",
-      "DG_108_9.jpg"
+      "DG_108_9.jpg",
+      "DG_108_10.jpg"
     ],
     "videos": [
       "DG_108_v1.mp4",
@@ -268,7 +290,8 @@ const MEDIA = {
       "DG_103_4.jpg",
       "DG_103_5.jpg",
       "DG_103_6.jpg",
-      "DG_103_3.jpg"
+      "DG_103_3.jpg",
+      "DG_103_8.jpg"
     ]
   },
   "DG_102": {
@@ -848,7 +871,9 @@ const MEDIA = {
     "photos": [
       "DG_022_2.jpg",
       "DG_022_3.jpg",
-      "DG_022_4.jpg"
+      "DG_022_4.jpg",
+      "DG_022_5.jpg",
+      "DG_022_6.jpg"
     ],
     "video": "DG_022.mp4",
     "videos": [
@@ -903,7 +928,9 @@ const MEDIA = {
   },
   "DG_147": {
     "photos": [
-      "DG_147_2.jpg"
+      "DG_147_2.jpg",
+      "DG_147_3.jpg",
+      "DG_147_4.jpg"
     ],
     "video": "DG_147.mp4"
   },
