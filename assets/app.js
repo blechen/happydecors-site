@@ -245,6 +245,7 @@
     { src: "assets/gallery/gv20_plafond_ballons.mp4", poster: "assets/gallery/gv20_plafond_ballons.jpg", cap: "Plafond de ballons au-dessus de la scène", video: true },
     { src: "assets/gallery/g21_chateau.jpg",    cap: "Arche château & boules miroir" },
     { src: "assets/gallery/g18_noel.jpg",       cap: "Cadeaux, étoiles & sapins (Noël)" },
+    { src: "assets/gallery/gv15_pegase.mp4", poster: "assets/gallery/gv15_pegase.jpg", cap: "Pégase en vol au-dessus de la piste", video: true },
     { src: "assets/gallery/gv34_noel.mp4", poster: "assets/gallery/gv34_noel.jpg", cap: "Noël : sucres d'orge & étoiles", video: true },
     { src: "assets/gallery/g12_papillons.jpg",  cap: "Papillons fluo & lanternes" },
     { src: "assets/gallery/g15_fluo.jpg",       cap: "Étoiles violettes devant la scène DJ" },
