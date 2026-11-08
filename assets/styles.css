@@ -542,7 +542,7 @@ html { scroll-padding-top: 90px; }
 .uni-all { margin-top: 14px; }
 .uni-grp { font-family: var(--font-display); font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); margin: 18px 2px 8px; }
 .uni-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.uni-pill { font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: .45em;
+.uni-pill { text-align: left; font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: .45em;
   padding: .4em .9em; border-radius: var(--r-pill); background: var(--paper); color: var(--ink); border: 1.5px solid var(--line); }
 .uni-pill small { color: var(--ink-faint); font-weight: 700; font-size: .78rem; }
 .uni-pill:hover, .uni-pill:active { border-color: var(--uc); }
