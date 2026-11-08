@@ -204,7 +204,6 @@
     { src: "assets/gallery/gv50_lune_astronaute_t7.mp4", poster: "assets/gallery/gv50_lune_astronaute_t7.jpg", cap: "Grande Lune & astronaute, salle prête au T7", video: true },
     { src: "assets/gallery/gv48_navette_t7.mp4", poster: "assets/gallery/gv48_navette_t7.jpg", cap: "Navette spatiale au-dessus de la piste du T7", video: true },
     { src: "assets/gallery/gv32_ariel.mp4", poster: "assets/gallery/gv32_ariel.jpg", cap: "La Petite Sirène au T7", video: true },
-    { src: "assets/gallery/gv15_pegase.mp4", poster: "assets/gallery/gv15_pegase.jpg", cap: "Pégase en vol au-dessus de la piste", video: true },
     { src: "assets/gallery/g17_chats.jpg",      cap: "Chat du Cheshire & Aristochats" },
     { src: "assets/gallery/gv38_marguerites.mp4", poster: "assets/gallery/gv38_marguerites.jpg", cap: "Marguerites géantes au coucher du soleil", video: true },
     { src: "assets/gallery/gv44_boules_arcenciel.mp4", poster: "assets/gallery/gv44_boules_arcenciel.jpg", cap: "Boules arc-en-ciel au crépuscule", video: true },
