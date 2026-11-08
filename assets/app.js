@@ -67,19 +67,10 @@
       <span class="uni-count">${counts[u.key] || 0} décors</span>
     </button>`;
   const GRP = { occasion: "Occasions", couleur: "Couleurs & ambiances", univers: "Univers" };
-  const pillHTML = u => `<button class="uni-pill" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}"><span class="up-e">${u.emoji}</span>${u.short || u.label}<small>${counts[u.key] || 0}</small></button>`;
-  universGrid.innerHTML = UNIS.filter(u => u.tile).map(tileHTML).join("");
-  const uniAll = $("#uniAll"), uniMore = $("#uniMore");
-  uniAll.innerHTML = Object.keys(GRP).map(g => {
-    const list = UNIS.filter(u => u.grp === g && !u.tile);
-    return list.length ? `<h3 class="uni-grp">${GRP[g]}</h3><div class="uni-pills">${list.map(pillHTML).join("")}</div>` : "";
+  universGrid.innerHTML = Object.keys(GRP).map(g => {
+    const list = UNIS.filter(u => u.grp === g);
+    return list.length ? `<h3 class="uni-grp">${GRP[g]}</h3><div class="univers-grid">${list.map(tileHTML).join("")}</div>` : "";
   }).join("");
-  uniMore.textContent = `Voir les ${UNIS.length} thèmes ▾`;
-  uniMore.addEventListener("click", () => {
-    const open = uniAll.hidden; uniAll.hidden = !open;
-    uniMore.setAttribute("aria-expanded", String(open));
-    uniMore.textContent = open ? "Masquer les thèmes ▴" : `Voir les ${UNIS.length} thèmes ▾`;
-  });
   const goUniverse = e => {
     const btn = e.target.closest("[data-u]");
     if (!btn) return;
@@ -87,7 +78,6 @@
     document.getElementById("catalogue").scrollIntoView({ behavior: "smooth" });
   };
   universGrid.addEventListener("click", goUniverse);
-  uniAll.addEventListener("click", goUniverse);
 
   // Sélecteur de thème (natif : confortable au pouce sur mobile)
   const uniSelect = $("#uniSelect");

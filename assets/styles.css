@@ -528,25 +528,22 @@ html { scroll-padding-top: 90px; }
 @media (max-width: 980px) { .univers-grid { gap: 10px; } .uni-card { padding: 16px 14px; } }
 /* Univers en fond photo */
 @media (max-width: 620px) {
-  .univers-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .uni-card { padding: 12px 12px; }
-  .uni-card.has-bg { min-height: 104px; }
+  .univers-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .uni-card { padding: 8px 8px; gap: 3px; }
+  .uni-card.has-bg { min-height: 108px; border-radius: 14px; }
   .uni-card:hover { transform: none; }
-  .uni-emoji { width: 38px; height: 38px; font-size: 1.3rem; }
-  .uni-name { font-size: .92rem; }
-  .uni-soon { top: 8px; right: 8px; }
+  .uni-emoji { width: 30px; height: 30px; font-size: 1.05rem; border-radius: 10px; }
+  .uni-name { font-size: .76rem; line-height: 1.12; }
+  .uni-count { font-size: .68rem; }
+  .uni-soon { top: 6px; right: 6px; font-size: .6rem; padding: 2px 6px; }
 }
-/* Tous les thèmes : liste compacte groupée */
-.uni-more { display: flex; margin: 18px auto 0; min-height: 48px; align-items: center; }
-.uni-all[hidden] { display: none; }
-.uni-all { margin-top: 14px; }
-.uni-grp { font-family: var(--font-display); font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); margin: 18px 2px 8px; }
-.uni-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.uni-pill { text-align: left; font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: .45em;
-  padding: .4em .9em; border-radius: var(--r-pill); background: var(--paper); color: var(--ink); border: 1.5px solid var(--line); }
-.uni-pill small { color: var(--ink-faint); font-weight: 700; font-size: .78rem; }
-.uni-pill:hover, .uni-pill:active { border-color: var(--uc); }
-@media (max-width: 620px) { .uni-pills { gap: 6px; } .uni-pill { flex: 1 1 calc(50% - 6px); justify-content: flex-start; font-size: .88rem; padding: .35em .7em; } }
+/* Tous les thèmes : mêmes tuiles photo, groupées, compactes */
+.uni-grp { font-family: var(--font-display); font-size: .8rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-faint); margin: 26px 2px 10px; }
+.univers-groups .uni-grp:first-child { margin-top: 6px; }
+.univers-grid { grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.uni-card.has-bg { min-height: 120px; }
+@media (max-width: 980px) { .univers-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 760px) { .univers-grid { grid-template-columns: repeat(3, 1fr); } }
 
 /* Sélecteur de thème + recherche : une seule ligne, collante, légère */
 .toolbar { flex-direction: row !important; align-items: center; gap: 8px; padding: 10px 0; }

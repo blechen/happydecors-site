@@ -35,14 +35,11 @@ const uni = u => `
 
 const grid = DECORS.map(card).join("");
 const ordered = universesInOrder();
-const unis = ordered.filter(u => u.tile).map(uni).join("");
 const GRP = { occasion: "Occasions", couleur: "Couleurs &amp; ambiances", univers: "Univers" };
-const pill = u => `<button class="uni-pill" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}"><span class="up-e">${u.emoji}</span>${esc(u.short || u.label)}<small>${counts[u.key] || 0}</small></button>`;
-const uniall = Object.keys(GRP).map(gk => { const l = ordered.filter(u => u.grp === gk && !u.tile); return l.length ? `<h3 class="uni-grp">${GRP[gk]}</h3><div class="uni-pills">${l.map(pill).join("")}</div>` : ""; }).join("");
+const unis = Object.keys(GRP).map(gk => { const l = ordered.filter(u => u.grp === gk); return l.length ? `<h3 class="uni-grp">${GRP[gk]}</h3><div class="univers-grid">${l.map(uni).join("")}</div>` : ""; }).join("");
 
 let html = fs.readFileSync("index.html", "utf8");
 html = html.replace(/(<!--GRID_START-->)[\s\S]*?(<!--GRID_END-->)/, `$1${grid}\n      $2`);
 html = html.replace(/(<!--UNI_START-->)[\s\S]*?(<!--UNI_END-->)/, `$1${unis}\n    $2`);
-html = html.replace(/(<!--UNIALL_START-->)[\s\S]*?(<!--UNIALL_END-->)/, `$1${uniall}$2`);
 fs.writeFileSync("index.html", html);
 console.log(`Pré-rendu : ${DECORS.length} fiches + ${UNIVERSES.length} univers injectés dans index.html`);
