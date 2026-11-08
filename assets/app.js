@@ -197,8 +197,10 @@
   const GALLERY = [
     { src: "assets/gallery/gv46_ocean_t7.mp4", poster: "assets/gallery/gv46_ocean_t7.jpg", cap: "Sous l'océan au T7 : dauphin, pieuvre & poissons-clowns", video: true },
     { src: "assets/gallery/gv37_lune.mp4", poster: "assets/gallery/gv37_lune.jpg", cap: "Halloween : la Grande Lune face à la Tour Eiffel", video: true },
+    { src: "assets/gallery/gv47_ovni_t7.mp4", poster: "assets/gallery/gv47_ovni_t7.jpg", cap: "Galaxy au T7 : soucoupe volante OVNI", video: true },
     { src: "assets/gallery/gv41_montgolfiere.mp4", poster: "assets/gallery/gv41_montgolfiere.jpg", cap: "Glace géante au coucher du soleil", video: true },
     { src: "assets/gallery/g08_candyland.jpg",  cap: "Arche Candyland" },
+    { src: "assets/gallery/gv48_navette_t7.mp4", poster: "assets/gallery/gv48_navette_t7.jpg", cap: "Navette spatiale au-dessus de la piste du T7", video: true },
     { src: "assets/gallery/gv32_ariel.mp4", poster: "assets/gallery/gv32_ariel.jpg", cap: "La Petite Sirène au T7", video: true },
     { src: "assets/gallery/gv15_pegase.mp4", poster: "assets/gallery/gv15_pegase.jpg", cap: "Pégase en vol au-dessus de la piste", video: true },
     { src: "assets/gallery/g17_chats.jpg",      cap: "Chat du Cheshire & Aristochats" },
