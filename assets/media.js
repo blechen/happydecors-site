@@ -856,11 +856,19 @@ const MEDIA = {
     ]
   },
   "DG_144": {
+    "photos": [
+      "DG_144_3.jpg",
+      "DG_144_4.jpg",
+      "DG_144_5.jpg",
+      "DG_144_2.jpg"
+    ],
     "video": "DG_144.mp4"
   },
   "DG_145": {
     "photos": [
       "DG_145_4.jpg",
+      "DG_145_5.jpg",
+      "DG_145_6.jpg",
       "DG_145_3.jpg",
       "DG_145_2.jpg"
     ],
