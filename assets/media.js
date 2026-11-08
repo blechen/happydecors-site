@@ -378,6 +378,7 @@ const MEDIA = {
   },
   "DG_090": {
     "photos": [
+      "DG_090_4.jpg", "DG_090_5.jpg", "DG_090_6.jpg", "DG_090_7.jpg", "DG_090_8.jpg", "DG_090_9.jpg", "DG_090_10.jpg",
       "DG_090_2.jpg",
       "DG_090_3.jpg"
     ],
