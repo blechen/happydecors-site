@@ -1044,7 +1044,7 @@ const MEDIA = {
   },
   "DG_150": {
     "photos": [
-      "DG_150_2.jpg"
+      "DG_150_3.jpg"
     ],
     "video": "DG_150.mp4"
   },
