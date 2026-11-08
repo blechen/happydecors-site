@@ -7,9 +7,6 @@ const MEDIA = {
     "video": "DG_131.mp4"
   },
   "DG_132": {
-    "photos": [
-      "DG_132_2.jpg"
-    ],
     "video": "DG_132.mp4"
   },
   "DG_133": {
@@ -26,9 +23,6 @@ const MEDIA = {
     "video": "DG_135.mp4"
   },
   "DG_136": {
-    "photos": [
-      "DG_136_2.jpg"
-    ],
     "video": "DG_136.mp4"
   },
   "DG_137": {
@@ -39,7 +33,6 @@ const MEDIA = {
   },
   "DG_138": {
     "photos": [
-      "DG_138_2.jpg",
       "DG_138_3.jpg"
     ]
   },
@@ -50,43 +43,36 @@ const MEDIA = {
   },
   "DG_142": {
     "photos": [
-      "DG_142_2.jpg",
-      "DG_142_3.jpg"
+      "DG_142_3.jpg",
+      "DG_142_2.jpg"
     ]
   },
   "DG_110": {
     "photos": [
-      "DG_110_2.jpg",
-      "DG_110_3.jpg",
+      "DG_110_6.jpg",
       "DG_110_4.jpg",
-      "DG_110_5.jpg",
-      "DG_110_6.jpg"
+      "DG_110_5.jpg"
     ],
     "video": "DG_110.mp4"
   },
   "DG_099": {
     "photos": [
-      "DG_099_2.jpg",
-      "DG_099_3.jpg",
-      "DG_099_4.jpg",
-      "DG_099_5.jpg"
+      "DG_099_2.jpg"
     ],
     "video": "DG_099.mp4"
   },
   "DG_107": {
     "photos": [
       "DG_107_2.jpg",
-      "DG_107_3.jpg",
       "DG_107_4.jpg",
-      "DG_107_5.jpg"
+      "DG_107_3.jpg"
     ]
   },
   "DG_093": {
     "photos": [
-      "DG_093_2.jpg",
-      "DG_093_3.jpg",
       "DG_093_4.jpg",
       "DG_093_5.jpg",
+      "DG_093_3.jpg",
       "DG_093_6.jpg"
     ],
     "videos": [
@@ -96,11 +82,10 @@ const MEDIA = {
   },
   "DG_091": {
     "photos": [
-      "DG_091_2.jpg",
       "DG_091_3.jpg",
+      "DG_091_6.jpg",
       "DG_091_4.jpg",
-      "DG_091_5.jpg",
-      "DG_091_6.jpg"
+      "DG_091_5.jpg"
     ],
     "videos": [
       "DG_091_v1.mp4",
@@ -109,10 +94,9 @@ const MEDIA = {
   },
   "DG_078": {
     "photos": [
-      "DG_078_2.jpg",
-      "DG_078_3.jpg",
-      "DG_078_4.jpg",
       "DG_078_5.jpg",
+      "DG_078_4.jpg",
+      "DG_078_3.jpg",
       "DG_078_6.jpg"
     ],
     "video": "DG_078.mp4",
@@ -123,15 +107,12 @@ const MEDIA = {
   },
   "DG_060": {
     "photos": [
+      "DG_060_10.jpg",
+      "DG_060_9.jpg",
       "DG_060_2.jpg",
       "DG_060_3.jpg",
       "DG_060_4.jpg",
-      "DG_060_5.jpg",
-      "DG_060_6.jpg",
-      "DG_060_7.jpg",
-      "DG_060_8.jpg",
-      "DG_060_9.jpg",
-      "DG_060_10.jpg"
+      "DG_060_6.jpg"
     ],
     "video": "DG_060.mp4",
     "videos": [
@@ -139,14 +120,9 @@ const MEDIA = {
       "DG_060_v2.mp4"
     ]
   },
-  "DG_151": {
-    "photos": [
-      "DG_151_2.jpg"
-    ]
-  },
+  "DG_151": {},
   "DG_035": {
     "photos": [
-      "DG_035_2.jpg",
       "DG_035_3.jpg"
     ],
     "video": "DG_035.mp4",
@@ -157,9 +133,6 @@ const MEDIA = {
   },
   "DG_029": {
     "photos": [
-      "DG_029_2.jpg",
-      "DG_029_3.jpg",
-      "DG_029_4.jpg",
       "DG_029_5.jpg"
     ],
     "video": "DG_029.mp4",
@@ -169,12 +142,10 @@ const MEDIA = {
   },
   "DG_028": {
     "photos": [
-      "DG_028_2.jpg",
-      "DG_028_3.jpg",
-      "DG_028_4.jpg",
-      "DG_028_5.jpg",
       "DG_028_6.jpg",
-      "DG_028_7.jpg"
+      "DG_028_4.jpg",
+      "DG_028_7.jpg",
+      "DG_028_2.jpg"
     ],
     "videos": [
       "DG_028_v1.mp4",
@@ -183,11 +154,10 @@ const MEDIA = {
   },
   "DG_024": {
     "photos": [
-      "DG_024_2.jpg",
-      "DG_024_3.jpg",
-      "DG_024_4.jpg",
       "DG_024_5.jpg",
-      "DG_024_6.jpg"
+      "DG_024_3.jpg",
+      "DG_024_6.jpg",
+      "DG_024_4.jpg"
     ],
     "video": "DG_024.mp4",
     "videos": [
@@ -197,10 +167,10 @@ const MEDIA = {
   },
   "DG_023": {
     "photos": [
-      "DG_023_2.jpg",
       "DG_023_3.jpg",
       "DG_023_4.jpg",
       "DG_023_5.jpg",
+      "DG_023_2.jpg",
       "DG_023_6.jpg"
     ],
     "video": "DG_023.mp4",
@@ -219,17 +189,14 @@ const MEDIA = {
   "DG_015": {
     "photos": [
       "DG_015_2.jpg",
-      "DG_015_3.jpg",
-      "DG_015_4.jpg",
-      "DG_015_5.jpg",
-      "DG_015_6.jpg"
+      "DG_015_4.jpg"
     ]
   },
   "DG_014": {
     "photos": [
-      "DG_014_2.jpg",
       "DG_014_3.jpg",
       "DG_014_4.jpg",
+      "DG_014_2.jpg",
       "DG_014_5.jpg"
     ],
     "video": "DG_014.mp4",
@@ -240,13 +207,11 @@ const MEDIA = {
   },
   "DG_108": {
     "photos": [
-      "DG_108_2.jpg",
+      "DG_108_8.jpg",
       "DG_108_3.jpg",
-      "DG_108_4.jpg",
-      "DG_108_5.jpg",
-      "DG_108_6.jpg",
       "DG_108_7.jpg",
-      "DG_108_8.jpg"
+      "DG_108_2.jpg",
+      "DG_108_4.jpg"
     ],
     "videos": [
       "DG_108_v1.mp4",
@@ -255,21 +220,17 @@ const MEDIA = {
   },
   "DG_106": {
     "photos": [
-      "DG_106_2.jpg",
       "DG_106_3.jpg",
-      "DG_106_4.jpg",
-      "DG_106_5.jpg"
+      "DG_106_2.jpg"
     ]
   },
   "DG_105": {
     "photos": [
       "DG_105_2.jpg",
       "DG_105_3.jpg",
-      "DG_105_4.jpg",
-      "DG_105_5.jpg",
-      "DG_105_6.jpg",
       "DG_105_7.jpg",
-      "DG_105_8.jpg"
+      "DG_105_8.jpg",
+      "DG_105_6.jpg"
     ],
     "videos": [
       "DG_105_v1.mp4"
@@ -277,80 +238,70 @@ const MEDIA = {
   },
   "DG_104": {
     "photos": [
-      "DG_104_2.jpg",
-      "DG_104_3.jpg",
-      "DG_104_4.jpg",
       "DG_104_5.jpg",
-      "DG_104_6.jpg"
+      "DG_104_2.jpg",
+      "DG_104_6.jpg",
+      "DG_104_3.jpg"
     ]
   },
   "DG_103": {
     "photos": [
       "DG_103_2.jpg",
-      "DG_103_3.jpg",
+      "DG_103_7.jpg",
       "DG_103_4.jpg",
       "DG_103_5.jpg",
       "DG_103_6.jpg",
-      "DG_103_7.jpg"
+      "DG_103_3.jpg"
     ]
   },
   "DG_102": {
     "photos": [
       "DG_102_2.jpg",
-      "DG_102_3.jpg",
-      "DG_102_4.jpg"
+      "DG_102_3.jpg"
     ]
   },
   "DG_101": {
     "photos": [
-      "DG_101_2.jpg",
       "DG_101_3.jpg",
-      "DG_101_4.jpg",
-      "DG_101_5.jpg",
       "DG_101_6.jpg",
-      "DG_101_7.jpg"
+      "DG_101_5.jpg",
+      "DG_101_2.jpg",
+      "DG_101_4.jpg"
     ]
   },
   "DG_100": {
     "photos": [
-      "DG_100_2.jpg",
       "DG_100_3.jpg",
       "DG_100_4.jpg",
-      "DG_100_5.jpg",
-      "DG_100_6.jpg",
       "DG_100_7.jpg",
-      "DG_100_8.jpg"
+      "DG_100_6.jpg",
+      "DG_100_2.jpg"
     ]
   },
   "DG_098": {
     "photos": [
-      "DG_098_2.jpg",
-      "DG_098_3.jpg",
-      "DG_098_4.jpg",
-      "DG_098_5.jpg",
       "DG_098_6.jpg",
+      "DG_098_3.jpg",
       "DG_098_7.jpg",
-      "DG_098_8.jpg"
+      "DG_098_4.jpg",
+      "DG_098_2.jpg"
     ]
   },
   "DG_097": {
     "photos": [
       "DG_097_2.jpg",
-      "DG_097_3.jpg",
-      "DG_097_4.jpg",
-      "DG_097_5.jpg",
+      "DG_097_7.jpg",
       "DG_097_6.jpg",
-      "DG_097_7.jpg"
+      "DG_097_5.jpg"
     ]
   },
   "DG_096": {
     "photos": [
-      "DG_096_2.jpg",
-      "DG_096_3.jpg",
-      "DG_096_4.jpg",
       "DG_096_5.jpg",
-      "DG_096_6.jpg",
-      "DG_096_7.jpg"
+      "DG_096_3.jpg",
+      "DG_096_2.jpg",
+      "DG_096_7.jpg",
+      "DG_096_6.jpg"
     ],
     "videos": [
       "DG_096_v1.mp4"
@@ -358,28 +309,28 @@ const MEDIA = {
   },
   "DG_095": {
     "photos": [
-      "DG_095_2.jpg",
       "DG_095_3.jpg",
-      "DG_095_4.jpg",
+      "DG_095_2.jpg",
       "DG_095_5.jpg",
-      "DG_095_6.jpg",
-      "DG_095_7.jpg"
+      "DG_095_6.jpg"
     ]
   },
   "DG_094": {
     "photos": [
       "DG_094_2.jpg",
       "DG_094_3.jpg",
-      "DG_094_4.jpg",
-      "DG_094_5.jpg",
       "DG_094_6.jpg"
     ]
   },
   "DG_090": {
     "photos": [
-      "DG_090_4.jpg", "DG_090_5.jpg", "DG_090_6.jpg", "DG_090_7.jpg", "DG_090_8.jpg", "DG_090_9.jpg", "DG_090_10.jpg",
       "DG_090_2.jpg",
-      "DG_090_3.jpg"
+      "DG_090_3.jpg",
+      "DG_090_9.jpg",
+      "DG_090_6.jpg",
+      "DG_090_7.jpg",
+      "DG_090_5.jpg",
+      "DG_090_10.jpg"
     ],
     "videos": [
       "DG_090_v1.mp4"
@@ -387,12 +338,11 @@ const MEDIA = {
   },
   "DG_088": {
     "photos": [
-      "DG_088_2.jpg",
       "DG_088_3.jpg",
-      "DG_088_4.jpg",
-      "DG_088_5.jpg",
+      "DG_088_2.jpg",
       "DG_088_6.jpg",
-      "DG_088_7.jpg"
+      "DG_088_7.jpg",
+      "DG_088_4.jpg"
     ],
     "videos": [
       "DG_088_v1.mp4"
@@ -400,31 +350,27 @@ const MEDIA = {
   },
   "DG_086": {
     "photos": [
+      "DG_086_5.jpg",
       "DG_086_2.jpg",
       "DG_086_3.jpg",
-      "DG_086_4.jpg",
-      "DG_086_5.jpg",
       "DG_086_6.jpg"
     ]
   },
   "DG_084": {
     "photos": [
-      "DG_084_2.jpg",
       "DG_084_3.jpg",
-      "DG_084_4.jpg",
-      "DG_084_5.jpg",
-      "DG_084_6.jpg"
+      "DG_084_6.jpg",
+      "DG_084_2.jpg",
+      "DG_084_5.jpg"
     ]
   },
   "DG_083": {
     "photos": [
       "DG_083_2.jpg",
-      "DG_083_3.jpg",
-      "DG_083_4.jpg",
-      "DG_083_5.jpg",
       "DG_083_6.jpg",
-      "DG_083_7.jpg",
-      "DG_083_8.jpg"
+      "DG_083_5.jpg",
+      "DG_083_3.jpg",
+      "DG_083_7.jpg"
     ],
     "videos": [
       "DG_083_v1.mp4",
@@ -433,66 +379,56 @@ const MEDIA = {
   },
   "DG_080": {
     "photos": [
+      "DG_080_5.jpg",
       "DG_080_2.jpg",
-      "DG_080_3.jpg",
-      "DG_080_4.jpg",
-      "DG_080_5.jpg"
+      "DG_080_3.jpg"
     ]
   },
   "DG_079": {
     "photos": [
       "DG_079_2.jpg",
-      "DG_079_3.jpg",
-      "DG_079_4.jpg",
-      "DG_079_5.jpg",
+      "DG_079_7.jpg",
       "DG_079_6.jpg",
-      "DG_079_7.jpg"
+      "DG_079_5.jpg"
     ]
   },
   "DG_077": {
     "photos": [
       "DG_077_2.jpg",
       "DG_077_3.jpg",
-      "DG_077_4.jpg",
-      "DG_077_5.jpg",
       "DG_077_6.jpg"
     ]
   },
   "DG_076": {
     "photos": [
-      "DG_076_2.jpg",
-      "DG_076_3.jpg",
       "DG_076_4.jpg",
+      "DG_076_2.jpg",
       "DG_076_5.jpg"
     ]
   },
   "DG_075": {
     "photos": [
       "DG_075_2.jpg",
-      "DG_075_3.jpg",
-      "DG_075_4.jpg",
+      "DG_075_7.jpg",
       "DG_075_5.jpg",
-      "DG_075_6.jpg",
-      "DG_075_7.jpg"
+      "DG_075_4.jpg",
+      "DG_075_3.jpg"
     ]
   },
   "DG_074": {
     "photos": [
       "DG_074_2.jpg",
-      "DG_074_3.jpg",
-      "DG_074_4.jpg",
-      "DG_074_5.jpg",
+      "DG_074_7.jpg",
       "DG_074_6.jpg",
-      "DG_074_7.jpg"
+      "DG_074_3.jpg"
     ]
   },
   "DG_072": {
     "photos": [
-      "DG_072_2.jpg",
-      "DG_072_3.jpg",
-      "DG_072_4.jpg",
       "DG_072_5.jpg",
       "DG_072_6.jpg",
+      "DG_072_3.jpg",
+      "DG_072_2.jpg",
       "DG_072_7.jpg"
     ],
     "videos": [
@@ -503,28 +439,23 @@ const MEDIA = {
   "DG_070": {
     "photos": [
       "DG_070_2.jpg",
-      "DG_070_3.jpg",
       "DG_070_4.jpg",
-      "DG_070_5.jpg",
       "DG_070_6.jpg",
       "DG_070_7.jpg"
     ]
   },
   "DG_073": {
     "photos": [
-      "DG_073_2.jpg",
-      "DG_073_3.jpg",
       "DG_073_4.jpg",
-      "DG_073_5.jpg"
+      "DG_073_2.jpg"
     ]
   },
   "DG_069": {
     "photos": [
       "DG_069_2.jpg",
+      "DG_069_6.jpg",
       "DG_069_3.jpg",
-      "DG_069_4.jpg",
-      "DG_069_5.jpg",
-      "DG_069_6.jpg"
+      "DG_069_4.jpg"
     ],
     "videos": [
       "DG_069_v1.mp4",
@@ -533,23 +464,19 @@ const MEDIA = {
   },
   "DG_067": {
     "photos": [
-      "DG_067_2.jpg",
       "DG_067_3.jpg",
-      "DG_067_4.jpg",
-      "DG_067_5.jpg",
+      "DG_067_7.jpg",
       "DG_067_6.jpg",
-      "DG_067_7.jpg"
+      "DG_067_5.jpg",
+      "DG_067_2.jpg"
     ]
   },
   "DG_092": {
     "photos": [
       "DG_092_2.jpg",
+      "DG_092_8.jpg",
       "DG_092_3.jpg",
-      "DG_092_4.jpg",
-      "DG_092_5.jpg",
-      "DG_092_6.jpg",
-      "DG_092_7.jpg",
-      "DG_092_8.jpg"
+      "DG_092_7.jpg"
     ],
     "videos": [
       "DG_092_v1.mp4",
@@ -560,38 +487,31 @@ const MEDIA = {
     "photos": [
       "DG_066_2.jpg",
       "DG_066_3.jpg",
-      "DG_066_4.jpg",
-      "DG_066_5.jpg",
-      "DG_066_6.jpg",
-      "DG_066_7.jpg"
+      "DG_066_7.jpg",
+      "DG_066_6.jpg"
     ]
   },
   "DG_065": {
     "photos": [
-      "DG_065_2.jpg",
       "DG_065_3.jpg",
-      "DG_065_4.jpg",
-      "DG_065_5.jpg",
       "DG_065_6.jpg",
-      "DG_065_7.jpg"
+      "DG_065_5.jpg",
+      "DG_065_7.jpg",
+      "DG_065_2.jpg"
     ]
   },
   "DG_064": {
     "photos": [
-      "DG_064_2.jpg",
       "DG_064_3.jpg",
-      "DG_064_4.jpg"
+      "DG_064_2.jpg"
     ]
   },
   "DG_063": {
     "photos": [
       "DG_063_2.jpg",
+      "DG_063_8.jpg",
       "DG_063_3.jpg",
-      "DG_063_4.jpg",
-      "DG_063_5.jpg",
-      "DG_063_6.jpg",
-      "DG_063_7.jpg",
-      "DG_063_8.jpg"
+      "DG_063_7.jpg"
     ],
     "videos": [
       "DG_063_v1.mp4",
@@ -600,90 +520,76 @@ const MEDIA = {
   },
   "DG_062": {
     "photos": [
-      "DG_062_2.jpg",
-      "DG_062_3.jpg",
       "DG_062_4.jpg",
       "DG_062_5.jpg",
-      "DG_062_6.jpg",
+      "DG_062_3.jpg",
+      "DG_062_2.jpg",
       "DG_062_7.jpg"
     ]
   },
   "DG_061": {
     "photos": [
-      "DG_061_2.jpg",
-      "DG_061_3.jpg"
+      "DG_061_2.jpg"
     ]
   },
   "DG_058": {
     "photos": [
       "DG_058_2.jpg",
-      "DG_058_3.jpg",
-      "DG_058_4.jpg",
-      "DG_058_5.jpg",
+      "DG_058_7.jpg",
       "DG_058_6.jpg",
-      "DG_058_7.jpg"
+      "DG_058_3.jpg",
+      "DG_058_5.jpg"
     ]
   },
   "DG_057": {
     "photos": [
-      "DG_057_2.jpg",
-      "DG_057_3.jpg",
-      "DG_057_4.jpg",
-      "DG_057_5.jpg",
-      "DG_057_6.jpg",
+      "DG_057_8.jpg",
       "DG_057_7.jpg",
-      "DG_057_8.jpg"
+      "DG_057_4.jpg",
+      "DG_057_2.jpg",
+      "DG_057_3.jpg"
     ]
   },
   "DG_059": {
     "photos": [
-      "DG_059_2.jpg",
-      "DG_059_3.jpg"
+      "DG_059_2.jpg"
     ]
   },
   "DG_056": {
     "photos": [
       "DG_056_2.jpg",
-      "DG_056_3.jpg",
-      "DG_056_4.jpg",
-      "DG_056_5.jpg",
-      "DG_056_6.jpg"
+      "DG_056_6.jpg",
+      "DG_056_5.jpg"
     ]
   },
   "DG_055": {
     "photos": [
-      "DG_055_2.jpg",
       "DG_055_3.jpg",
-      "DG_055_4.jpg",
-      "DG_055_5.jpg",
+      "DG_055_2.jpg",
       "DG_055_6.jpg"
     ]
   },
   "DG_054": {
     "photos": [
-      "DG_054_2.jpg",
-      "DG_054_3.jpg",
-      "DG_054_4.jpg"
+      "DG_054_2.jpg"
     ],
     "video": "DG_054.mp4"
   },
   "DG_053": {
     "photos": [
       "DG_053_2.jpg",
-      "DG_053_3.jpg",
-      "DG_053_4.jpg",
-      "DG_053_5.jpg",
       "DG_053_6.jpg",
-      "DG_053_7.jpg"
+      "DG_053_3.jpg",
+      "DG_053_5.jpg",
+      "DG_053_4.jpg"
     ]
   },
   "DG_052": {
     "photos": [
-      "DG_052_2.jpg",
-      "DG_052_3.jpg",
       "DG_052_4.jpg",
+      "DG_052_2.jpg",
       "DG_052_5.jpg",
-      "DG_052_6.jpg"
+      "DG_052_3.jpg"
     ],
     "videos": [
       "DG_052_v1.mp4"
@@ -691,11 +597,10 @@ const MEDIA = {
   },
   "DG_051": {
     "photos": [
-      "DG_051_2.jpg",
       "DG_051_3.jpg",
-      "DG_051_4.jpg",
       "DG_051_5.jpg",
       "DG_051_6.jpg",
+      "DG_051_2.jpg",
       "DG_051_7.jpg"
     ]
   },
@@ -703,19 +608,15 @@ const MEDIA = {
     "photos": [
       "DG_049_2.jpg",
       "DG_049_3.jpg",
-      "DG_049_4.jpg",
-      "DG_049_5.jpg",
-      "DG_049_6.jpg",
-      "DG_049_7.jpg"
+      "DG_049_7.jpg",
+      "DG_049_6.jpg"
     ]
   },
   "DG_048": {
     "photos": [
-      "DG_048_2.jpg",
-      "DG_048_3.jpg",
-      "DG_048_4.jpg",
-      "DG_048_5.jpg",
       "DG_048_6.jpg",
+      "DG_048_3.jpg",
+      "DG_048_2.jpg",
       "DG_048_7.jpg"
     ],
     "video": "DG_048.mp4"
@@ -723,32 +624,27 @@ const MEDIA = {
   "DG_047": {
     "photos": [
       "DG_047_2.jpg",
-      "DG_047_3.jpg",
       "DG_047_4.jpg"
     ]
   },
   "DG_046": {
     "photos": [
-      "DG_046_2.jpg",
-      "DG_046_3.jpg"
+      "DG_046_2.jpg"
     ]
   },
   "DG_045": {
     "photos": [
-      "DG_045_2.jpg",
       "DG_045_3.jpg",
-      "DG_045_4.jpg",
       "DG_045_5.jpg"
     ]
   },
   "DG_042": {
     "photos": [
-      "DG_042_2.jpg",
       "DG_042_3.jpg",
-      "DG_042_4.jpg",
-      "DG_042_5.jpg",
+      "DG_042_2.jpg",
       "DG_042_6.jpg",
-      "DG_042_7.jpg"
+      "DG_042_7.jpg",
+      "DG_042_4.jpg"
     ],
     "videos": [
       "DG_042_v1.mp4",
@@ -761,8 +657,6 @@ const MEDIA = {
       "DG_040_3.jpg",
       "DG_040_4.jpg",
       "DG_040_5.jpg",
-      "DG_040_6.jpg",
-      "DG_040_7.jpg",
       "DG_040_8.jpg"
     ],
     "videos": [
@@ -772,22 +666,18 @@ const MEDIA = {
   },
   "DG_043": {
     "photos": [
-      "DG_043_2.jpg",
       "DG_043_3.jpg",
-      "DG_043_4.jpg",
-      "DG_043_5.jpg",
+      "DG_043_2.jpg",
+      "DG_043_7.jpg",
       "DG_043_6.jpg",
-      "DG_043_7.jpg"
+      "DG_043_5.jpg"
     ]
   },
   "DG_039": {
     "photos": [
-      "DG_039_2.jpg",
       "DG_039_3.jpg",
-      "DG_039_4.jpg",
-      "DG_039_5.jpg",
-      "DG_039_6.jpg",
-      "DG_039_7.jpg"
+      "DG_039_2.jpg",
+      "DG_039_4.jpg"
     ],
     "videos": [
       "DG_039_v1.mp4"
@@ -797,9 +687,6 @@ const MEDIA = {
     "photos": [
       "DG_038_2.jpg",
       "DG_038_3.jpg",
-      "DG_038_4.jpg",
-      "DG_038_5.jpg",
-      "DG_038_6.jpg",
       "DG_038_7.jpg"
     ],
     "video": "DG_038.mp4",
@@ -809,10 +696,8 @@ const MEDIA = {
   },
   "DG_034": {
     "photos": [
-      "DG_034_2.jpg",
       "DG_034_3.jpg",
-      "DG_034_4.jpg",
-      "DG_034_5.jpg",
+      "DG_034_2.jpg",
       "DG_034_6.jpg",
       "DG_034_7.jpg"
     ],
@@ -822,48 +707,43 @@ const MEDIA = {
   },
   "DG_033": {
     "photos": [
-      "DG_033_2.jpg",
-      "DG_033_3.jpg",
-      "DG_033_4.jpg",
-      "DG_033_5.jpg",
       "DG_033_6.jpg",
-      "DG_033_7.jpg"
+      "DG_033_3.jpg",
+      "DG_033_2.jpg",
+      "DG_033_5.jpg"
     ]
   },
   "DG_032": {
     "photos": [
-      "DG_032_2.jpg",
-      "DG_032_3.jpg",
-      "DG_032_4.jpg",
-      "DG_032_5.jpg",
-      "DG_032_6.jpg",
       "DG_032_7.jpg",
-      "DG_032_8.jpg"
+      "DG_032_6.jpg",
+      "DG_032_8.jpg",
+      "DG_032_3.jpg",
+      "DG_032_2.jpg",
+      "DG_032_4.jpg"
     ]
   },
   "DG_030": {
     "photos": [
+      "DG_030_6.jpg",
       "DG_030_2.jpg",
-      "DG_030_3.jpg",
       "DG_030_4.jpg",
-      "DG_030_5.jpg",
-      "DG_030_6.jpg"
+      "DG_030_5.jpg"
     ]
   },
   "DG_000": {
     "photos": [
-      "DG_000_2.jpg",
-      "DG_000_3.jpg",
-      "DG_000_4.jpg"
+      "DG_000_4.jpg",
+      "DG_000_2.jpg"
     ]
   },
   "DG_001": {
     "photos": [
-      "DG_001_2.jpg",
       "DG_001_3.jpg",
+      "DG_001_2.jpg",
       "DG_001_4.jpg",
-      "DG_001_5.jpg",
       "DG_001_6.jpg",
+      "DG_001_5.jpg",
       "DG_001_7.jpg"
     ],
     "videos": [
@@ -876,8 +756,6 @@ const MEDIA = {
       "DG_002_2.jpg",
       "DG_002_3.jpg",
       "DG_002_4.jpg",
-      "DG_002_5.jpg",
-      "DG_002_6.jpg",
       "DG_002_7.jpg",
       "DG_002_8.jpg"
     ]
@@ -886,81 +764,64 @@ const MEDIA = {
     "photos": [
       "DG_003_2.jpg",
       "DG_003_3.jpg",
-      "DG_003_4.jpg",
-      "DG_003_5.jpg"
+      "DG_003_4.jpg"
     ]
   },
   "DG_004": {
     "photos": [
-      "DG_004_2.jpg",
-      "DG_004_3.jpg"
+      "DG_004_2.jpg"
     ]
   },
   "DG_006": {
     "photos": [
-      "DG_006_2.jpg",
       "DG_006_3.jpg",
-      "DG_006_4.jpg",
+      "DG_006_2.jpg",
       "DG_006_5.jpg",
-      "DG_006_6.jpg"
+      "DG_006_4.jpg"
     ]
   },
   "DG_007": {
     "photos": [
       "DG_007_2.jpg",
       "DG_007_3.jpg",
-      "DG_007_4.jpg",
-      "DG_007_5.jpg",
-      "DG_007_6.jpg",
-      "DG_007_7.jpg"
+      "DG_007_5.jpg"
     ]
   },
   "DG_009": {
     "photos": [
-      "DG_009_2.jpg",
-      "DG_009_3.jpg",
       "DG_009_4.jpg",
-      "DG_009_5.jpg",
+      "DG_009_3.jpg",
       "DG_009_6.jpg",
-      "DG_009_7.jpg"
+      "DG_009_5.jpg"
     ]
   },
   "DG_011": {
     "photos": [
-      "DG_011_2.jpg",
-      "DG_011_3.jpg",
-      "DG_011_4.jpg"
+      "DG_011_2.jpg"
     ]
   },
   "DG_012": {
     "photos": [
-      "DG_012_2.jpg",
       "DG_012_3.jpg",
-      "DG_012_4.jpg",
-      "DG_012_5.jpg",
+      "DG_012_2.jpg",
       "DG_012_6.jpg",
-      "DG_012_7.jpg",
       "DG_012_8.jpg"
     ]
   },
   "DG_013": {
     "photos": [
-      "DG_013_2.jpg",
       "DG_013_3.jpg"
     ]
   },
   "DG_016": {
     "photos": [
-      "DG_016_2.jpg",
-      "DG_016_3.jpg",
-      "DG_016_4.jpg",
       "DG_016_5.jpg",
+      "DG_016_2.jpg",
       "DG_016_6.jpg"
     ]
   },
   "DG_021": {
     "photos": [
-      "DG_021_2.jpg",
       "DG_021_3.jpg"
     ]
   },
@@ -968,10 +829,7 @@ const MEDIA = {
     "photos": [
       "DG_022_2.jpg",
       "DG_022_3.jpg",
-      "DG_022_4.jpg",
-      "DG_022_5.jpg",
-      "DG_022_6.jpg",
-      "DG_022_7.jpg"
+      "DG_022_4.jpg"
     ],
     "video": "DG_022.mp4",
     "videos": [
@@ -981,10 +839,9 @@ const MEDIA = {
   "DG_130": {
     "photos": [
       "DG_130_2.jpg",
-      "DG_130_3.jpg",
-      "DG_130_4.jpg",
       "DG_130_5.jpg",
-      "DG_130_6.jpg"
+      "DG_130_6.jpg",
+      "DG_130_3.jpg"
     ]
   },
   "DG_018": {
@@ -994,26 +851,16 @@ const MEDIA = {
   },
   "DG_036": {
     "photos": [
-      "DG_036_2.jpg",
-      "DG_036_3.jpg",
       "DG_036_4.jpg",
-      "DG_036_5.jpg"
+      "DG_036_3.jpg"
     ]
   },
   "DG_144": {
-    "photos": [
-      "DG_144_2.jpg",
-      "DG_144_3.jpg",
-      "DG_144_4.jpg",
-      "DG_144_5.jpg"
-    ],
     "video": "DG_144.mp4"
   },
   "DG_145": {
     "photos": [
       "DG_145_4.jpg",
-      "DG_145_5.jpg",
-      "DG_145_6.jpg",
       "DG_145_3.jpg",
       "DG_145_2.jpg"
     ],
@@ -1051,24 +898,19 @@ const MEDIA = {
   "DG_152": {
     "photos": [
       "DG_152_2.jpg",
-      "DG_152_3.jpg",
+      "DG_152_5.jpg",
       "DG_152_4.jpg",
-      "DG_152_5.jpg"
+      "DG_152_3.jpg"
     ],
     "video": "DG_152.mp4"
   },
   "DG_008": {
     "photos": [
-      "DG_008_2.jpg",
       "DG_008_3.jpg",
-      "DG_008_4.jpg",
-      "DG_008_5.jpg"
+      "DG_008_2.jpg"
     ]
   },
   "DG_005": {
-    "photos": [
-      "DG_005_2.jpg"
-    ],
     "videos": [
       "DG_005_v1.mp4"
     ]
@@ -1076,26 +918,15 @@ const MEDIA = {
   "DG_044": {},
   "DG_081": {
     "photos": [
-      "DG_081_2.jpg",
-      "DG_081_3.jpg"
+      "DG_081_2.jpg"
     ]
   },
-  "DG_089": {
-    "photos": [
-      "DG_089_2.jpg"
-    ]
-  },
-  "DG_071": {
-    "photos": [
-      "DG_071_2.jpg"
-    ]
-  },
+  "DG_089": {},
+  "DG_071": {},
   "DG_031": {
     "photos": [
-      "DG_031_2.jpg",
       "DG_031_3.jpg",
-      "DG_031_4.jpg",
-      "DG_031_5.jpg"
+      "DG_031_4.jpg"
     ]
   },
   "DG_037": {
@@ -1107,37 +938,25 @@ const MEDIA = {
       "DG_037_v1.mp4"
     ]
   },
-  "DG_085": {
-    "photos": [
-      "DG_085_2.jpg"
-    ]
-  },
-  "DG_020": {
-    "photos": [
-      "DG_020_2.jpg",
-      "DG_020_3.jpg"
-    ]
-  },
+  "DG_085": {},
+  "DG_020": {},
   "DG_027": {
     "photos": [
       "DG_027_2.jpg",
-      "DG_027_3.jpg",
-      "DG_027_4.jpg",
-      "DG_027_5.jpg"
+      "DG_027_5.jpg",
+      "DG_027_3.jpg"
     ]
   },
   "DG_010": {
     "photos": [
-      "DG_010_2.jpg",
       "DG_010_3.jpg",
-      "DG_010_4.jpg"
+      "DG_010_2.jpg"
     ]
   },
   "DG_087": {
     "photos": [
-      "DG_087_2.jpg",
       "DG_087_3.jpg",
-      "DG_087_4.jpg"
+      "DG_087_2.jpg"
     ],
     "videos": [
       "DG_087_v1.mp4"
@@ -1155,17 +974,38 @@ const MEDIA = {
       "DG_026_2.jpg"
     ]
   },
-  "DG_025": {
+  "DG_025": {},
+  "DG_041": {},
+  "DG_153": {
     "photos": [
-      "DG_025_2.jpg"
+      "DG_153_3.jpg",
+      "DG_153_2.jpg"
+    ],
+    "video": "DG_153.mp4"
+  },
+  "DG_154": {
+    "photos": [
+      "DG_154_2.jpg",
+      "DG_154_3.jpg",
+      "DG_154_4.jpg"
     ]
   },
-  "DG_041": {},
-  "DG_153": {"photos": ["DG_153_2.jpg", "DG_153_3.jpg", "DG_153_4.jpg"], "video": "DG_153.mp4"},
-  "DG_154": {"photos": ["DG_154_2.jpg", "DG_154_3.jpg", "DG_154_4.jpg"]},
-  "DG_155": {"photos": ["DG_155_2.jpg", "DG_155_3.jpg", "DG_155_4.jpg"], "video": "DG_155.mp4"},
-  "DG_156": {"photos": ["DG_156_2.jpg", "DG_156_3.jpg"]},
+  "DG_155": {
+    "photos": [
+      "DG_155_4.jpg",
+      "DG_155_3.jpg",
+      "DG_155_2.jpg"
+    ],
+    "video": "DG_155.mp4"
+  },
+  "DG_156": {
+    "photos": [
+      "DG_156_2.jpg"
+    ]
+  },
   "DG_157": {},
   "DG_158": {},
-  "DG_159": {"photos": ["DG_159_2.jpg"]}
+  "DG_159": {},
+  "DG_019": {},
+  "DG_143": {}
 };
