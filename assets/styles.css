@@ -568,5 +568,5 @@ html { scroll-padding-top: 90px; }
 .gal-more { display: block; margin: 26px auto 0; }
 .gal-more[hidden] { display: none; }
 
-/* Version sans prix : happydecors.fr/?sansprix (mémorisée pour la session ; ?prix pour revenir) */
+/* variante */
 .np .card-price { display: none; }
