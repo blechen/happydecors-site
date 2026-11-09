@@ -11,19 +11,6 @@
   UNIVERSES.forEach(u => { UCOLOR[u.key] = u.color; uLabel[u.key] = u.label; if (u.bg) UNI_BG[u.key] = u.bg; });
   const uLabels = d => [d.u].concat(d.also || []).map(k => uLabel[k]).join(" ");
 
-  // ---------- Échelle : hauteur approx. (m), relevée dans les devis/commandes ----------
-  const HEIGHTS = {
-    // Nouveaux décors (commandes 2023-2025)
-    DG_131: 2.2, DG_132: 2.1, DG_133: 2.2, DG_135: 2.2, DG_136: 1.2,
-    DG_137: 1.6, DG_138: 2, DG_140: 2.6, DG_142: 2.5, DG_143: 2.2,
-    DG_152: 1.75, DG_144: 1.4, DG_145: 1.6, DG_146: 1.4, DG_147: 1.2,
-    // Décors existants
-    DG_130: 4.3, DG_032: 2.4, DG_015: 1.8, DG_091: 1.9, DG_069: 1.8, DG_006: 2.3,
-    DG_049: 5.5, DG_017: 2.3, DG_018: 1.5, DG_019: 1.2, DG_078: 3.4, DG_058: 1.8,
-    DG_088: 2.5, DG_083: 1.6, DG_052: 3.9, DG_007: 1.5, DG_080: 1.7, DG_081: 1.7,
-    DG_051: 1.7, DG_100: 5.4, DG_102: 5.6, DG_098: 5.5, DG_095: 5.5,
-  };
-  const fmtH = m => (Number.isInteger(m) ? m + " m" : String(m).replace(".", ",") + " m");
   const capOf = d => `${d.name}${d.qte ? " (" + d.qte + " disponibles)" : ""} — ${d.price > 0 ? d.price + "€" + (d.qte ? " l'unité" : "") + " / 48h" : "sur devis"}`;
   function mediaBadge(d) {
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
@@ -124,6 +111,7 @@
         <div class="card-body">
           <span class="card-name">${d.name}</span>
           ${d.qte ? `<span class="card-qte">${d.qte} disponibles</span>` : ""}
+          ${sizeText(d.id) ? `<span class="card-size">${sizeText(d.id)}</span>` : ""}
           <span class="card-price ${d.price > 0 ? "" : "devis"}">${d.price > 0 && d.qte ? `${d.price}€ <small>l'unité · 48h</small>` : fmtPrice(d.price)}</span>
           <button class="card-add" data-add="${d.id}" data-added="${added}">
             ${added ? "✓ Ajouté à ma demande" : "+ Ajouter à ma demande"}
@@ -301,7 +289,7 @@
     if (!d) return;
     lbDecorId = id;
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
-    const items = [{ src: `assets/decors/${d.id}.jpg`, cap: capOf(d), h: HEIGHTS[d.id] }];
+    const items = [{ src: `assets/decors/${d.id}.jpg`, cap: capOf(d), h: sizeText(d.id) }];
     (m.photos || []).forEach(p => items.push({ src: `assets/decors/${p}`, cap: capOf(d) }));
     (m.video ? [m.video] : []).concat(m.videos || []).forEach(v => items.push({ src: `assets/decors/${v}`, cap: capOf(d), video: true }));
     openLBList(items, 0);
@@ -323,7 +311,7 @@
       lbImg.src = it.src;
       lbImg.alt = it.cap;
     }
-    lbCap.textContent = it.cap + (it.h ? ` · ≈ ${fmtH(it.h)}` : "") + (lbItems.length > 1 ? `  (${lbIndex + 1}/${lbItems.length})` : "");
+    lbCap.textContent = it.cap + (it.h ? ` · ${it.h}` : "") + (lbItems.length > 1 ? `  (${lbIndex + 1}/${lbItems.length})` : "");
   }
   // Balayage au doigt (mobile) : gauche = suivant, droite = précédent
   (function () {

@@ -3,8 +3,8 @@
 import fs from "fs";
 
 const g = {};
-new Function("g", fs.readFileSync("assets/decors.js", "utf8") + ";g.DECORS=DECORS;g.UNIVERSES=UNIVERSES;g.universesInOrder=universesInOrder;g.inUniverse=inUniverse;")(g);
-const { DECORS, UNIVERSES, universesInOrder, inUniverse } = g;
+new Function("g", fs.readFileSync("assets/decors.js", "utf8") + ";g.DECORS=DECORS;g.sizeText=sizeText;g.UNIVERSES=UNIVERSES;g.universesInOrder=universesInOrder;g.inUniverse=inUniverse;")(g);
+const { sizeText, DECORS, UNIVERSES, universesInOrder, inUniverse } = g;
 
 const UCOLOR = {}, UNI_BG = {};
 UNIVERSES.forEach(u => { UCOLOR[u.key] = u.color; if (u.bg) UNI_BG[u.key] = u.bg; });
@@ -21,7 +21,7 @@ const card = d => `
         </div>
         <div class="card-body">
           <h3 class="card-name">${esc(d.name)}</h3>
-          ${d.qte ? `<span class="card-qte">${d.qte} disponibles</span>` : ""}<span class="card-price ${d.price > 0 ? "" : "devis"}">${d.price > 0 ? d.price + (d.qte ? "€ <small>l'unité · 48h</small>" : "€ <small>/ 48h</small>") : "Sur devis"}</span>
+          ${d.qte ? `<span class="card-qte">${d.qte} disponibles</span>` : ""}${sizeText(d.id) ? `<span class="card-size">${sizeText(d.id)}</span>` : ""}<span class="card-price ${d.price > 0 ? "" : "devis"}">${d.price > 0 ? d.price + (d.qte ? "€ <small>l'unité · 48h</small>" : "€ <small>/ 48h</small>") : "Sur devis"}</span>
           <button class="card-add" data-add="${d.id}" data-added="false">+ Ajouter à ma demande</button>
         </div>
       </article>`;
