@@ -567,3 +567,6 @@ html { scroll-padding-top: 90px; }
 /* Galerie : bouton « Voir plus de réalisations » */
 .gal-more { display: block; margin: 26px auto 0; }
 .gal-more[hidden] { display: none; }
+
+/* Version sans prix : happydecors.fr/?sansprix (mémorisée pour la session ; ?prix pour revenir) */
+.np .card-price { display: none; }

@@ -11,7 +11,7 @@
   UNIVERSES.forEach(u => { UCOLOR[u.key] = u.color; uLabel[u.key] = u.label; if (u.bg) UNI_BG[u.key] = u.bg; });
   const uLabels = d => [d.u].concat(d.also || []).map(k => uLabel[k]).join(" ");
 
-  const capOf = d => `${d.name}${d.qte ? " (" + d.qte + " disponibles)" : ""} — ${d.price > 0 ? d.price + "€" + (d.qte ? " l'unité" : "") + " / 48h" : "sur devis"}`;
+  const capOf = d => `${d.name}${d.qte ? " (" + d.qte + " disponibles)" : ""} — ${document.documentElement.classList.contains("np") ? "sur demande" : d.price > 0 ? d.price + "€" + (d.qte ? " l'unité" : "") + " / 48h" : "sur devis"}`;
   function mediaBadge(d) {
     const m = (typeof MEDIA !== "undefined" && MEDIA[d.id]) || {};
     const vids = (m.videos || []).concat(m.video ? [m.video] : []);
