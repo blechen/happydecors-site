@@ -46,35 +46,20 @@
   const counts = {};
   UNIVERSES.forEach(u => { counts[u.key] = DECORS.filter(d => inUniverse(d, u.key)).length; });
 
-  // Tuiles (thèmes phares) + liste compacte de tous les thèmes, groupés
-  const tileHTML = u => `
-    <button class="uni-card${UNI_BG[u.key] ? " has-bg" : ""}" data-u="${u.key}" style="--uc:${UCOLOR[u.key]}${UNI_BG[u.key] ? `; background-image:url('${UNI_BG[u.key]}')` : ""}">
-      ${u.soon ? '<span class="uni-soon">Bientôt</span>' : ""}<span class="uni-emoji">${u.emoji}</span>
-      <span class="uni-name">${u.label}</span>
-      <span class="uni-count">${counts[u.key] || 0} décors</span>
-    </button>`;
-  const GRP = { occasion: "Occasions", couleur: "Couleurs & ambiances", univers: "Univers" };
-  universGrid.innerHTML = Object.keys(GRP).map(g => {
-    const list = UNIS.filter(u => u.grp === g);
-    return list.length ? `<h3 class="uni-grp">${GRP[g]}</h3><div class="univers-grid">${list.map(tileHTML).join("")}</div>` : "";
-  }).join("");
-  const goUniverse = e => {
+  // Un seul menu : bandeau de thèmes (tout par défaut, on touche un thème pour filtrer, on retouche pour tout revoir)
+  const chip = (key, label, ph, count, color) => `<button class="uni-chip${activeU === key ? " on" : ""}" data-u="${key}" aria-pressed="${activeU === key}"${color ? ` style="--uc:${color}"` : ""}>${ph}<span class="uni-name">${label}</span><span class="uni-count">${count}</span></button>`;
+  const stripHTML = () => chip("all", "Tous", '<span class="uni-chip-ph all">✨</span>', DECORS.length) +
+    UNIS.map(u => chip(u.key, u.short || u.label, `<span class="uni-chip-ph"${UNI_BG[u.key] ? ` style="background-image:url('${UNI_BG[u.key]}')"` : ""}>${UNI_BG[u.key] ? "" : u.emoji}</span>`, counts[u.key] || 0, UCOLOR[u.key])).join("");
+  universGrid.innerHTML = stripHTML();
+  universGrid.addEventListener("click", e => {
     const btn = e.target.closest("[data-u]");
     if (!btn) return;
-    setUniverse(btn.dataset.u);
-    document.getElementById("catalogue").scrollIntoView({ behavior: "smooth" });
-  };
-  universGrid.addEventListener("click", goUniverse);
-
-  // Sélecteur de thème (natif : confortable au pouce sur mobile)
-  const uniSelect = $("#uniSelect");
-  uniSelect.innerHTML = `<option value="all">Tous les thèmes</option>` + Object.keys(GRP).map(g =>
-    `<optgroup label="${GRP[g]}">${UNIS.filter(u => u.grp === g).map(u => `<option value="${u.key}">${u.emoji} ${u.short || u.label}</option>`).join("")}</optgroup>`).join("");
-  uniSelect.addEventListener("change", () => setUniverse(uniSelect.value));
+    setUniverse(btn.dataset.u === activeU ? "all" : btn.dataset.u);
+  });
 
   function setUniverse(u) {
     activeU = u;
-    uniSelect.value = u;
+    universGrid.querySelectorAll(".uni-chip").forEach(c => { const on = c.dataset.u === u; c.classList.toggle("on", on); c.setAttribute("aria-pressed", on); if (on) c.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); });
     shown = PAGE;
     render();
   }

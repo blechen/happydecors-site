@@ -35,8 +35,7 @@ const uni = u => `
 
 const grid = DECORS.map(card).join("");
 const ordered = universesInOrder();
-const GRP = { occasion: "Occasions", couleur: "Couleurs &amp; ambiances", univers: "Univers" };
-const unis = Object.keys(GRP).map(gk => { const l = ordered.filter(u => u.grp === gk); return l.length ? `<h3 class="uni-grp">${GRP[gk]}</h3><div class="univers-grid">${l.map(uni).join("")}</div>` : ""; }).join("");
+const unis = `<button class="uni-chip on" data-u="all" aria-pressed="true"><span class="uni-chip-ph all">✨</span><span class="uni-name">Tous</span><span class="uni-count">${DECORS.length}</span></button>` + ordered.map(u => `<button class="uni-chip" data-u="${u.key}" aria-pressed="false" style="--uc:${UCOLOR[u.key]}"><span class="uni-chip-ph"${UNI_BG[u.key] ? ` style="background-image:url('${UNI_BG[u.key]}')"` : ""}>${UNI_BG[u.key] ? "" : u.emoji}</span><span class="uni-name">${esc(u.short || u.label)}</span><span class="uni-count">${counts[u.key] || 0}</span></button>`).join("");
 
 let html = fs.readFileSync("index.html", "utf8");
 html = html.replace(/(<!--GRID_START-->)[\s\S]*?(<!--GRID_END-->)/, `$1${grid}\n      $2`);
