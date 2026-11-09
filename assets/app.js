@@ -131,7 +131,7 @@
     moreBtn.textContent = `Voir plus de décors (${reste})`;
     const n = current.length;
     resultCount.textContent = n === DECORS.length
-      ? `Plus de 100 décors disponibles`
+      ? `Plus de 150 décors disponibles`
       : `${n} décor${n > 1 ? "s" : ""} ${activeU !== "all" ? "· " + uLabel[activeU] : ""}`;
     emptyMsg.hidden = n > 0;
   }

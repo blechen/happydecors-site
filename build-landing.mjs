@@ -323,7 +323,7 @@ const page = p => `<!DOCTYPE html>
     <header class="section-head">
       <span class="kicker">Nos décors</span>
       <h2>Idées de décors pour ${esc(p.cible)}</h2>
-      <p class="section-lead">Une sélection parmi nos plus de 100 décors gonflables. <a href="/#catalogue">Voir tout le catalogue →</a></p>
+      <p class="section-lead">Une sélection parmi nos plus de 150 décors gonflables. <a href="/#catalogue">Voir tout le catalogue →</a></p>
     </header>
     <div class="grid">${p.decors.map(card).join("")}
     </div>
@@ -384,7 +384,7 @@ const page = p => `<!DOCTYPE html>
     <header class="section-head">
       <span class="kicker">Nos décors</span>
       <h2>Idées de décors pour ${esc(p.cible)}</h2>
-      <p class="section-lead">Une sélection parmi nos plus de 100 décors gonflables. <a href="/#catalogue">Voir tout le catalogue →</a></p>
+      <p class="section-lead">Une sélection parmi nos plus de 150 décors gonflables. <a href="/#catalogue">Voir tout le catalogue →</a></p>
     </header>
     <div class="grid">${p.decors.map(card).join("")}
     </div>
