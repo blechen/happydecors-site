@@ -584,3 +584,12 @@ html { scroll-padding-top: 90px; }
 .uni-chip:active .uni-chip-ph { transform: scale(.95); }
 @media (min-width: 900px) { .uni-chip { width: 96px; } .uni-chip-ph { width: 78px; height: 78px; } .uni-chip .uni-name { font-size: .8rem; } }
 .toolbar .search { width: 100%; }
+
+.strip-hint { font-size: .85rem; font-weight: 700; color: var(--ink); margin: 6px 2px 2px; }
+.strip-hint span { color: var(--ink-faint); font-weight: 600; }
+.strip-wrap { position: relative; }
+.strip-wrap::after { content: ""; position: absolute; top: 0; right: 0; bottom: 12px; width: 56px; background: linear-gradient(to right, rgba(255,246,236,0), var(--cream) 85%); pointer-events: none; transition: opacity .2s; }
+.strip-wrap.at-end::after { opacity: 0; }
+.strip-next { position: absolute; top: 18px; right: 2px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25); font-size: 1.7rem; line-height: 1; padding: 0 0 4px; cursor: pointer; z-index: 2; color: var(--ink); animation: nudge 1.6s ease-in-out 3; }
+.strip-next[hidden] { display: none; }
+@keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }

@@ -57,6 +57,13 @@
     setUniverse(btn.dataset.u === activeU ? "all" : btn.dataset.u);
   });
 
+  const stripNext = $("#stripNext");
+  const stripEdge = () => { const atEnd = universGrid.scrollLeft + universGrid.clientWidth >= universGrid.scrollWidth - 8; stripNext.hidden = atEnd; universGrid.parentElement.classList.toggle("at-end", atEnd); };
+  stripNext.addEventListener("click", () => universGrid.scrollBy({ left: universGrid.clientWidth * 0.8, behavior: "smooth" }));
+  universGrid.addEventListener("scroll", stripEdge, { passive: true });
+  window.addEventListener("resize", stripEdge);
+  setTimeout(stripEdge, 0);
+
   function setUniverse(u) {
     activeU = u;
     universGrid.querySelectorAll(".uni-chip").forEach(c => { const on = c.dataset.u === u; c.classList.toggle("on", on); c.setAttribute("aria-pressed", on); if (on) c.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); });
